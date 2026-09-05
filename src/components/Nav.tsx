@@ -50,14 +50,12 @@ export default function Nav() {
             href="/"
             data-cursor
             onClick={goHome}
-            className="font-display font-semibold text-xl tracking-tight text-white"
+            className="brand-logo"
           >
             Gentle Group<span className="text-[10px] align-super">®</span>
           </a>
           <div className="flex items-center gap-8">
-            <span className="hidden md:block text-[11px] tracking-[0.25em] uppercase text-white/60">
-              Paris — Tokyo — NYC
-            </span>
+            <span className="hidden md:block text-[11px] tracking-[0.25em] uppercase text-white/60">Software — Design — Betrieb</span>
             <button
               data-cursor
               onClick={() => setOpen(!open)}
@@ -120,9 +118,8 @@ export default function Nav() {
                 transition={{ delay: 0.5 }}
               >
                 <span>office@gentlegroup.de</span>
-                <span>Instagram</span>
-                <span>Behance</span>
-                <span>LinkedIn</span>
+                <span>Deutschland</span>
+                <span>Software & Design</span>
               </motion.div>
             </div>
           </motion.div>

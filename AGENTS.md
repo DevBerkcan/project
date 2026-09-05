@@ -206,7 +206,7 @@ The legacy production website is `https://www.gentlegroup.de/`. Use it as the pr
 
 - Gentle Group is presented as an umbrella brand for digital services and software products under the GentleSuite name.
 - The new public-facing studio name is **Gentle Group Studios**.
-- The primary market is German-speaking businesses, with a regional association to Düsseldorf and NRW.
+- The primary market is German-speaking businesses, with a regional association to Wuppertal and NRW.
 - The core commercial positioning is custom digital solutions from strategy and design through implementation and continued operation.
 - The default site language should be German. English may be added only as an intentional, complete locale with correct metadata and language switching.
 - Primary contact email: `office@gentlegroup.de`.
@@ -303,7 +303,7 @@ The legacy testimonials currently use generic names and companies and must be re
 - Gentle Group is described in the current imprint as a brand rather than a separately registered company. Preserve the legally responsible provider information from the verified legal source, but do not duplicate sensitive tax, address, or personal data into ordinary marketing components.
 - The legacy imprint contains two different email domains. Resolve this inconsistency before launch and use `office@gentlegroup.de` as the provisional public contact address.
 - The new template's French phone number and international studio addresses are placeholders and must be removed.
-- The website title may target Düsseldorf while legal provider information references Wuppertal. Treat Wuppertal as the legal location and Düsseldorf/NRW as a market-region statement unless the user confirms an actual Düsseldorf office.
+- The website title may target Wuppertal while legal provider information references Wuppertal. Treat Wuppertal as the legal location and Wuppertal/NRW as a market-region statement unless the user confirms an actual Wuppertal office.
 - Never improvise legal text. Preserve reviewed legal pages or flag them for legal review.
 
 ## 9.3 New homepage content blueprint

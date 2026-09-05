@@ -2,10 +2,15 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Preloader({ onDone }: { onDone: () => void }) {
-  const [count, setCount] = useState(0)
-  const [gone, setGone] = useState(false)
+  const [reducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+  const [count, setCount] = useState(() => reducedMotion ? 100 : 0)
+  const [gone, setGone] = useState(reducedMotion)
 
   useEffect(() => {
+    if (reducedMotion) {
+      onDone()
+      return
+    }
     let raf: number
     const start = performance.now()
     const duration = 1800
@@ -24,29 +29,29 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
     }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
-  }, [onDone])
+  }, [onDone, reducedMotion])
 
   return (
     <AnimatePresence>
       {!gone && (
         <motion.div
-          className="fixed inset-0 z-[10000] bg-[#0e0e0e] flex flex-col justify-between p-6 md:p-10"
+          className="fixed inset-0 z-[10000] bg-brand-dark flex flex-col justify-between p-6 md:p-10"
           exit={{ y: '-100%' }}
           transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
         >
-          <div className="flex justify-between text-[11px] tracking-[0.25em] uppercase text-[#8a877f]">
-            <span>Gentle Group Studio</span>
-            <span>Portfolio © 2026</span>
+          <div className="flex justify-between text-[11px] tracking-[0.25em] uppercase text-brand-light/60">
+            <span className="brand-logo">Gentle Group<sup>®</sup></span>
+            <span>Digitale Lösungen</span>
           </div>
           <div className="flex items-end justify-between">
             <motion.p
-              className="text-[11px] tracking-[0.25em] uppercase text-[#8a877f] mb-4"
+              className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4"
               animate={{ opacity: [0.3, 1, 0.3] }}
               transition={{ duration: 1.4, repeat: Infinity }}
             >
-              Loading experience
+              Digitale Lösungen laden
             </motion.p>
-            <span className="font-display font-medium text-[22vw] md:text-[16vw] leading-[0.8] text-[#eae7e0] tabular-nums">
+            <span className="font-display font-semibold text-[22vw] md:text-[16vw] leading-[0.8] text-brand-light tabular-nums">
               {count}
             </span>
           </div>

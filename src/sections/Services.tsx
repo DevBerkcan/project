@@ -1,32 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const services = [
-  {
-    n: '01',
-    title: 'Brand Identity',
-    desc: 'Strategy-led identity systems built to survive every touchpoint — from a favicon to a forty-foot billboard. Naming, visual language, guidelines, and the courage to be distinct.',
-    tags: ['Strategy', 'Naming', 'Visual Identity', 'Guidelines', 'Tone of Voice'],
-  },
-  {
-    n: '02',
-    title: 'Digital Design',
-    desc: 'Websites and products designed around human behavior, not best practices. We prototype early, test obsessively, and ship interfaces people actually enjoy using.',
-    tags: ['Web Design', 'UX / UI', 'Design Systems', 'Prototyping', 'Accessibility'],
-  },
-  {
-    n: '03',
-    title: 'Creative Development',
-    desc: 'Award-grade front-end engineering. WebGL, shaders, physics-based motion and buttery performance — the technical craft that makes the impossible feel effortless.',
-    tags: ['React / Next.js', 'WebGL / Three.js', 'Motion', 'CMS', 'E-Commerce'],
-  },
-  {
-    n: '04',
-    title: 'Motion & Content',
-    desc: 'Stories told at 24, 30 and 60 frames per second. From brand films to micro-interactions, we choreograph movement that gives brands a pulse.',
-    tags: ['Art Direction', '3D / CGI', 'Brand Film', 'Social Content', 'Sound Design'],
-  },
-]
+import { services } from '../data/siteContent'
 
 export default function Services() {
   const [open, setOpen] = useState<number | null>(1)
@@ -34,68 +8,42 @@ export default function Services() {
   return (
     <section id="services" className="px-6 md:px-10 py-24 md:py-36">
       <div className="flex items-baseline justify-between mb-14 md:mb-20">
-        <span className="text-[11px] tracking-[0.25em] uppercase text-[#8a877f]">03 — Services</span>
-        <span className="text-[11px] tracking-[0.25em] uppercase text-[#8a877f]">What we do</span>
+        <span className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60">03 — Leistungen</span>
+        <span className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60">Was wir entwickeln</span>
       </div>
-
-      <h2 className="font-display font-medium text-[11vw] md:text-[6.5vw] leading-[0.95] mb-16 md:mb-24">
-        Full-stack <span className="text-stroke">creative</span>
-        <br />
-        capability<span className="text-[#d7ff3f]">.</span>
+      <h2 className="font-display font-semibold text-[11vw] md:text-[6.5vw] leading-[0.95] mb-16 md:mb-24">
+        Digitale <span className="text-stroke">Substanz</span><br />für echte Aufgaben<span className="text-brand-primary">.</span>
       </h2>
-
       <div>
-        {services.map((s, i) => {
-          const isOpen = open === i
+        {services.map((service, index) => {
+          const isOpen = open === index
           return (
-            <div key={s.n} className="border-t border-white/10 last:border-b">
+            <div key={service.id} className="border-t border-brand-light/15 last:border-b">
               <button
-                id={`service-trigger-${s.n}`}
+                id={`service-trigger-${service.id}`}
                 data-cursor
-                onClick={() => setOpen(isOpen ? null : i)}
-                className="w-full flex items-center justify-between py-7 md:py-9 text-left group"
+                onClick={() => setOpen(isOpen ? null : index)}
+                className="w-full flex items-center justify-between gap-6 py-7 md:py-9 text-left group"
                 aria-expanded={isOpen}
-                aria-controls={`service-panel-${s.n}`}
+                aria-controls={`service-panel-${service.id}`}
               >
                 <div className="flex items-baseline gap-6 md:gap-12">
-                  <span className={`text-sm tabular-nums transition-colors duration-300 ${isOpen ? 'text-[#d7ff3f]' : 'text-[#8a877f]'}`}>
-                    {s.n}
-                  </span>
-                  <span className={`font-display font-medium text-3xl md:text-5xl transition-all duration-500 ${isOpen ? 'translate-x-2 md:translate-x-4 text-[#d7ff3f]' : 'group-hover:translate-x-2 md:group-hover:translate-x-4'}`}>
-                    {s.title}
-                  </span>
+                  <span className={`text-sm tabular-nums transition-colors duration-300 ${isOpen ? 'text-brand-primary' : 'text-brand-light/60'}`}>{service.number}</span>
+                  <span className={`font-display font-semibold text-2xl md:text-5xl transition-all duration-500 ${isOpen ? 'translate-x-2 md:translate-x-4 text-brand-primary' : 'group-hover:translate-x-2 md:group-hover:translate-x-4'}`}>{service.title}</span>
                 </div>
                 <motion.span
-                  className={`shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-full border flex items-center justify-center text-xl transition-colors duration-500 ${isOpen ? 'bg-[#d7ff3f] border-[#d7ff3f] text-[#0e0e0e]' : 'border-white/15'}`}
+                  className={`shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-full border flex items-center justify-center text-xl transition-colors duration-500 ${isOpen ? 'bg-brand-primary border-brand-primary text-brand-dark' : 'border-brand-light/20'}`}
                   animate={{ rotate: isOpen ? 45 : 0 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  +
-                </motion.span>
+                >+</motion.span>
               </button>
               <AnimatePresence initial={false}>
                 {isOpen && (
-                  <motion.div
-                    id={`service-panel-${s.n}`}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="overflow-hidden"
-                    role="region"
-                    aria-labelledby={`service-trigger-${s.n}`}
-                  >
+                  <motion.div id={`service-panel-${service.id}`} initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden" role="region" aria-labelledby={`service-trigger-${service.id}`}>
                     <div className="pb-10 md:pb-12 md:pl-[4.5rem] lg:pl-[7.5rem] max-w-3xl">
-                      <p className="text-[#8a877f] leading-relaxed text-base md:text-lg">{s.desc}</p>
+                      <p className="text-brand-light/70 leading-relaxed text-base md:text-lg">{service.description}</p>
                       <div className="mt-6 flex flex-wrap gap-2">
-                        {s.tags.map((t) => (
-                          <span
-                            key={t}
-                            className="text-[11px] tracking-[0.12em] uppercase border border-white/15 rounded-full px-4 py-2 text-[#eae7e0]/80"
-                          >
-                            {t}
-                          </span>
-                        ))}
+                        {service.tags.map((tag) => <span key={tag} className="text-[11px] tracking-[0.1em] uppercase border border-brand-light/20 rounded-full px-4 py-2 text-brand-light/80">{tag}</span>)}
                       </div>
                     </div>
                   </motion.div>

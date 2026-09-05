@@ -5,14 +5,22 @@
 @tailwind utilities;
 
 :root {
-  --ink: #0e0e0e;
-  --bone: #eae7e0;
-  --acid: #d7ff3f;
-  --grey: #8a877f;
+  --color-brand-primary: #d7ff3f;
+  --color-brand-secondary: #a97aff;
+  --color-brand-dark: #010a30;
+  --color-brand-light: #f0eff4;
+  --color-background: var(--color-brand-dark);
+  --color-foreground: var(--color-brand-light);
+  --color-surface: #07143d;
+  --color-muted: rgb(240 239 244 / 68%);
+  --color-border: rgb(240 239 244 / 16%);
+  --color-focus: var(--color-brand-primary);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
 }
 
 html {
-  background: var(--ink);
+  background: var(--color-background);
 }
 
 html.lenis, html.lenis body {
@@ -23,26 +31,26 @@ html.lenis, html.lenis body {
 }
 
 body {
-  font-family: 'Satoshi', sans-serif;
-  background: var(--ink);
-  color: var(--bone);
+  font-family: 'Clash Display', sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: var(--acid);
-  color: var(--ink);
+  background: var(--color-brand-primary);
+  color: var(--color-brand-dark);
 }
 
 ::-webkit-scrollbar {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--ink);
+  background: var(--color-brand-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: #3a3a3a;
+  background: rgb(240 239 244 / 28%);
   border-radius: 2px;
 }
 
@@ -50,8 +58,28 @@ body {
   font-family: 'Clash Display', sans-serif;
 }
 
+.brand-logo {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: white;
+  white-space: nowrap;
+}
+
+.brand-logo sup {
+  font-size: 10px;
+  vertical-align: super;
+}
+
 .text-stroke {
-  -webkit-text-stroke: 1px rgba(234, 231, 224, 0.35);
+  -webkit-text-stroke: 1px rgb(240 239 244 / 42%);
+  color: transparent;
+}
+
+.text-stroke-dark {
+  -webkit-text-stroke: 1px rgb(1 10 48 / 36%);
   color: transparent;
 }
 
@@ -92,6 +120,23 @@ body {
 }
 .animate-spin-slow {
   animation: spin-slow 14s linear infinite;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @media (pointer: fine) {

@@ -6,21 +6,23 @@ import Manifesto from '../sections/Manifesto'
 import Works from '../sections/Works'
 import Services from '../sections/Services'
 import Recognition from '../sections/Recognition'
+import Products from '../sections/Products'
 import Footer from '../sections/Footer'
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
 
   return (
-    <div className="grain bg-[#0e0e0e] text-[#eae7e0] min-h-screen">
+    <div className="grain bg-brand-dark text-brand-light min-h-screen">
       <Preloader onDone={() => setLoaded(true)} />
       <main>
         <Hero started={loaded} />
-        <Marquee items={['Brand', 'Digital', 'Motion', 'Strategy', 'Identity', 'Content', 'E-Commerce', 'Campaign']} dark />
+        <Marquee items={['Software', 'Web-Apps', 'Websites', 'KI', 'Automatisierung', 'UX/UI', 'Cloud', 'APIs']} dark />
         <Manifesto />
         <Works />
-        <Marquee items={['Gentle Group Studio', 'Est. 2016', 'Paris', 'Tokyo', 'New York', 'Independent', 'Award-Winning']} slow />
+        <Marquee items={['Gentle Group®', 'Software', 'Design', 'Entwicklung', 'Betrieb', 'GentleSuite']} slow />
         <Services />
+        <Products />
         <Recognition />
       </main>
       <Footer />

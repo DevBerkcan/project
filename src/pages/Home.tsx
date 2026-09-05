@@ -7,8 +7,8 @@ import Works from '../sections/Works'
 import Services from '../sections/Services'
 import Recognition from '../sections/Recognition'
 import Products from '../sections/Products'
-import Team from '../sections/Team'
 import Footer from '../sections/Footer'
+import Team from '@/sections/Team'
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false)

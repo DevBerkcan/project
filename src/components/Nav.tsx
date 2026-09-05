@@ -63,6 +63,8 @@ export default function Nav() {
               onClick={() => setOpen(!open)}
               className="flex flex-col items-end gap-[6px] w-10"
               aria-label="Menu"
+              aria-expanded={open}
+              aria-controls="site-menu"
             >
               <motion.span
                 className="block h-[2px] bg-white"
@@ -82,6 +84,7 @@ export default function Nav() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="site-menu"
             className="fixed inset-0 z-[150] bg-[#d7ff3f]"
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             animate={{ clipPath: 'inset(0 0 0% 0)' }}

@@ -50,9 +50,12 @@ export default function Services() {
           return (
             <div key={s.n} className="border-t border-white/10 last:border-b">
               <button
+                id={`service-trigger-${s.n}`}
                 data-cursor
                 onClick={() => setOpen(isOpen ? null : i)}
                 className="w-full flex items-center justify-between py-7 md:py-9 text-left group"
+                aria-expanded={isOpen}
+                aria-controls={`service-panel-${s.n}`}
               >
                 <div className="flex items-baseline gap-6 md:gap-12">
                   <span className={`text-sm tabular-nums transition-colors duration-300 ${isOpen ? 'text-[#d7ff3f]' : 'text-[#8a877f]'}`}>
@@ -73,11 +76,14 @@ export default function Services() {
               <AnimatePresence initial={false}>
                 {isOpen && (
                   <motion.div
+                    id={`service-panel-${s.n}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
+                    role="region"
+                    aria-labelledby={`service-trigger-${s.n}`}
                   >
                     <div className="pb-10 md:pb-12 md:pl-[4.5rem] lg:pl-[7.5rem] max-w-3xl">
                       <p className="text-[#8a877f] leading-relaxed text-base md:text-lg">{s.desc}</p>

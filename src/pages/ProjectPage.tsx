@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { Link, useParams } from 'react-router'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { projects } from '../data/projects'
+import { findNextProject, findProjectBySlug } from '../data/projectQueries'
 import { ProjectArt } from '../sections/Works'
 
 function ParallaxArt({ art, className }: { art: string; className?: string }) {
@@ -33,9 +34,13 @@ function Reveal({ children, delay = 0, className }: { children: React.ReactNode;
 
 export default function ProjectPage() {
   const { slug } = useParams()
-  const index = projects.findIndex((p) => p.slug === slug)
-  const project = projects[index]
-  const next = projects[(index + 1) % projects.length]
+  const index = projects.findIndex((project) => project.slug === slug)
+  const project = findProjectBySlug(projects, slug)
+  const next = findNextProject(projects, index)
+  const heroRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
+  const heroY = useTransform(heroProgress, [0, 1], [0, 160])
+  const heroOpacity = useTransform(heroProgress, [0, 0.9], [1, 0])
 
   if (!project) {
     return (
@@ -52,11 +57,6 @@ export default function ProjectPage() {
       </div>
     )
   }
-
-  const heroRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
-  const heroY = useTransform(heroProgress, [0, 1], [0, 160])
-  const heroOpacity = useTransform(heroProgress, [0, 0.9], [1, 0])
 
   return (
     <div className="grain bg-[#0e0e0e] text-[#eae7e0] min-h-screen">

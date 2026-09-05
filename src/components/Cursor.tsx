@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 export default function Cursor() {
-  const [isFine, setIsFine] = useState(false)
+  const [isFine] = useState(() => window.matchMedia('(pointer: fine)').matches)
   const [hovering, setHovering] = useState(false)
   const [label, setLabel] = useState('')
 
@@ -12,9 +12,7 @@ export default function Cursor() {
   const springY = useSpring(y, { stiffness: 400, damping: 35, mass: 0.6 })
 
   useEffect(() => {
-    const fine = window.matchMedia('(pointer: fine)').matches
-    setIsFine(fine)
-    if (!fine) return
+    if (!isFine) return
 
     document.documentElement.classList.add('cursor-none-desktop')
 
@@ -35,7 +33,7 @@ export default function Cursor() {
       window.removeEventListener('mousemove', move)
       document.documentElement.classList.remove('cursor-none-desktop')
     }
-  }, [x, y])
+  }, [isFine, x, y])
 
   if (!isFine) return null
 

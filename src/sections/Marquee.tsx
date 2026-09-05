@@ -7,8 +7,8 @@ export default function Marquee({
   dark?: boolean
   slow?: boolean
 }) {
-  const row = (
-    <div className="flex shrink-0 items-center">
+  const row = (hidden = false) => (
+    <div aria-hidden={hidden} className="flex shrink-0 items-center">
       {items.map((item, i) => (
         <span key={i} className="flex items-center">
           <span
@@ -31,8 +31,8 @@ export default function Marquee({
       }`}
     >
       <div className={`flex w-max ${slow ? 'animate-marquee-slow' : 'animate-marquee'}`}>
-        {row}
-        {row}
+        {row()}
+        {row(true)}
       </div>
     </div>
   )

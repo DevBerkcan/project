@@ -19,7 +19,7 @@ export default function Home() {
         <Marquee items={['Brand', 'Digital', 'Motion', 'Strategy', 'Identity', 'Content', 'E-Commerce', 'Campaign']} dark />
         <Manifesto />
         <Works />
-        <Marquee items={['Noir Studio', 'Est. 2016', 'Paris', 'Tokyo', 'New York', 'Independent', 'Award-Winning']} slow />
+        <Marquee items={['Gentle Group Studio', 'Est. 2016', 'Paris', 'Tokyo', 'New York', 'Independent', 'Award-Winning']} slow />
         <Services />
         <Recognition />
       </main>

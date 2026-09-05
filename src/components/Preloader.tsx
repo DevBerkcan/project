@@ -35,7 +35,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
           transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
         >
           <div className="flex justify-between text-[11px] tracking-[0.25em] uppercase text-[#8a877f]">
-            <span>Noir Studio</span>
+            <span>Gentle Group Studio</span>
             <span>Portfolio © 2026</span>
           </div>
           <div className="flex items-end justify-between">

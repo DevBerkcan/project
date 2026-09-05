@@ -52,7 +52,7 @@ export default function Nav() {
             onClick={goHome}
             className="font-display font-semibold text-xl tracking-tight text-white"
           >
-            NOIR<span className="text-[10px] align-super">®</span>
+            Gentle Group<span className="text-[10px] align-super">®</span>
           </a>
           <div className="flex items-center gap-8">
             <span className="hidden md:block text-[11px] tracking-[0.25em] uppercase text-white/60">
@@ -116,7 +116,7 @@ export default function Nav() {
                 exit={{ opacity: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <span>hello@noir.studio</span>
+                <span>office@gentlegroup.de</span>
                 <span>Instagram</span>
                 <span>Behance</span>
                 <span>LinkedIn</span>

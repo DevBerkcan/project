@@ -38,8 +38,8 @@ export const projects: Project[] = [
       'radial-gradient(ellipse at 15% 25%, #ffd89e 0%, transparent 45%), radial-gradient(ellipse at 85% 60%, #c93a5e 0%, transparent 55%), linear-gradient(150deg, #250a33 0%, #100517 100%)',
       'radial-gradient(ellipse at 50% 100%, #ff8e53 0%, transparent 55%), radial-gradient(ellipse at 80% 10%, #6b2a6e 0%, transparent 50%), linear-gradient(180deg, #1e0829 0%, #0e0513 100%)',
     ],
-    quote: 'Noir didn\'t give us a logo. They gave us a language — one our customers now speak fluently.',
-    quoteAuthor: 'Mara Chen, Co-founder',
+    quote: 'Gentle Group didn\'t give us a logo. They gave us a language — one our customers now speak fluently.',
+    quoteAuthor: 'Berk-Can Atesoglu, founder',
   },
   {
     slug: 'meridian-bank',
@@ -110,7 +110,7 @@ export const projects: Project[] = [
       'radial-gradient(ellipse at 30% 30%, #f0e2d3 0%, transparent 40%), radial-gradient(ellipse at 85% 85%, #7a5f47 0%, transparent 50%), linear-gradient(150deg, #1a130d 0%, #0d0906 100%)',
       'radial-gradient(ellipse at 60% 90%, #cbb397 0%, transparent 50%), radial-gradient(ellipse at 10% 60%, #4a3828 0%, transparent 55%), linear-gradient(190deg, #15100a 0%, #0a0705 100%)',
     ],
-    quote: 'Working with Noir felt like being edited by someone with better taste than us. Humbling, and worth every cent.',
+    quote: 'Working with Gentle Group felt like being edited by someone with better taste than us. Humbling, and worth every cent.',
     quoteAuthor: 'Camille Fontaine, Creative Director',
   },
   {

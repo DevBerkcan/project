@@ -23,7 +23,7 @@ function MagneticButton() {
   return (
     <motion.a
       ref={ref}
-      href="mailto:hello@noir.studio"
+      href="mailto:office@gentlegroup.de"
       data-cursor
       onMouseMove={onMove}
       onMouseLeave={reset}
@@ -61,7 +61,7 @@ export default function Footer() {
         <div className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-10 border-t border-white/10 pt-10">
           <div>
             <div className="text-[11px] tracking-[0.25em] uppercase text-[#8a877f] mb-4">New business</div>
-            <a href="mailto:hello@noir.studio" data-cursor className="block hover:text-[#d7ff3f] transition-colors">hello@noir.studio</a>
+            <a href="mailto:office@gentlegroup.de" data-cursor className="block hover:text-[#d7ff3f] transition-colors">office@gentlegroup.de</a>
             <a href="tel:+33100000000" data-cursor className="block mt-1 hover:text-[#d7ff3f] transition-colors">+33 1 00 00 00 00</a>
           </div>
           <div>
@@ -96,7 +96,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-4 text-[11px] tracking-[0.2em] uppercase text-[#8a877f] border-t border-white/10 pt-6">
-          <span>© 2026 Noir Studio</span>
+          <span>© 2026 Gentle Group Studio</span>
           <span className="hidden md:inline">Designed with obsession</span>
           <button
             data-cursor

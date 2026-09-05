@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
+import { Link } from 'react-router'
 import { motion, useMotionValue, useSpring, AnimatePresence, useScroll, useTransform } from 'framer-motion'
-import { solutionAreas } from '../data/siteContent'
+import { workProjects } from '../data/siteContent'
 
 export function ProjectArt({ art, className }: { art: string; className?: string }) {
   return (
@@ -42,26 +43,41 @@ export default function Works() {
         <AnimatePresence>
           {active !== null && (
             <motion.div className="hidden md:block absolute z-20 w-[26vw] h-[17vw] pointer-events-none" style={{ left: sx, top: sy, x: '-50%', y: '-50%' }} initial={{ scale: 0.55, opacity: 0, rotate: -4 }} animate={{ scale: 1, opacity: 1, rotate: 2 }} exit={{ scale: 0.55, opacity: 0, rotate: 4 }} transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}>
-              <ProjectArt art={solutionAreas[active].art} className="w-full h-full rounded-md" />
+              <ProjectArt art={workProjects[active].art} className="w-full h-full rounded-md" />
             </motion.div>
           )}
         </AnimatePresence>
-        {solutionAreas.map((area, index) => (
-          <article key={area.title} onMouseEnter={() => setActive(index)} className="group block border-t border-brand-dark/15 last:border-b px-6 md:px-10">
-            <div className="md:hidden pt-6"><ProjectArt art={area.art} className="w-full h-44 rounded-md" /></div>
+        {workProjects.map((project, index) => (
+          <article key={project.title} onMouseEnter={() => setActive(index)} className="group block border-t border-brand-dark/15 last:border-b px-6 md:px-10">
+            <div className="md:hidden pt-6"><ProjectArt art={project.art} className="w-full h-44 rounded-md" /></div>
             <div className="relative flex items-center justify-between gap-6 py-7 md:py-10">
               <div className="flex items-baseline gap-5 md:gap-10">
                 <span className="text-xs text-brand-dark/60 tabular-nums">0{index + 1}</span>
-                <h3 className="font-display font-semibold text-3xl md:text-6xl leading-none transition-all duration-500 md:group-hover:translate-x-6 md:group-hover:text-brand-secondary">{area.title}</h3>
+                <h3 className="font-display font-semibold text-3xl md:text-6xl leading-none transition-all duration-500 md:group-hover:translate-x-6 md:group-hover:text-brand-secondary">{project.title}</h3>
               </div>
               <div className="flex items-center gap-6 md:gap-14 shrink-0">
-                <span className="hidden lg:block text-[12px] tracking-[0.15em] uppercase text-brand-dark/60">{area.category}</span>
-                <span className="hidden md:flex w-10 h-10 rounded-full border border-brand-dark/20 items-center justify-center transition-all duration-500 group-hover:bg-brand-secondary group-hover:border-brand-secondary group-hover:text-brand-dark">↗</span>
+                <span className="text-[12px] text-brand-dark/60 tabular-nums">{project.year}</span>
+                {project.href && (
+                  <a href={project.href} target="_blank" rel="noreferrer" aria-label={`${project.title} öffnen`} className="hidden md:flex w-10 h-10 rounded-full border border-brand-dark/20 items-center justify-center transition-all duration-500 group-hover:bg-brand-secondary group-hover:border-brand-secondary group-hover:text-brand-dark">↗</a>
+                )}
               </div>
             </div>
-            <p className="max-w-xl pb-7 md:pb-10 pl-10 md:pl-20 text-brand-dark/70 leading-relaxed">{area.description}</p>
+            <div className="max-w-4xl pb-7 md:pb-10 pl-10 md:pl-20">
+              <h4 className="font-display font-semibold text-xl md:text-3xl leading-tight">{project.intro}</h4>
+              <p className="mt-5 max-w-3xl text-brand-dark/70 leading-relaxed">{project.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="text-[11px] tracking-[0.1em] uppercase border border-brand-dark/15 rounded-full px-3 py-1.5 text-brand-dark/75">{tag}</span>
+                ))}
+              </div>
+            </div>
           </article>
         ))}
+      </div>
+      <div className="px-6 md:px-10 mt-12 flex justify-center">
+        <Link to="/projects" className="inline-flex items-center gap-3 rounded-full border border-brand-dark/25 px-7 py-4 text-[12px] tracking-[0.18em] uppercase text-brand-dark transition-colors hover:bg-brand-secondary hover:border-brand-secondary">
+          All projects <span aria-hidden="true">↗</span>
+        </Link>
       </div>
     </section>
   )

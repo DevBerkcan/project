@@ -7,6 +7,7 @@ import Works from '../sections/Works'
 import Services from '../sections/Services'
 import Recognition from '../sections/Recognition'
 import Products from '../sections/Products'
+import Team from '../sections/Team'
 import Footer from '../sections/Footer'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
         <Marquee items={['Gentle Group®', 'Software', 'Design', 'Entwicklung', 'Betrieb', 'GentleSuite']} slow />
         <Services />
         <Products />
+        <Team />
         <Recognition />
       </main>
       <Footer />

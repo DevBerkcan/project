@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router'
 import Lenis from 'lenis'
 import Home from './pages/Home'
 import ProjectPage from './pages/ProjectPage'
+import ProjectsPage from './pages/ProjectsPage'
 import Cursor from './components/Cursor'
 import Nav from './components/Nav'
 import { setLenis, scrollToTop } from './lib/scroll'
@@ -39,6 +40,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/work/:slug" element={<ProjectPage />} />
         <Route path="*" element={<ProjectPage />} />
       </Routes>

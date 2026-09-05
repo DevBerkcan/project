@@ -5,7 +5,7 @@ export default function Recognition() {
   return (
     <section className="px-6 md:px-10 py-24 md:py-36">
       <div className="flex items-baseline justify-between mb-14 md:mb-20">
-        <span className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60">05 — Prozess</span>
+        <span className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60">06 — Prozess</span>
         <span className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60">Klar von Anfang an</span>
       </div>
       <div className="grid md:grid-cols-2 gap-16 md:gap-10">

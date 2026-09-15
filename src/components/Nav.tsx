@@ -3,11 +3,12 @@ import { useLocation, useNavigate } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { scrollToTop } from '../lib/scroll'
 
-const links = [
-  { label: 'Work', index: '01', href: '#work' },
+const links: { label: string; index: string; href?: string; route?: string }[] = [
+  { label: 'Projekte', index: '01', href: '#work' },
   { label: 'Studio', index: '02', href: '#studio' },
-  { label: 'Services', index: '03', href: '#services' },
-  { label: 'Contact', index: '04', href: '#contact' },
+  { label: 'Leistungen', index: '03', route: '/leistungen' },
+  { label: 'Blog', index: '04', route: '/blog' },
+  { label: 'Kontakt', index: '05', href: '#contact' },
 ]
 
 export default function Nav() {
@@ -21,8 +22,13 @@ export default function Nav() {
     }, 500)
   }
 
-  const go = (href: string) => {
+  const go = (link: { href?: string; route?: string }) => {
     setOpen(false)
+    if (link.route) {
+      navigate(link.route)
+      return
+    }
+    const href = link.href!
     if (pathname !== '/') {
       navigate('/')
       setTimeout(() => {
@@ -52,7 +58,7 @@ export default function Nav() {
             onClick={goHome}
             className="brand-logo"
           >
-            Gentle Group<span className="text-[10px] align-super">®</span>
+            Gentle Group Studios
           </a>
           <div className="flex items-center gap-8">
             <span className="hidden md:block text-[11px] tracking-[0.25em] uppercase text-white/60">Software — Design — Betrieb</span>
@@ -94,7 +100,7 @@ export default function Nav() {
                 <div key={link.label} className="overflow-hidden border-b border-[#0e0e0e]/15">
                   <motion.button
                     data-cursor
-                    onClick={() => go(link.href)}
+                    onClick={() => go(link)}
                     className="group flex items-baseline gap-4 md:gap-8 py-3 md:py-4 w-full text-left"
                     initial={{ y: '110%' }}
                     animate={{ y: 0 }}

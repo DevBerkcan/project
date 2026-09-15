@@ -33,11 +33,11 @@ export default function Works() {
   return (
     <section id="work" className="py-24 md:py-36 bg-brand-light text-brand-dark">
       <div ref={headerRef} className="overflow-hidden mb-14 md:mb-20">
-        <motion.h2 style={{ x: hx }} className="font-display font-semibold text-[16vw] md:text-[11vw] leading-none whitespace-nowrap text-stroke-dark select-none">Selected Works — Selected Works</motion.h2>
+        <motion.h2 style={{ x: hx }} className="font-display font-semibold text-[16vw] md:text-[11vw] leading-none whitespace-nowrap text-stroke-dark select-none">Ausgewählte Projekte — Ausgewählte Projekte</motion.h2>
       </div>
       <div className="px-6 md:px-10 flex items-baseline justify-between mb-6">
-        <span className="text-[11px] tracking-[0.25em] uppercase text-brand-dark/60">02 — Work</span>
-        <span className="text-[11px] tracking-[0.25em] uppercase text-brand-dark/60">Selected work</span>
+        <span className="text-[11px] tracking-[0.25em] uppercase text-brand-dark/60">02 — Projekte</span>
+        <span className="text-[11px] tracking-[0.25em] uppercase text-brand-dark/60">Ausgewählte Projekte</span>
       </div>
       <div ref={containerRef} className="relative" onMouseMove={onMove} onMouseLeave={() => setActive(null)}>
         <AnimatePresence>
@@ -53,7 +53,7 @@ export default function Works() {
             <div className="relative flex items-center justify-between gap-6 py-7 md:py-10">
               <div className="flex items-baseline gap-5 md:gap-10">
                 <span className="text-xs text-brand-dark/60 tabular-nums">0{index + 1}</span>
-                <h3 className="font-display font-semibold text-3xl md:text-6xl leading-none transition-all duration-500 md:group-hover:translate-x-6 md:group-hover:text-brand-secondary">{project.title}</h3>
+                <h3 className="font-display font-semibold text-3xl md:text-6xl leading-none transition-all duration-500 md:group-hover:translate-x-6 md:group-hover:text-brand-secondary"><Link to={`/projekte/${project.slug}`}>{project.title}</Link></h3>
               </div>
               <div className="flex items-center gap-6 md:gap-14 shrink-0">
                 <span className="text-[12px] text-brand-dark/60 tabular-nums">{project.year}</span>
@@ -75,8 +75,8 @@ export default function Works() {
         ))}
       </div>
       <div className="px-6 md:px-10 mt-12 flex justify-center">
-        <Link to="/projects" className="inline-flex items-center gap-3 rounded-full border border-brand-dark/25 px-7 py-4 text-[12px] tracking-[0.18em] uppercase text-brand-dark transition-colors hover:bg-brand-secondary hover:border-brand-secondary">
-          All projects <span aria-hidden="true">↗</span>
+        <Link to="/projekte" className="inline-flex items-center gap-3 rounded-full border border-brand-dark/25 px-7 py-4 text-[12px] tracking-[0.18em] uppercase text-brand-dark transition-colors hover:bg-brand-secondary hover:border-brand-secondary">
+          Alle Projekte <span aria-hidden="true">↗</span>
         </Link>
       </div>
     </section>

@@ -52,6 +52,7 @@ export interface SolutionArea {
 }
 
 export interface WorkProject {
+  slug: string
   title: string
   year: string
   intro: string
@@ -59,10 +60,12 @@ export interface WorkProject {
   tags: string[]
   art: string
   href?: string
+  relatedServiceIds?: string[]
 }
 
 export const workProjects: WorkProject[] = [
   {
+    slug: 'daily-gourmet',
     title: 'Daily Gourmet',
     year: '2026',
     intro: 'Eine Plattform für den gesamten Catering-Prozess.',
@@ -70,8 +73,10 @@ export const workProjects: WorkProject[] = [
       'Für Daily Gourmet haben wir eine individuelle Catering-Software entwickelt, die Speiseplanung, Bestellungen, Produktion, Einkauf und Auslieferung in einem zentralen System verbindet. Von der Veröffentlichung wöchentlicher Speisepläne über die Portionsbestellungen der Einrichtungen bis zur Berechnung des Zutatenbedarfs und der Planung von Lieferrouten greifen alle wichtigen Abläufe digital ineinander.',
     tags: ['Catering Management', 'Web-App', 'Prozessdigitalisierung'],
     art: 'radial-gradient(ellipse at 28% 22%, var(--color-brand-secondary) 0%, transparent 48%), linear-gradient(145deg, var(--color-brand-dark) 0%, rgb(169 122 255 / 30%) 100%)',
+    relatedServiceIds: ['software'],
   },
   {
+    slug: 'skinbloom-buchungssystem',
     title: 'Skinbloom Buchungssystem',
     year: '2026',
     intro: 'Online buchen. Intern effizient verwalten.',
@@ -80,8 +85,10 @@ export const workProjects: WorkProject[] = [
     tags: ['Booking System', 'Kundenportal', 'Administration'],
     art: 'radial-gradient(ellipse at 32% 72%, var(--color-brand-secondary) 0%, transparent 48%), linear-gradient(145deg, var(--color-brand-dark) 0%, rgb(169 122 255 / 24%) 100%)',
     href: 'https://skinbloombooking.gentlegroup.de/',
+    relatedServiceIds: ['software', 'web'],
   },
   {
+    slug: 'skinbloom-preisrechner',
     title: 'Skinbloom Preisrechner',
     year: '2026',
     intro: 'Von der individuellen Behandlung zum fertigen Angebot.',
@@ -89,8 +96,10 @@ export const workProjects: WorkProject[] = [
       'Für Skinbloom Aesthetics haben wir einen digitalen Preisrechner entwickelt, mit dem individuelle Behandlungskosten transparent zusammengestellt werden können. Die Verwaltung pflegt Kunden, Leistungen, Kategorien und Preise zentral. Auf Grundlage der ausgewählten Leistungen berechnet das System den Gesamtpreis und erstellt einen individuellen Kostenvoranschlag als PDF.',
     tags: ['Business Tool', 'Preisberechnung', 'PDF-Automatisierung'],
     art: 'radial-gradient(ellipse at 48% 18%, var(--color-brand-secondary) 0%, transparent 46%), linear-gradient(150deg, var(--color-brand-dark) 0%, rgb(169 122 255 / 30%) 100%)',
+    relatedServiceIds: ['software'],
   },
   {
+    slug: 'emma-solution',
     title: 'Emma Solution',
     year: '2025',
     intro: 'Logistikprozesse in einer zentralen Plattform.',
@@ -98,8 +107,10 @@ export const workProjects: WorkProject[] = [
       'Für Emma Solution haben wir eine umfassende Logistik-Management-Plattform entwickelt. Die Lösung verbindet Fracht- und Fahrzeugverwaltung, operative Abläufe und Echtzeit-Tracking in einem gemeinsamen System. Neben der Web-Anwendung entstanden eine Backend-API und eine Android-App. Dadurch können relevante Informationen zentral verwaltet und unterwegs abgerufen werden.',
     tags: ['Logistiksoftware', 'Full-Stack', 'Android-App'],
     art: 'radial-gradient(ellipse at 72% 24%, var(--color-brand-primary) 0%, transparent 46%), linear-gradient(155deg, var(--color-brand-dark) 0%, rgb(1 10 48 / 60%) 100%)',
+    relatedServiceIds: ['software', 'mobile'],
   },
   {
+    slug: 'teretnjaci',
     title: 'Teretnjaci',
     year: '2025',
     intro: 'Eine Content-Plattform für Web und Mobile.',
@@ -107,6 +118,7 @@ export const workProjects: WorkProject[] = [
       'Für Teretnjaci haben wir eine digitale Nachrichtenplattform rund um Trucks und Logistik entwickelt. Inhalte werden über ein zentrales Administrationsportal verwaltet und anschließend über die Website sowie Android- und iOS-Anwendungen veröffentlicht. Dadurch können redaktionelle Inhalte zentral gepflegt und auf mehreren Plattformen bereitgestellt werden.',
     tags: ['Content-Plattform', 'Web-App', 'Android & iOS'],
     art: 'radial-gradient(ellipse at 76% 68%, var(--color-brand-primary) 0%, transparent 44%), radial-gradient(ellipse at 22% 18%, var(--color-brand-secondary) 0%, transparent 42%), linear-gradient(165deg, var(--color-brand-dark) 0%, rgb(1 10 48 / 60%) 100%)',
+    relatedServiceIds: ['software', 'mobile'],
   },
 ]
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Preloader({ onDone }: { onDone: () => void }) {
-  const [reducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+  const [reducedMotion] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
   const [count, setCount] = useState(() => reducedMotion ? 100 : 0)
   const [gone, setGone] = useState(reducedMotion)
 

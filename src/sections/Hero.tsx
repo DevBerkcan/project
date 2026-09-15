@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { siteConfig } from '../lib/siteConfig'
 import { useRef } from 'react'
 
 const line1 = 'DIGITALE'
@@ -41,12 +42,10 @@ export default function Hero({ started }: { started: boolean }) {
             animate={started ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.9, duration: 0.8 }}
           >
-            Gentle Group Studios entwickelt individuelle Software, Web-Apps, Websites, KI-Lösungen und Automatisierungen für Unternehmen.
+            Gentle Group Studios entwickelt individuelle Software, Web-Apps, Websites, KI-Lösungen und Automatisierungen für Unternehmen in Wuppertal, Düsseldorf und NRW.
           </motion.p>
           <motion.a
-            href="https://www.gentlegroup.de/project-questionnaire"
-            target="_blank"
-            rel="noreferrer"
+            href={`${siteConfig.url}/projekt-starten`}
             data-cursor="Projekt besprechen"
             className="inline-flex w-fit items-center gap-3 rounded-full border border-brand-light/20 px-5 py-3 text-[11px] tracking-[0.15em] uppercase text-brand-light transition-colors hover:bg-brand-primary hover:text-brand-dark hover:border-brand-primary"
             initial={{ opacity: 0, scale: 0.8 }}

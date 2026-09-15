@@ -22,6 +22,9 @@ export default function Manifesto() {
       <p className="font-display font-semibold text-[7.2vw] md:text-[4.2vw] leading-[1.12] max-w-6xl">
         {words.map((word, index) => <Word key={`${word}-${index}`} word={word} progress={scrollYProgress} range={[index / words.length, (index + 1) / words.length]} />)}
       </p>
+      <p className="mt-8 md:mt-10 max-w-2xl text-base leading-relaxed text-brand-light/70">
+        Gentle Group Studios ist ein Studio aus Wuppertal, das individuelle Software, Websites und KI-Automatisierungen für Unternehmen in Wuppertal, Düsseldorf und NRW entwickelt.
+      </p>
       <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-light/15">
         {[
           ['Analyse', 'Wir hören zu.'],

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 export default function Cursor() {
-  const [isFine] = useState(() => window.matchMedia('(pointer: fine)').matches)
+  const [isFine] = useState(() => typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches)
   const [hovering, setHovering] = useState(false)
   const [label, setLabel] = useState('')
 

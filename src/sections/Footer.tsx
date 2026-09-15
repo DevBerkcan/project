@@ -1,6 +1,8 @@
 import { useRef } from 'react'
+import { Link } from 'react-router'
 import { motion, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion'
 import { scrollToTop } from '../lib/scroll'
+import { siteConfig } from '../lib/siteConfig'
 
 function ContactButton() {
   const ref = useRef<HTMLAnchorElement>(null)
@@ -19,7 +21,7 @@ function ContactButton() {
   return (
     <motion.a
       ref={ref}
-      href="https://www.gentlegroup.de/project-questionnaire"
+      href={`${siteConfig.url}/projekt-starten`}
       target="_blank"
       rel="noreferrer"
       data-cursor="Projekt starten"
@@ -35,10 +37,11 @@ function ContactButton() {
 }
 
 const menu = [
-  ['Work', '#work'],
+  ['Projekte', '#work'],
   ['Studio', '#studio'],
-  ['Services', '#services'],
-  ['Contact', '#contact'],
+  ['Leistungen', '#services'],
+  ['Blog', '/blog'],
+  ['Kontakt', '#contact'],
 ]
 
 export default function Footer() {
@@ -59,11 +62,12 @@ export default function Footer() {
           <div>
             <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Kontakt</div>
             <a href="mailto:office@gentlegroup.de" data-cursor className="block hover:text-brand-primary transition-colors">office@gentlegroup.de</a>
-            <a href="https://www.gentlegroup.de/project-questionnaire" target="_blank" rel="noreferrer" data-cursor className="block mt-3 text-brand-primary hover:text-brand-light transition-colors">Projektfragebogen ↗</a>
+            <a href={`${siteConfig.url}/projekt-starten`} data-cursor className="block mt-3 text-brand-primary hover:text-brand-light transition-colors">Projekt starten ↗</a>
           </div>
           <div>
             <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Region</div>
             <p>Deutschland</p><p className="mt-1 text-brand-light/70">Wuppertal / NRW</p>
+            <Link to="/leistungsgebiet" data-cursor className="block mt-3 text-brand-primary hover:text-brand-light transition-colors">Leistungsgebiet ansehen →</Link>
           </div>
           <div>
             <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Fokus</div>
@@ -71,13 +75,15 @@ export default function Footer() {
           </div>
           <div>
             <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Navigation</div>
-            {menu.map(([label, href]) => <button key={label} data-cursor onClick={() => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })} className="block mt-1 first:mt-0 text-left hover:text-brand-primary transition-colors">{label}</button>)}
+            {menu.map(([label, href]) => href.startsWith('/')
+              ? <Link key={label} to={href} data-cursor className="block mt-1 first:mt-0 hover:text-brand-primary transition-colors">{label}</Link>
+              : <button key={label} data-cursor onClick={() => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })} className="block mt-1 first:mt-0 text-left hover:text-brand-primary transition-colors">{label}</button>)}
           </div>
         </div>
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-4 text-[11px] tracking-[0.15em] uppercase text-brand-light/60 border-t border-brand-light/15 pt-6">
-          <span>© 2026 Gentle Group®</span>
-          <div className="flex flex-wrap gap-4"><a href="https://www.gentlegroup.de/impressum" target="_blank" rel="noreferrer" className="hover:text-brand-light">Impressum</a><a href="https://www.gentlegroup.de/datenschutzerklaerung" target="_blank" rel="noreferrer" className="hover:text-brand-light">Datenschutz</a><a href="https://www.gentlegroup.de/agb" target="_blank" rel="noreferrer" className="hover:text-brand-light">AGB</a><a href="https://www.gentlegroup.de/barrierefreiheit" target="_blank" rel="noreferrer" className="hover:text-brand-light">Barrierefreiheit</a></div>
+          <span>© 2026 Gentle Group Studios</span>
+          <div className="flex flex-wrap gap-4"><a href={`${siteConfig.url}/impressum`} className="hover:text-brand-light">Impressum</a><a href={`${siteConfig.url}/datenschutz`} className="hover:text-brand-light">Datenschutz</a><a href={`${siteConfig.url}/agb`} className="hover:text-brand-light">AGB</a><a href={`${siteConfig.url}/barrierefreiheit`} className="hover:text-brand-light">Barrierefreiheit</a></div>
           <button data-cursor onClick={() => scrollToTop(false)} className="hover:text-brand-light transition-colors">Nach oben ↑</button>
         </div>
       </motion.div>

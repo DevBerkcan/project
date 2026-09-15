@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { services } from '../data/siteContent'
 
@@ -45,6 +46,7 @@ export default function Services() {
                       <div className="mt-6 flex flex-wrap gap-2">
                         {service.tags.map((tag) => <span key={tag} className="text-[11px] tracking-[0.1em] uppercase border border-brand-light/20 rounded-full px-4 py-2 text-brand-light/80">{tag}</span>)}
                       </div>
+                      <Link to={`/leistungen/${service.id}`} data-cursor className="mt-6 inline-flex text-sm uppercase tracking-[0.12em] text-brand-primary hover:text-brand-secondary">Mehr erfahren →</Link>
                     </div>
                   </motion.div>
                 )}

@@ -3,6 +3,8 @@ import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 export default function Cursor() {
   const [isFine] = useState(() => typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches)
+  const [reducedMotion] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+  const enabled = isFine && !reducedMotion
   const [hovering, setHovering] = useState(false)
   const [label, setLabel] = useState('')
 
@@ -12,7 +14,7 @@ export default function Cursor() {
   const springY = useSpring(y, { stiffness: 400, damping: 35, mass: 0.6 })
 
   useEffect(() => {
-    if (!isFine) return
+    if (!enabled) return
 
     document.documentElement.classList.add('cursor-none-desktop')
 
@@ -33,9 +35,9 @@ export default function Cursor() {
       window.removeEventListener('mousemove', move)
       document.documentElement.classList.remove('cursor-none-desktop')
     }
-  }, [isFine, x, y])
+  }, [enabled, x, y])
 
-  if (!isFine) return null
+  if (!enabled) return null
 
   return (
     <motion.div

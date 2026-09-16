@@ -2,13 +2,15 @@ import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { scrollToTop } from '../lib/scroll'
+import { routes } from '../lib/routes'
 
 const links: { label: string; index: string; href?: string; route?: string }[] = [
   { label: 'Projekte', index: '01', href: '#work' },
   { label: 'Studio', index: '02', href: '#studio' },
-  { label: 'Leistungen', index: '03', route: '/leistungen' },
-  { label: 'Blog', index: '04', route: '/blog' },
-  { label: 'Kontakt', index: '05', href: '#contact' },
+  { label: 'Leistungen', index: '03', route: routes.services },
+  { label: 'GentleSuite', index: '04', route: routes.gentlesuite },
+  { label: 'Blog', index: '05', route: routes.blog },
+  { label: 'Kontakt', index: '06', href: '#contact' },
 ]
 
 export default function Nav() {

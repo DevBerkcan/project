@@ -170,6 +170,7 @@ export function getStaticRoutes(): string[] {
     '/projekt-starten',
     '/leistungsgebiet',
     '/leistungen',
+    '/gentlesuite',
     ...LEGAL_PAGES.map((page) => page.path),
     ...workProjects.map((project) => `/projekte/${project.slug}`),
     ...services.map((service) => `/leistungen/${service.id}`),
@@ -240,6 +241,21 @@ export function getPageMeta(pathname: string): PageMeta {
         breadcrumbNode([
           { name: 'Home', path: '/' },
           { name: 'Leistungen', path: '/leistungen' },
+        ]),
+      ],
+    }
+  }
+
+  if (pathname === '/gentlesuite') {
+    return {
+      title: 'GentleSuite | Eigene Produkte von Gentle Group Studios',
+      description:
+        'GentleSuite: GentleTrack, GentleAccess, GentleCalc und GentleBook — eigene digitale Produkte von Gentle Group Studios für Projektübersicht, Barrierefreiheit, Preisberechnung und Buchung.',
+      jsonLd: [
+        ...base,
+        breadcrumbNode([
+          { name: 'Home', path: '/' },
+          { name: 'GentleSuite', path: '/gentlesuite' },
         ]),
       ],
     }

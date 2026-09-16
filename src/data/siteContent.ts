@@ -26,21 +26,21 @@ export const teamProfiles: TeamProfile[] = [
     label: 'Profil 01',
     role: 'Founder & Lead Developer',
     description: 'Dummy-Text: Verantwortlich für Produktstrategie, technische Architektur und die Verbindung zwischen Idee und Umsetzung.',
-    src: '/berk-can_founder.png',
+    src: '/berk-can_founder.webp',
   },
   {
     name: 'Medin',
     label: 'Profil 02',
     role: 'Backend Specialist',
     description: 'Dummy-Text: Entwickelt skalierbare Backend-Architekturen, Datenmodelle und zuverlässige Schnittstellen für digitale Produkte.',
-    src: '/medin_co-founder.png',
+    src: '/medin_co-founder.webp',
   },
   {
     name: 'Alanur',
     label: 'Profil 03',
     role: 'Backoffice & Administration',
     description: 'Dummy-Text: Unterstützt Organisation, Projektkoordination und die Abläufe, die gute Zusammenarbeit im Hintergrund möglich machen.',
-    src: '/alanur_backoffice.png',
+    src: '/alanur_backoffice.webp',
   },
 ]
 
@@ -57,6 +57,9 @@ export interface WorkProject {
   year: string
   intro: string
   description: string
+  challenge: string
+  approach: string
+  result: string
   tags: string[]
   art: string
   href?: string
@@ -71,6 +74,9 @@ export const workProjects: WorkProject[] = [
     intro: 'Eine Plattform für den gesamten Catering-Prozess.',
     description:
       'Für Daily Gourmet haben wir eine individuelle Catering-Software entwickelt, die Speiseplanung, Bestellungen, Produktion, Einkauf und Auslieferung in einem zentralen System verbindet. Von der Veröffentlichung wöchentlicher Speisepläne über die Portionsbestellungen der Einrichtungen bis zur Berechnung des Zutatenbedarfs und der Planung von Lieferrouten greifen alle wichtigen Abläufe digital ineinander.',
+    challenge: 'Speiseplanung, Bestellungen, Produktion, Einkauf und Auslieferung liefen als mehrere getrennte, nicht miteinander verbundene Abläufe.',
+    approach: 'Eine individuelle Catering-Software verbindet alle Schritte in einem zentralen System: von der Veröffentlichung wöchentlicher Speisepläne über Portionsbestellungen bis zur Berechnung des Zutatenbedarfs und der Lieferroutenplanung.',
+    result: 'Ein durchgängiger digitaler Prozess mit einer zentralen Datenbasis statt mehrerer getrennter Werkzeuge.',
     tags: ['Catering Management', 'Web-App', 'Prozessdigitalisierung'],
     art: 'radial-gradient(ellipse at 28% 22%, var(--color-brand-secondary) 0%, transparent 48%), linear-gradient(145deg, var(--color-brand-dark) 0%, rgb(169 122 255 / 30%) 100%)',
     relatedServiceIds: ['software'],
@@ -82,6 +88,9 @@ export const workProjects: WorkProject[] = [
     intro: 'Online buchen. Intern effizient verwalten.',
     description:
       'Für Skinbloom Aesthetics haben wir ein individuelles Buchungssystem entwickelt, das die Online-Terminbuchung mit der internen Verwaltung des Studios verbindet. Kunden wählen Leistungen und Mitarbeiter online aus. Administratoren verwalten Termine, Services, Zeitblockierungen, Mitarbeiter und Kundendaten zentral. Mitarbeiter erhalten einen eigenen, auf ihre Termine begrenzten Kalenderzugriff.',
+    challenge: 'Online-Terminbuchung und interne Studioverwaltung — Termine, Services, Zeitblockierungen, Mitarbeiter, Kundendaten — waren nicht miteinander verbunden.',
+    approach: 'Ein individuelles Buchungssystem verbindet die öffentliche Terminbuchung mit einer zentralen internen Verwaltung; Mitarbeitende erhalten einen eigenen, auf ihre Termine begrenzten Kalenderzugriff.',
+    result: 'Kunden buchen selbstständig online, während Administratoren und Mitarbeitende zentral und rollenbasiert auf dieselbe Datenbasis zugreifen.',
     tags: ['Booking System', 'Kundenportal', 'Administration'],
     art: 'radial-gradient(ellipse at 32% 72%, var(--color-brand-secondary) 0%, transparent 48%), linear-gradient(145deg, var(--color-brand-dark) 0%, rgb(169 122 255 / 24%) 100%)',
     href: 'https://skinbloombooking.gentlegroup.de/',
@@ -94,6 +103,9 @@ export const workProjects: WorkProject[] = [
     intro: 'Von der individuellen Behandlung zum fertigen Angebot.',
     description:
       'Für Skinbloom Aesthetics haben wir einen digitalen Preisrechner entwickelt, mit dem individuelle Behandlungskosten transparent zusammengestellt werden können. Die Verwaltung pflegt Kunden, Leistungen, Kategorien und Preise zentral. Auf Grundlage der ausgewählten Leistungen berechnet das System den Gesamtpreis und erstellt einen individuellen Kostenvoranschlag als PDF.',
+    challenge: 'Individuelle Behandlungskosten mussten aus mehreren Leistungen und Kategorien manuell zusammengestellt werden.',
+    approach: 'Ein digitaler Preisrechner berechnet auf Grundlage ausgewählter Leistungen automatisch den Gesamtpreis und erstellt einen individuellen Kostenvoranschlag als PDF; Kunden, Leistungen, Kategorien und Preise werden zentral gepflegt.',
+    result: 'Transparente, wiederholbare Preisberechnung statt manueller Einzelkalkulation.',
     tags: ['Business Tool', 'Preisberechnung', 'PDF-Automatisierung'],
     art: 'radial-gradient(ellipse at 48% 18%, var(--color-brand-secondary) 0%, transparent 46%), linear-gradient(150deg, var(--color-brand-dark) 0%, rgb(169 122 255 / 30%) 100%)',
     relatedServiceIds: ['software'],
@@ -105,6 +117,9 @@ export const workProjects: WorkProject[] = [
     intro: 'Logistikprozesse in einer zentralen Plattform.',
     description:
       'Für Emma Solution haben wir eine umfassende Logistik-Management-Plattform entwickelt. Die Lösung verbindet Fracht- und Fahrzeugverwaltung, operative Abläufe und Echtzeit-Tracking in einem gemeinsamen System. Neben der Web-Anwendung entstanden eine Backend-API und eine Android-App. Dadurch können relevante Informationen zentral verwaltet und unterwegs abgerufen werden.',
+    challenge: 'Fracht- und Fahrzeugverwaltung, operative Abläufe und Tracking liefen in getrennten Systemen ohne durchgängigen Informationsfluss.',
+    approach: 'Eine Logistik-Management-Plattform aus Web-Anwendung, Backend-API und Android-App verbindet Fracht- und Fahrzeugverwaltung, operative Abläufe und Echtzeit-Tracking in einem gemeinsamen System.',
+    result: 'Relevante Informationen sind zentral verwaltet und auch unterwegs über die mobile Anwendung abrufbar.',
     tags: ['Logistiksoftware', 'Full-Stack', 'Android-App'],
     art: 'radial-gradient(ellipse at 72% 24%, var(--color-brand-primary) 0%, transparent 46%), linear-gradient(155deg, var(--color-brand-dark) 0%, rgb(1 10 48 / 60%) 100%)',
     relatedServiceIds: ['software', 'mobile'],
@@ -116,6 +131,9 @@ export const workProjects: WorkProject[] = [
     intro: 'Eine Content-Plattform für Web und Mobile.',
     description:
       'Für Teretnjaci haben wir eine digitale Nachrichtenplattform rund um Trucks und Logistik entwickelt. Inhalte werden über ein zentrales Administrationsportal verwaltet und anschließend über die Website sowie Android- und iOS-Anwendungen veröffentlicht. Dadurch können redaktionelle Inhalte zentral gepflegt und auf mehreren Plattformen bereitgestellt werden.',
+    challenge: 'Redaktionelle Inhalte sollten auf Website, Android- und iOS-Anwendung gleichzeitig erscheinen, ohne für jeden Kanal separat gepflegt zu werden.',
+    approach: 'Ein zentrales Administrationsportal verwaltet Inhalte, die anschließend automatisch über Website sowie Android- und iOS-Anwendungen veröffentlicht werden.',
+    result: 'Inhalte werden einmal gepflegt und konsistent auf mehreren Plattformen bereitgestellt.',
     tags: ['Content-Plattform', 'Web-App', 'Android & iOS'],
     art: 'radial-gradient(ellipse at 76% 68%, var(--color-brand-primary) 0%, transparent 44%), radial-gradient(ellipse at 22% 18%, var(--color-brand-secondary) 0%, transparent 42%), linear-gradient(165deg, var(--color-brand-dark) 0%, rgb(1 10 48 / 60%) 100%)',
     relatedServiceIds: ['software', 'mobile'],

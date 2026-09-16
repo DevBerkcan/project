@@ -26,6 +26,7 @@ describe('SEO contract', () => {
     }
     expect(routes).toContain('/leistungsgebiet')
     expect(routes).toContain('/leistungen')
+    expect(routes).toContain('/gentlesuite')
     for (const service of services) {
       expect(routes).toContain(`/leistungen/${service.id}`)
     }
@@ -57,5 +58,17 @@ describe('SEO contract', () => {
     expect(source).not.toContain('Selected work')
     expect(footer).not.toContain('project-questionnaire')
     expect(footer).not.toContain('https://www.gentlegroup.de/impressum')
+  })
+
+  it('keeps internal legal/contact links on router <Link>, not full-page reloads', () => {
+    const footer = readFileSync(`${projectRoot}/src/sections/Footer.tsx`, 'utf8')
+    const hero = readFileSync(`${projectRoot}/src/sections/Hero.tsx`, 'utf8')
+
+    expect(footer).not.toContain('siteConfig.url}/impressum')
+    expect(footer).not.toContain('siteConfig.url}/datenschutz')
+    expect(footer).not.toContain('siteConfig.url}/agb')
+    expect(footer).not.toContain('siteConfig.url}/barrierefreiheit')
+    expect(footer).not.toContain('siteConfig.url}/projekt-starten')
+    expect(hero).not.toContain('siteConfig.url}/projekt-starten')
   })
 })

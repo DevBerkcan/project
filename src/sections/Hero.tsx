@@ -1,6 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { siteConfig } from '../lib/siteConfig'
+import { Link } from 'react-router'
 import { useRef } from 'react'
+import { routes } from '../lib/routes'
+import { trackEvent } from '../lib/analytics'
+
+const MotionLink = motion.create(Link)
 
 const line1 = 'DIGITALE'
 const line2 = 'LÖSUNGEN'
@@ -44,16 +48,17 @@ export default function Hero({ started }: { started: boolean }) {
           >
             Gentle Group Studios entwickelt individuelle Software, Web-Apps, Websites, KI-Lösungen und Automatisierungen für Unternehmen in Wuppertal, Düsseldorf und NRW.
           </motion.p>
-          <motion.a
-            href={`${siteConfig.url}/projekt-starten`}
+          <MotionLink
+            to={routes.projectStart}
             data-cursor="Projekt besprechen"
+            onClick={() => trackEvent('projectCtaClicked', { location: 'hero' })}
             className="inline-flex w-fit items-center gap-3 rounded-full border border-brand-light/20 px-5 py-3 text-[11px] tracking-[0.15em] uppercase text-brand-light transition-colors hover:bg-brand-primary hover:text-brand-dark hover:border-brand-primary"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={started ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 1.1, duration: 0.8 }}
           >
             Projekt besprechen <span aria-hidden="true">↗</span>
-          </motion.a>
+          </MotionLink>
         </div>
 
         <h1 className="font-display font-semibold leading-[0.85] tracking-[-0.02em] select-none">

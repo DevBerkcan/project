@@ -57,7 +57,7 @@ export function InteractivePhotoStack({ items, title }: InteractivePhotoStackPro
                 aria-pressed={isSelected}
                 tabIndex={!isSpread && index !== 0 ? -1 : 0}
                 aria-hidden={!isSpread && index !== 0}
-                className="absolute left-1/2 top-1/2 h-96 w-64 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-brand-dark/15 bg-brand-light p-3 text-left shadow-xl transition-all duration-700 ease-out focus-visible:outline-2 focus-visible:outline-brand-secondary"
+                className="absolute left-1/2 top-1/2 h-96 w-64 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-brand-dark/15 bg-brand-light p-3 text-left shadow-xl transition-all duration-700 ease-out focus-visible:outline-2 focus-visible:outline-brand-primary"
                 style={{
                   zIndex: isSelected ? 30 : isSpread ? 20 - index : items.length - index + 10,
                   opacity: !isSpread && index !== 0 ? 0 : 1,
@@ -68,7 +68,7 @@ export function InteractivePhotoStack({ items, title }: InteractivePhotoStackPro
                 }}
               >
                 <span className="flex h-full flex-col justify-between">
-                  <img src={item.src} alt={item.name} className="h-64 w-full rounded-lg object-contain" />
+                  <img src={item.src} alt={item.name} width={256} height={256} loading="lazy" decoding="async" className="h-64 w-full rounded-lg object-contain" />
                   <span>
                     <span className="block font-display text-2xl font-semibold text-brand-dark">{item.name}</span>
                     {item.role ? <span className="mt-1 block text-xs text-brand-dark/65">{item.role}</span> : null}

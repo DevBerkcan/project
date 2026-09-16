@@ -1,5 +1,6 @@
 import { useRef } from 'react'
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import type { MotionValue } from 'framer-motion'
 
 const text = 'Wir machen aus komplexen Geschäftsproblemen digitale Produkte, die verständlich beginnen, zuverlässig funktionieren und langfristig weiterentwickelt werden können.'
 

@@ -11,6 +11,8 @@ import ServicesIndexPage from './pages/ServicesIndexPage'
 import ServiceDetailPage from './pages/ServiceDetailPage'
 import BlogIndexPage from './pages/BlogIndexPage'
 import BlogPostPage from './pages/BlogPostPage'
+import GentleSuiteIndexPage from './pages/GentleSuiteIndexPage'
+import NotFoundPage from './pages/NotFoundPage'
 import Cursor from './components/Cursor'
 import Nav from './components/Nav'
 import { setLenis, scrollToTop } from './lib/scroll'
@@ -60,10 +62,11 @@ export default function App() {
         <Route path="/leistungen/:slug" element={<ServiceDetailPage />} />
         <Route path="/blog" element={<BlogIndexPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/gentlesuite" element={<GentleSuiteIndexPage />} />
         <Route path="/projects" element={<Navigate to="/projekte" replace />} />
         <Route path="/projekte/:slug" element={<ProjectPage />} />
         <Route path="/work/:slug" element={<Navigate to="/projekte" replace />} />
-        <Route path="*" element={<ProjectPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   )

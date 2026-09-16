@@ -19,7 +19,7 @@ export default function Home() {
       <Preloader onDone={() => setLoaded(true)} />
       <main>
         <Hero started={loaded} />
-        <Marquee items={['Software', 'Web-Apps', 'Websites', 'KI', 'Automatisierung', 'UX/UI', 'Cloud', 'APIs']} dark />
+        <Marquee items={['Software', 'Web-Apps', 'Websites', 'KI', 'Automatisierung', 'UX/UI', 'Cloud', 'Azure', 'APIs']} dark />
         <Manifesto />
         <Works />
         <Marquee items={['Gentle Group Studios', 'Software', 'Design', 'Entwicklung', 'Betrieb', 'GentleSuite']} slow />

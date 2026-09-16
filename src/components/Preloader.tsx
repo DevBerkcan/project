@@ -12,6 +12,8 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       return
     }
     let raf: number
+    let hideTimeout: ReturnType<typeof setTimeout>
+    let doneTimeout: ReturnType<typeof setTimeout>
     const start = performance.now()
     const duration = 1800
     const tick = (now: number) => {
@@ -21,14 +23,18 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       if (p < 1) {
         raf = requestAnimationFrame(tick)
       } else {
-        setTimeout(() => {
+        hideTimeout = setTimeout(() => {
           setGone(true)
-          setTimeout(onDone, 750)
+          doneTimeout = setTimeout(onDone, 750)
         }, 250)
       }
     }
     raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
+    return () => {
+      cancelAnimationFrame(raf)
+      clearTimeout(hideTimeout)
+      clearTimeout(doneTimeout)
+    }
   }, [onDone, reducedMotion])
 
   return (

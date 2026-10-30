@@ -5,6 +5,7 @@ import { scrollToTop } from '../lib/scroll'
 import { siteConfig } from '../lib/siteConfig'
 import { routes } from '../lib/routes'
 import { trackEvent } from '../lib/analytics'
+import LegalCockpitSeal from '../components/LegalCockpitSeal'
 
 const MotionLink = motion.create(Link)
 
@@ -85,7 +86,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-wrap items-center justify-between gap-4 text-[11px] tracking-[0.15em] uppercase text-brand-light/60 border-t border-brand-light/15 pt-6">
+        <div className="mt-12 flex justify-start md:justify-end">
+          <LegalCockpitSeal />
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[11px] tracking-[0.15em] uppercase text-brand-light/60 border-t border-brand-light/15 pt-6">
           <span>© 2026 Gentle Group Studios</span>
           <div className="flex flex-wrap gap-4">
             <Link to={routes.legal.impressum} className="hover:text-brand-light">Impressum</Link>

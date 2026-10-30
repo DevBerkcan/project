@@ -52,6 +52,20 @@
   </head>
   <body>
     <div id="root"><!--app-html--></div>
+    <!-- Keep this outside React: Legal Cockpit binds existing links once on startup. -->
+    <a class="consent-settings-link" href="/datenschutz" data-cc="c-settings" aria-haspopup="dialog">Cookie-Einstellungen</a>
+    <script
+      defer
+      src="https://app.cockpit.legal/static/cookieconsent-v2.js?tools=Google%20Tag%20Manager,Microsoft,Google%20Analytics"
+      data-cc-tools="Google Tag Manager,Microsoft,Google Analytics"
+      data-cc-privacy="https://www.gentlegroup.de/datenschutz"
+      data-cc-imprint="https://www.gentlegroup.de/impressum"
+      data-cc-color="#01FFA9"
+      data-cc-theme="dark"
+      data-cc-language="de"
+      data-cc-non-eu-consent="false"
+      data-cc-enable-logs="false"
+    ></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

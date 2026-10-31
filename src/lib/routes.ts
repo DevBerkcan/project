@@ -12,7 +12,6 @@ export const routes = {
   legal: {
     impressum: '/impressum',
     datenschutz: '/datenschutz',
-    agb: '/agb',
     barrierefreiheit: '/barrierefreiheit',
   },
 } as const

@@ -31,11 +31,6 @@ const LEGAL_PAGES: LegalPage[] = [
     description: 'Datenschutzerklärung von Gentle Group Studios.',
   },
   {
-    path: '/agb',
-    title: 'AGB | Gentle Group Studios',
-    description: 'Allgemeine Geschäftsbedingungen von Gentle Group Studios.',
-  },
-  {
     path: '/barrierefreiheit',
     title: 'Barrierefreiheit | Gentle Group Studios',
     description: 'Erklärung zur Barrierefreiheit von Gentle Group Studios.',

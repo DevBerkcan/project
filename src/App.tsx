@@ -55,7 +55,6 @@ export default function App() {
         <Route path="/projekt-starten" element={<ProjectStartPage />} />
         <Route path="/impressum" element={<LegalPage id="impressum" />} />
         <Route path="/datenschutz" element={<LegalPage id="datenschutz" />} />
-        <Route path="/agb" element={<LegalPage id="agb" />} />
         <Route path="/barrierefreiheit" element={<LegalPage id="barrierefreiheit" />} />
         <Route path="/leistungsgebiet" element={<RegionPage />} />
         <Route path="/leistungen" element={<ServicesIndexPage />} />

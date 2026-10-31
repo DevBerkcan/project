@@ -95,7 +95,6 @@ export default function Footer() {
           <div className="flex flex-wrap gap-4">
             <Link to={routes.legal.impressum} className="hover:text-brand-light">Impressum</Link>
             <Link to={routes.legal.datenschutz} className="hover:text-brand-light">Datenschutz</Link>
-            <Link to={routes.legal.agb} className="hover:text-brand-light">AGB</Link>
             <Link to={routes.legal.barrierefreiheit} className="hover:text-brand-light">Barrierefreiheit</Link>
           </div>
           <button data-cursor onClick={() => scrollToTop(false)} className="hover:text-brand-light transition-colors">Nach oben ↑</button>

@@ -2,12 +2,11 @@ import { Link } from 'react-router'
 import LegalCockpitSeal from '../components/LegalCockpitSeal'
 import privacyHtml from '../data/legal/privacy.html?raw'
 
-export type LegalPageId = 'impressum' | 'datenschutz' | 'agb' | 'barrierefreiheit'
+export type LegalPageId = 'impressum' | 'datenschutz' | 'barrierefreiheit'
 
 const LABELS: Record<LegalPageId, string> = {
   impressum: 'Impressum',
   datenschutz: 'Datenschutz',
-  agb: 'AGB',
   barrierefreiheit: 'Barrierefreiheit',
 }
 

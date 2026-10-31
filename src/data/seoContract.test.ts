@@ -21,9 +21,10 @@ describe('SEO contract', () => {
     for (const project of workProjects) {
       expect(routes).toContain(`/projekte/${project.slug}`)
     }
-    for (const legalRoute of ['/impressum', '/datenschutz', '/agb', '/barrierefreiheit']) {
+    for (const legalRoute of ['/impressum', '/datenschutz', '/barrierefreiheit']) {
       expect(routes).toContain(legalRoute)
     }
+    expect(routes).not.toContain('/agb')
     expect(routes).toContain('/leistungsgebiet')
     expect(routes).toContain('/leistungen')
     expect(routes).toContain('/gentlesuite')
@@ -66,7 +67,7 @@ describe('SEO contract', () => {
 
     expect(footer).not.toContain('siteConfig.url}/impressum')
     expect(footer).not.toContain('siteConfig.url}/datenschutz')
-    expect(footer).not.toContain('siteConfig.url}/agb')
+    expect(footer).not.toContain('routes.legal.agb')
     expect(footer).not.toContain('siteConfig.url}/barrierefreiheit')
     expect(footer).not.toContain('siteConfig.url}/projekt-starten')
     expect(hero).not.toContain('siteConfig.url}/projekt-starten')

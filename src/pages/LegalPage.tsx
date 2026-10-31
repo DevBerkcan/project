@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import LegalCockpitSeal from '../components/LegalCockpitSeal'
+import privacyHtml from '../data/legal/privacy.html?raw'
 
 export type LegalPageId = 'impressum' | 'datenschutz' | 'agb' | 'barrierefreiheit'
 
@@ -56,7 +57,10 @@ export default function LegalPage({ id }: { id: LegalPageId }) {
       <main className="px-6 md:px-10 pt-40 pb-32 md:pt-52">
         <Link to="/" className="text-xs uppercase tracking-[0.2em] text-brand-light/60 hover:text-brand-primary">← Startseite</Link>
         <h1 className="mt-16 max-w-4xl font-display font-semibold text-5xl md:text-7xl leading-[0.95]">{LABELS[id]}</h1>
-        {id === 'impressum' ? <ImprintContent /> : (
+        {id === 'impressum' ? <ImprintContent /> : id === 'datenschutz' ? (
+          // Static, reviewed HTML supplied by the site owner; never use visitor input here.
+          <div className="privacy-copy mt-10 max-w-3xl text-base md:text-lg leading-relaxed text-brand-light" dangerouslySetInnerHTML={{ __html: privacyHtml }} />
+        ) : (
           <p className="mt-10 max-w-2xl text-lg leading-relaxed text-brand-light/70">Inhalt in Vorbereitung.</p>
         )}
       </main>

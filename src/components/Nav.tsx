@@ -106,14 +106,14 @@ export default function Nav() {
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
             transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
           >
-            <div className="h-full flex flex-col justify-center px-6 md:px-10">
+            <div className="h-full overflow-y-auto flex flex-col justify-center px-6 md:px-10 pt-24 pb-8">
               {links.map((link, i) => (
                 <div key={link.label} className="overflow-hidden border-b border-brand-dark/15">
                   <motion.a
                     href={link.route ?? `/${link.href}`}
                     data-cursor
                     onClick={(event) => go(event, link)}
-                    className="group flex items-baseline gap-4 md:gap-8 py-3 md:py-4 w-full text-left"
+                    className="group flex items-baseline gap-4 md:gap-8 py-2 md:py-3 w-full text-left"
                     initial={{ y: '110%' }}
                     animate={{ y: 0 }}
                     exit={{ y: '110%', transition: { duration: 0.4, delay: 0 } }}
@@ -122,14 +122,14 @@ export default function Nav() {
                     <span className="text-xs md:text-sm font-medium text-brand-dark/60 tabular-nums">
                       {link.index}
                     </span>
-                    <span className="font-display font-medium text-[13vw] md:text-[7.5vw] leading-[0.95] text-brand-dark transition-transform duration-500 group-hover:translate-x-4 md:group-hover:translate-x-8">
+                    <span className="font-display font-medium text-[min(12vw,8.5vh)] md:text-[min(6vw,9vh)] leading-[1.1] text-brand-dark transition-transform duration-500 group-hover:translate-x-4 md:group-hover:translate-x-8">
                       {link.label}
                     </span>
                   </motion.a>
                 </div>
               ))}
               <motion.div
-                className="mt-10 flex flex-wrap gap-x-10 gap-y-3 text-[11px] tracking-[0.2em] uppercase text-brand-dark/70"
+                className="mt-8 flex flex-wrap gap-x-10 gap-y-3 text-[11px] tracking-[0.2em] uppercase text-brand-dark/70"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

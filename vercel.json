@@ -2,5 +2,20 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "redirects": [
+    { "source": "/leistungen/software", "destination": "/leistungen/individuelle-softwareentwicklung", "statusCode": 301 },
+    { "source": "/leistungen/web", "destination": "/leistungen/webdesign-webentwicklung", "statusCode": 301 },
+    { "source": "/leistungen/ai", "destination": "/leistungen/ki-automatisierung", "statusCode": 301 },
+    { "source": "/leistungen/operations", "destination": "/leistungen/cloud-betrieb-wartung", "statusCode": 301 },
+    { "source": "/leistungen/mobile", "destination": "/leistungen/app-entwicklung", "statusCode": 301 },
+    { "source": "/projects", "destination": "/projekte", "statusCode": 301 },
+    { "source": "/work/:slug", "destination": "/projekte/:slug", "statusCode": 301 },
+    { "source": "/project-questionnaire", "destination": "/projekt-starten", "statusCode": 301 }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
 }

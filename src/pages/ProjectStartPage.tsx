@@ -95,7 +95,7 @@ export default function ProjectStartPage() {
 
   return (
     <div className="grain bg-brand-dark text-brand-light h-dvh overflow-hidden flex flex-col">
-      <main className="flex-1 min-h-0 flex flex-col justify-center px-6 md:px-10 pt-24 md:pt-28 pb-6 overflow-y-auto">
+      <main id="main" tabIndex={-1} className="flex-1 min-h-0 flex flex-col justify-center px-6 md:px-10 pt-24 md:pt-28 pb-6 overflow-y-auto">
         <div className="mx-auto w-full max-w-2xl">
           <div className="flex items-center justify-between gap-4">
             <Link to={routes.home} className="text-xs uppercase tracking-[0.2em] text-brand-light/60 hover:text-brand-primary">← Startseite</Link>

@@ -7,7 +7,7 @@ const post: BlogPost = {
   excerpt:
     'Online-Terminbuchung ist für Kunden Standard geworden. Für Dienstleistungsbetriebe entscheidet sich der Nutzen aber erst an der internen Verwaltung dahinter.',
   datePublished: '2026-07-20',
-  relatedServiceIds: ['software', 'web'],
+  relatedServiceIds: ['booking', 'software', 'web'],
   relatedProjectSlugs: ['skinbloom-buchungssystem'],
   body: [
     {
@@ -42,6 +42,11 @@ const post: BlogPost = {
     {
       type: 'paragraph',
       text: 'Fertige Buchungstools sind sinnvoll, wenn Standard-Terminvergabe ausreicht. Sobald Rollen, Berechtigungen oder Abläufe spezifisch werden — etwa unterschiedliche Sichtbarkeiten für Mitarbeitende oder eine enge Verzahnung mit weiteren internen Prozessen — lohnt sich eine individuelle Lösung, die genau auf den Betrieb zugeschnitten ist statt umgekehrt den Betrieb an die Software anzupassen.',
+    },
+    {
+      type: 'link',
+      text: 'Buchungssystem entwickeln lassen',
+      to: '/leistungen/buchungssystem-entwicklung',
     },
   ],
 }

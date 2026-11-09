@@ -39,6 +39,11 @@ const post: BlogPost = {
       type: 'paragraph',
       text: 'In unserem Projektprozess ist "Betrieb" deshalb eine eigene Phase nach Analyse, Konzeption, Design, Entwicklung und Qualitätssicherung — nicht ein optionales Zusatzpaket. Wer diese Phase von Anfang an mitdenkt, vermeidet, dass technische Schulden entstehen, die später aufwendiger zu beheben sind als von Beginn an eingeplant zu werden.',
     },
+    {
+      type: 'link',
+      text: 'Cloud-Betrieb, Wartung & Weiterentwicklung',
+      to: '/leistungen/cloud-betrieb-wartung',
+    },
   ],
 }
 

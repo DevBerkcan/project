@@ -3,6 +3,7 @@ import type { BlogPost } from '../types'
 const post: BlogPost = {
   slug: 'ortsunabhaengige-softwareentwicklung-nrw',
   title: 'Ortsunabhängige Softwareentwicklung aus Wuppertal für Unternehmen in NRW',
+  seoTitle: 'Ortsunabhängige Softwareentwicklung für NRW',
   category: 'GEO',
   excerpt:
     'Nicht jedes Digitalprojekt braucht eine Agentur mit Büro vor Ort. Wie ortsunabhängige Zusammenarbeit in der Praxis funktioniert — und wo sie an Grenzen stößt.',
@@ -34,8 +35,9 @@ const post: BlogPost = {
       text: 'Bei komplexeren Abstimmungen — etwa zu Projektbeginn, wenn Abläufe vor Ort verstanden werden müssen — kann ein Termin vor Ort sinnvoller sein als ein Call. Deshalb ist die Zusammenarbeit projektbezogen: remote als Regelfall, vor Ort dort, wo es den Ablauf tatsächlich verbessert.',
     },
     {
-      type: 'paragraph',
-      text: 'Mehr zum Leistungsgebiet und zur Zusammenarbeit über Wuppertal hinaus gibt es auf der Seite „Leistungsgebiet".',
+      type: 'link',
+      text: 'Mehr zum Leistungsgebiet Wuppertal, Düsseldorf und NRW',
+      to: '/leistungsgebiet',
     },
   ],
 }

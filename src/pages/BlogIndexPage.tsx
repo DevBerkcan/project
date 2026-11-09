@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import Footer from '../sections/Footer'
 import { blogPosts } from '../data/blog'
 
 export default function BlogIndexPage() {
@@ -6,7 +7,7 @@ export default function BlogIndexPage() {
 
   return (
     <div className="min-h-screen bg-brand-dark text-brand-light">
-      <main>
+      <main id="main" tabIndex={-1}>
         <section className="px-6 md:px-10 pt-40 pb-24 md:pt-52 md:pb-36">
           <div className="flex flex-wrap items-end justify-between gap-8 border-b border-brand-light/15 pb-8">
             <div>
@@ -33,10 +34,7 @@ export default function BlogIndexPage() {
           </section>
         ))}
       </main>
-      <footer className="px-6 md:px-10 py-8 border-t border-brand-light/15 flex flex-wrap justify-between gap-4 text-[11px] tracking-[0.15em] uppercase text-brand-light/60">
-        <Link to="/" className="hover:text-brand-primary">← Zur Startseite</Link>
-        <span>© 2026 Gentle Group Studios</span>
-      </footer>
+      <Footer />
     </div>
   )
 }

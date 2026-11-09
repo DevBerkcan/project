@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
-import { motion, AnimatePresence } from 'framer-motion'
-import { services } from '../data/siteContent'
+import { motion } from 'framer-motion'
+import { services, solutions } from '../data/siteContent'
+import { routes } from '../lib/routes'
 
 export default function Services() {
   const [open, setOpen] = useState<number | null>(1)
@@ -38,22 +39,41 @@ export default function Services() {
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >+</motion.span>
               </button>
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div id={`service-panel-${service.id}`} initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden" role="region" aria-labelledby={`service-trigger-${service.id}`}>
-                    <div className="pb-10 md:pb-12 md:pl-[4.5rem] lg:pl-[7.5rem] max-w-3xl">
-                      <p className="text-brand-light/70 leading-relaxed text-base md:text-lg">{service.description}</p>
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {service.tags.map((tag) => <span key={tag} className="text-[11px] tracking-[0.1em] uppercase border border-brand-light/20 rounded-full px-4 py-2 text-brand-light/80">{tag}</span>)}
-                      </div>
-                      <Link to={`/leistungen/${service.id}`} data-cursor className="mt-6 inline-flex text-sm uppercase tracking-[0.12em] text-brand-primary hover:text-brand-secondary">Mehr erfahren →</Link>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Panels stay mounted so every description and link is part of the prerendered HTML. */}
+              <motion.div
+                id={`service-panel-${service.id}`}
+                initial={false}
+                animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden"
+                role="region"
+                aria-labelledby={`service-trigger-${service.id}`}
+                inert={!isOpen}
+              >
+                <div className="pb-10 md:pb-12 md:pl-[4.5rem] lg:pl-[7.5rem] max-w-3xl">
+                  <p className="text-brand-light/70 leading-relaxed text-base md:text-lg">{service.description}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {service.tags.map((tag) => <span key={tag} className="text-[11px] tracking-[0.1em] uppercase border border-brand-light/20 rounded-full px-4 py-2 text-brand-light/80">{tag}</span>)}
+                  </div>
+                  <Link to={routes.service(service.slug)} data-cursor className="mt-6 inline-flex text-sm uppercase tracking-[0.12em] text-brand-primary hover:text-brand-secondary">{service.title}: mehr erfahren →</Link>
+                </div>
+              </motion.div>
             </div>
           )
         })}
+      </div>
+      <div className="mt-14 md:mt-20 grid gap-6 md:grid-cols-12">
+        <h3 className="md:col-span-3 text-[11px] tracking-[0.25em] uppercase text-brand-light/60">Schwerpunkte</h3>
+        <ul className="md:col-span-9 flex flex-wrap gap-3">
+          {solutions.map((solution) => (
+            <li key={solution.id}>
+              <Link to={routes.service(solution.slug)} data-cursor className="inline-flex rounded-full border border-brand-light/20 px-5 py-3 text-sm text-brand-light/85 transition-colors hover:border-brand-primary hover:text-brand-primary">{solution.title}</Link>
+            </li>
+          ))}
+          <li>
+            <Link to={routes.services} data-cursor className="inline-flex rounded-full px-5 py-3 text-sm uppercase tracking-[0.12em] text-brand-primary hover:text-brand-secondary">Alle Leistungen →</Link>
+          </li>
+        </ul>
       </div>
     </section>
   )

@@ -4,7 +4,7 @@ export const routes = {
   project: (slug: string) => `/projekte/${slug}`,
   projectStart: '/projekt-starten',
   services: '/leistungen',
-  service: (id: string) => `/leistungen/${id}`,
+  service: (slug: string) => `/leistungen/${slug}`,
   gentlesuite: '/gentlesuite',
   region: '/leistungsgebiet',
   blog: '/blog',

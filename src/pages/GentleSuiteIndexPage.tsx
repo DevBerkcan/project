@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router'
+import Footer from '../sections/Footer'
 import { products } from '../data/siteContent'
 import { routes } from '../lib/routes'
 import { trackEvent } from '../lib/analytics'
@@ -11,7 +12,7 @@ export default function GentleSuiteIndexPage() {
 
   return (
     <div className="min-h-screen bg-brand-dark text-brand-light">
-      <main>
+      <main id="main" tabIndex={-1}>
         <section className="px-6 md:px-10 pt-40 pb-24 md:pt-52 md:pb-36">
           <div className="flex flex-wrap items-end justify-between gap-8 border-b border-brand-light/15 pb-8">
             <div>
@@ -43,10 +44,7 @@ export default function GentleSuiteIndexPage() {
           </div>
         </section>
       </main>
-      <footer className="px-6 md:px-10 py-8 border-t border-brand-light/15 flex flex-wrap justify-between gap-4 text-[11px] tracking-[0.15em] uppercase text-brand-light/60">
-        <Link to={routes.home} className="hover:text-brand-primary">← Zur Startseite</Link>
-        <span>© 2026 Gentle Group Studios</span>
-      </footer>
+      <Footer />
     </div>
   )
 }

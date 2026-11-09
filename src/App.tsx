@@ -45,6 +45,7 @@ export default function App() {
 
   return (
     <>
+      <a href="#main" className="skip-link">Zum Inhalt springen</a>
       <Cursor />
       <Nav />
       <Seo />

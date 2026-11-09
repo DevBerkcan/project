@@ -40,14 +40,15 @@ export default function Hero({ started }: { started: boolean }) {
 
       <motion.div style={{ y, opacity }} className="relative">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-8 mb-6 md:mb-10">
-          <motion.p
-            className="max-w-md text-base leading-relaxed text-brand-light/70"
+          <motion.h1
+            className="max-w-xl text-base md:text-lg font-normal leading-relaxed text-brand-light/80"
             initial={{ opacity: 0, y: 20 }}
             animate={started ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.9, duration: 0.8 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Gentle Group Studios entwickelt individuelle Software, Web-Apps, Websites, KI-Lösungen und Automatisierungen für Unternehmen in Wuppertal, Düsseldorf und NRW.
-          </motion.p>
+            <span className="block font-semibold text-brand-light">Softwareagentur aus Wuppertal</span>
+            für individuelle Software, Web-Apps, Websites und KI-Automatisierung — für Unternehmen in Düsseldorf und ganz NRW.
+          </motion.h1>
           <MotionLink
             to={routes.projectStart}
             data-cursor="Projekt besprechen"
@@ -55,22 +56,23 @@ export default function Hero({ started }: { started: boolean }) {
             className="inline-flex w-fit items-center gap-3 rounded-full border border-brand-light/20 px-5 py-3 text-[11px] tracking-[0.15em] uppercase text-brand-light transition-colors hover:bg-brand-primary hover:text-brand-dark hover:border-brand-primary"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={started ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 1.1, duration: 0.8 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
           >
             Projekt besprechen <span aria-hidden="true">↗</span>
           </MotionLink>
         </div>
 
-        <h1 className="font-display font-semibold leading-[0.85] tracking-[-0.02em] select-none">
-          <span className="block text-[15.5vw] md:text-[13vw]"><Letters text={line1} delay={0.15} started={started} /></span>
-          <span className="block text-[15.5vw] md:text-[13vw] text-stroke"><Letters text={line2} delay={0.45} started={started} /></span>
-        </h1>
+        {/* Decorative display type; the semantic h1 above carries the page topic. */}
+        <p aria-hidden="true" className="font-display font-semibold leading-[0.85] tracking-[-0.02em] select-none">
+          <span className="block whitespace-nowrap text-[15.5vw] md:text-[13vw]"><Letters text={line1} delay={0.05} started={started} /></span>
+          <span className="block whitespace-nowrap text-[15.5vw] md:text-[13vw] text-stroke"><Letters text={line2} delay={0.25} started={started} /></span>
+        </p>
 
         <motion.div
           className="mt-8 md:mt-12 flex flex-wrap justify-between gap-4 border-t border-brand-light/15 pt-5 text-[11px] tracking-[0.2em] uppercase text-brand-light/60"
           initial={{ opacity: 0 }}
           animate={started ? { opacity: 1 } : {}}
-          transition={{ delay: 1.3, duration: 0.8 }}
+          transition={{ delay: 0.9, duration: 0.8 }}
         >
           <span>Software / Design / Betrieb</span>
           <span className="hidden sm:inline">Von der Idee bis zum Produkt</span>

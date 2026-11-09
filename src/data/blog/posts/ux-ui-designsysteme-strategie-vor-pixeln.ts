@@ -38,6 +38,11 @@ const post: BlogPost = {
       type: 'paragraph',
       text: 'Ein Designsystem definiert wiederverwendbare Komponenten (Buttons, Formulare, Layout-Bausteine) statt einzelner Seiten. Das beschleunigt nicht nur die Entwicklung neuer Seiten, sondern sorgt auch dafür, dass eine Website mit wachsendem Umfang visuell konsistent bleibt — ein Aspekt, der bei reiner "Seite für Seite"-Gestaltung häufig verloren geht.',
     },
+    {
+      type: 'link',
+      text: 'Webdesign & Webentwicklung für Unternehmen',
+      to: '/leistungen/webdesign-webentwicklung',
+    },
   ],
 }
 

@@ -4,13 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { scrollToTop } from '../lib/scroll'
 import { routes } from '../lib/routes'
 
+// `href` targets a section on the home page; `route` is a standalone page.
 const links: { label: string; index: string; href?: string; route?: string }[] = [
-  { label: 'Projekte', index: '01', href: '#work' },
-  { label: 'Studio', index: '02', href: '#studio' },
-  { label: 'Leistungen', index: '03', route: routes.services },
-  { label: 'GentleSuite', index: '04', route: routes.gentlesuite },
+  { label: 'Leistungen', index: '01', route: routes.services },
+  { label: 'Projekte', index: '02', route: routes.projects },
+  { label: 'GentleSuite', index: '03', route: routes.gentlesuite },
+  { label: 'Studio', index: '04', href: '#studio' },
   { label: 'Blog', index: '05', route: routes.blog },
-  { label: 'Kontakt', index: '06', href: '#contact' },
+  { label: 'Kontakt', index: '06', route: routes.projectStart },
 ]
 
 export default function Nav() {
@@ -24,7 +25,8 @@ export default function Nav() {
     }, 500)
   }
 
-  const go = (link: { href?: string; route?: string }) => {
+  const go = (event: React.MouseEvent, link: { href?: string; route?: string }) => {
+    event.preventDefault()
     setOpen(false)
     if (link.route) {
       navigate(link.route)
@@ -58,9 +60,15 @@ export default function Nav() {
             href="/"
             data-cursor
             onClick={goHome}
-            className="brand-logo"
+            className="brand-logo block"
           >
-            Gentle Group Studios
+            <img
+              src="/logo/gentle-group-studios-vector.svg"
+              alt="Gentle Group Studios"
+              width={1044}
+              height={729}
+              className="h-10 md:h-12 w-auto"
+            />
           </a>
           <div className="flex items-center gap-8">
             <span className="hidden md:block text-[11px] tracking-[0.25em] uppercase text-white/60">Software — Design — Betrieb</span>
@@ -68,7 +76,7 @@ export default function Nav() {
               data-cursor
               onClick={() => setOpen(!open)}
               className="flex flex-col items-end gap-[6px] w-10"
-              aria-label="Menu"
+              aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
               aria-expanded={open}
               aria-controls="site-menu"
             >
@@ -89,9 +97,10 @@ export default function Nav() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <motion.nav
             id="site-menu"
-            className="fixed inset-0 z-[150] bg-[#d7ff3f]"
+            aria-label="Hauptnavigation"
+            className="fixed inset-0 z-[150] bg-brand-primary"
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
@@ -99,27 +108,28 @@ export default function Nav() {
           >
             <div className="h-full flex flex-col justify-center px-6 md:px-10">
               {links.map((link, i) => (
-                <div key={link.label} className="overflow-hidden border-b border-[#0e0e0e]/15">
-                  <motion.button
+                <div key={link.label} className="overflow-hidden border-b border-brand-dark/15">
+                  <motion.a
+                    href={link.route ?? `/${link.href}`}
                     data-cursor
-                    onClick={() => go(link)}
+                    onClick={(event) => go(event, link)}
                     className="group flex items-baseline gap-4 md:gap-8 py-3 md:py-4 w-full text-left"
                     initial={{ y: '110%' }}
                     animate={{ y: 0 }}
                     exit={{ y: '110%', transition: { duration: 0.4, delay: 0 } }}
                     transition={{ duration: 0.7, delay: 0.15 + i * 0.07, ease: [0.76, 0, 0.24, 1] }}
                   >
-                    <span className="text-xs md:text-sm font-medium text-[#0e0e0e]/50 tabular-nums">
+                    <span className="text-xs md:text-sm font-medium text-brand-dark/60 tabular-nums">
                       {link.index}
                     </span>
-                    <span className="font-display font-medium text-[13vw] md:text-[7.5vw] leading-[0.95] text-[#0e0e0e] transition-transform duration-500 group-hover:translate-x-4 md:group-hover:translate-x-8">
+                    <span className="font-display font-medium text-[13vw] md:text-[7.5vw] leading-[0.95] text-brand-dark transition-transform duration-500 group-hover:translate-x-4 md:group-hover:translate-x-8">
                       {link.label}
                     </span>
-                  </motion.button>
+                  </motion.a>
                 </div>
               ))}
               <motion.div
-                className="mt-10 flex flex-wrap gap-x-10 gap-y-3 text-[11px] tracking-[0.2em] uppercase text-[#0e0e0e]/60"
+                className="mt-10 flex flex-wrap gap-x-10 gap-y-3 text-[11px] tracking-[0.2em] uppercase text-brand-dark/70"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -130,7 +140,7 @@ export default function Nav() {
                 <span>Software & Design</span>
               </motion.div>
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </>

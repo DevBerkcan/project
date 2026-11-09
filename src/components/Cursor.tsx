@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 export default function Cursor() {
-  const [isFine] = useState(() => typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches)
-  const [reducedMotion] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-  const enabled = isFine && !reducedMotion
+  // Decided after mount so the hydrated markup matches the prerendered HTML.
+  const [enabled, setEnabled] = useState(false)
   const [hovering, setHovering] = useState(false)
   const [label, setLabel] = useState('')
 
@@ -12,6 +11,13 @@ export default function Cursor() {
   const y = useMotionValue(-100)
   const springX = useSpring(x, { stiffness: 400, damping: 35, mass: 0.6 })
   const springY = useSpring(y, { stiffness: 400, damping: 35, mass: 0.6 })
+
+  useEffect(() => {
+    const isFine = window.matchMedia('(pointer: fine)').matches
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time client capability check
+    setEnabled(isFine && !reducedMotion)
+  }, [])
 
   useEffect(() => {
     if (!enabled) return

@@ -28,6 +28,11 @@ const forbiddenTerms = [
   'Aether Parfums',
   'Northwind AI',
   '#top',
+  // Placeholder copy and informal address found during the SEO audit (2026-11).
+  'Dummy-Text',
+  'LASS UNS',
+  'Verifizierter Projekteintrag',
+  'Gentle Group<sup>®',
 ]
 
 function sourceFiles(directory: string): string[] {

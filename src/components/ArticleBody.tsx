@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import type { BlogBlock } from '../data/blog'
 
 export default function ArticleBody({ blocks }: { blocks: BlogBlock[] }) {
@@ -36,6 +37,12 @@ export default function ArticleBody({ blocks }: { blocks: BlogBlock[] }) {
               >
                 {block.text}
               </blockquote>
+            )
+          case 'link':
+            return (
+              <p key={index} className="mt-6 text-lg">
+                <Link to={block.to} className="text-brand-primary underline underline-offset-4 hover:text-brand-secondary">{block.text} →</Link>
+              </p>
             )
           default:
             return null

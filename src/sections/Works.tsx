@@ -33,7 +33,7 @@ export default function Works() {
   return (
     <section id="work" className="py-24 md:py-36 bg-brand-light text-brand-dark">
       <div ref={headerRef} className="overflow-hidden mb-14 md:mb-20">
-        <motion.h2 style={{ x: hx }} className="font-display font-semibold text-[16vw] md:text-[11vw] leading-none whitespace-nowrap text-stroke-dark select-none">Ausgewählte Projekte — Ausgewählte Projekte</motion.h2>
+        <motion.h2 style={{ x: hx }} className="font-display font-semibold text-[16vw] md:text-[11vw] leading-none whitespace-nowrap text-stroke-dark select-none">Ausgewählte Projekte<span aria-hidden="true"> — Ausgewählte Projekte</span></motion.h2>
       </div>
       <div className="px-6 md:px-10 flex items-baseline justify-between mb-6">
         <span className="text-[11px] tracking-[0.25em] uppercase text-brand-dark/60">02 — Projekte</span>
@@ -63,7 +63,7 @@ export default function Works() {
               </div>
             </div>
             <div className="max-w-4xl pb-7 md:pb-10 pl-10 md:pl-20">
-              <h4 className="font-display font-semibold text-xl md:text-3xl leading-tight">{project.intro}</h4>
+              <p className="font-display font-semibold text-xl md:text-3xl leading-tight">{project.intro}</p>
               <p className="mt-5 max-w-3xl text-brand-dark/70 leading-relaxed">{project.description}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (

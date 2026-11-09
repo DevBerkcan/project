@@ -15,7 +15,7 @@ function replaceOrInsert(html, regex, replacement, insertBeforeHead) {
   return html.replace('</head>', `${insertBeforeHead}\n</head>`)
 }
 
-function applyPageMeta(templateHtml, appHtml, canonical, meta) {
+function applyPageMeta(templateHtml, appHtml, canonical, meta, siteUrl) {
   const title = escapeHtml(meta.title)
   const description = escapeHtml(meta.description)
   const robots = meta.noindex ? 'noindex, nofollow' : 'index, follow'
@@ -37,12 +37,17 @@ function applyPageMeta(templateHtml, appHtml, canonical, meta) {
     `<meta name="robots" content="${robots}" />`,
     `    <meta name="robots" content="${robots}" />`,
   )
-  html = replaceOrInsert(
-    html,
-    /<link rel="canonical" href="[^"]*"\s*\/?>/,
-    `<link rel="canonical" href="${canonical}" />`,
-    `    <link rel="canonical" href="${canonical}" />`,
-  )
+  if (canonical) {
+    html = replaceOrInsert(
+      html,
+      /<link rel="canonical" href="[^"]*"\s*\/?>/,
+      `<link rel="canonical" href="${canonical}" />`,
+      `    <link rel="canonical" href="${canonical}" />`,
+    )
+  } else {
+    // Error pages must not claim a canonical URL.
+    html = html.replace(/\s*<link rel="canonical" href="[^"]*"\s*\/?>/, '')
+  }
   html = replaceOrInsert(
     html,
     /<meta property="og:type" content="[^"]*"\s*\/?>/,
@@ -64,8 +69,8 @@ function applyPageMeta(templateHtml, appHtml, canonical, meta) {
   html = replaceOrInsert(
     html,
     /<meta property="og:url" content="[^"]*"\s*\/?>/,
-    `<meta property="og:url" content="${canonical}" />`,
-    `    <meta property="og:url" content="${canonical}" />`,
+    `<meta property="og:url" content="${canonical ?? siteUrl}" />`,
+    `    <meta property="og:url" content="${canonical ?? siteUrl}" />`,
   )
   html = replaceOrInsert(
     html,
@@ -95,21 +100,30 @@ function canonicalPath(route) {
 
 async function main() {
   const templateHtml = readFileSync(join(distDir, 'index.html'), 'utf8')
-  const { render, getStaticRoutes, getPageMeta, buildSitemapXml, siteConfig } = await import(ssrEntry)
+  const { render, getStaticRoutes, getIndexableRoutes, getPageMeta, getNotFoundMeta, buildSitemapXml, buildLlmsTxt, siteConfig } =
+    await import(ssrEntry)
 
   for (const route of getStaticRoutes()) {
     const appHtml = render(route)
     const meta = getPageMeta(route)
     const canonical = `${siteConfig.url}${canonicalPath(route)}`
-    const html = applyPageMeta(templateHtml, appHtml, canonical, meta)
+    const html = applyPageMeta(templateHtml, appHtml, canonical, meta, siteConfig.url)
 
     const outPath = route === '/' ? join(distDir, 'index.html') : join(distDir, route.slice(1), 'index.html')
     mkdirSync(dirname(outPath), { recursive: true })
     writeFileSync(outPath, html, 'utf8')
   }
 
-  const sitemap = buildSitemapXml(siteConfig.url, getStaticRoutes())
+  // Vercel serves 404.html with a real 404 status for every unknown path.
+  const notFoundHtml = applyPageMeta(templateHtml, render('/404'), null, getNotFoundMeta(), siteConfig.url)
+  writeFileSync(join(distDir, '404.html'), notFoundHtml, 'utf8')
+
+  const sitemap = buildSitemapXml(siteConfig.url, getIndexableRoutes())
   writeFileSync(join(distDir, 'sitemap.xml'), sitemap, 'utf8')
+  writeFileSync(join(distDir, 'llms.txt'), buildLlmsTxt(), 'utf8')
 }
 
-main()
+main().catch((error) => {
+  console.error(error)
+  process.exit(1)
+})

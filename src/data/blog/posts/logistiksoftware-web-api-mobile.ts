@@ -42,6 +42,11 @@ const post: BlogPost = {
       type: 'paragraph',
       text: 'Eine native oder mobile Anwendung lohnt sich, wenn Nutzer regelmäßig unterwegs auf aktuelle Informationen angewiesen sind — nicht als Standardzusatz zu jeder Web-App. Bei Logistikprozessen mit Fahrzeugen und Auslieferungen ist dieser Bedarf naturgemäß gegeben, weshalb die mobile Anwendung hier kein Extra, sondern ein notwendiger dritter Zugang zum selben System war.',
     },
+    {
+      type: 'link',
+      text: 'App-Entwicklung für Android & iOS',
+      to: '/leistungen/app-entwicklung',
+    },
   ],
 }
 

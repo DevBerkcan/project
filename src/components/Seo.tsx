@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import { siteConfig } from '../lib/siteConfig'
-import { getPageMeta, isPreviewHost } from '../lib/pageSeo'
+import { canonicalPath, getNotFoundMeta, getPageMeta, isPreviewHost } from '../lib/pageSeo'
 
 function setMeta(attribute: 'name' | 'property', key: string, content: string) {
   let element = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`)
@@ -28,13 +28,15 @@ export default function Seo() {
 
   useEffect(() => {
     const page = getPageMeta(pathname)
-    const canonical = `${siteConfig.url}${pathname === '/' ? '/' : pathname.replace(/\/$/, '')}`
+    const canonical = `${siteConfig.url}${canonicalPath(pathname)}`
+    const notFound = page === getNotFoundMeta()
     const previewHost = isPreviewHost(window.location.hostname)
     const noindex = page.noindex || previewHost
 
     document.documentElement.lang = 'de'
     document.title = page.title
-    setLink('canonical', canonical)
+    if (notFound) document.head.querySelector('link[rel="canonical"]')?.remove()
+    else setLink('canonical', canonical)
     setMeta('name', 'description', page.description)
     setMeta('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow')
     setMeta('property', 'og:locale', siteConfig.locale)

@@ -3,6 +3,7 @@ import type { BlogPost } from '../types'
 const post: BlogPost = {
   slug: 'individuelle-software-vs-standardsoftware',
   title: 'Individuelle Software vs. Standardsoftware: Wann sich Eigenentwicklung lohnt',
+  seoTitle: 'Individuelle Software vs. Standardsoftware',
   category: 'Softwareentwicklung',
   excerpt:
     'Standardsoftware deckt viele Abläufe gut ab — aber nicht alle. Ein Überblick, woran man erkennt, dass ein Unternehmen an die Grenzen von Standardlösungen stößt.',
@@ -42,6 +43,11 @@ const post: BlogPost = {
     {
       type: 'paragraph',
       text: 'Individuelle Software ersetzt selten das gesamte Tool-Ökosystem eines Unternehmens. Meistens geht es um einen konkreten, klar abgegrenzten Ablauf, der digitalisiert oder verbunden wird — über Systemintegration, APIs oder ein eigenständiges internes Tool. Der erste Schritt ist deshalb immer eine Analyse: Welcher Ablauf verursacht den Aufwand, und wo genau reicht Standardsoftware nicht mehr aus.',
+    },
+    {
+      type: 'link',
+      text: 'Individuelle Softwareentwicklung bei Gentle Group Studios',
+      to: '/leistungen/individuelle-softwareentwicklung',
     },
   ],
 }

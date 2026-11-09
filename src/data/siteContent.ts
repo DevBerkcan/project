@@ -1,6 +1,8 @@
 export interface Service {
   id: string
-  number: string
+  /** URL segment below /leistungen; keyword-bearing and stable once published. */
+  slug: string
+  number?: string
   title: string
   description: string
   tags: string[]
@@ -16,7 +18,8 @@ export interface TeamProfile {
   name: string
   label: string
   role: string
-  description: string
+  /** Only set once the person has approved the text. */
+  description?: string
   src: string
 }
 
@@ -25,21 +28,18 @@ export const teamProfiles: TeamProfile[] = [
     name: 'Berk-Can',
     label: 'Profil 01',
     role: 'Founder & Lead Developer',
-    description: 'Dummy-Text: Verantwortlich für Produktstrategie, technische Architektur und die Verbindung zwischen Idee und Umsetzung.',
     src: '/berk-can_founder.webp',
   },
   {
     name: 'Medin',
     label: 'Profil 02',
     role: 'Backend Specialist',
-    description: 'Dummy-Text: Entwickelt skalierbare Backend-Architekturen, Datenmodelle und zuverlässige Schnittstellen für digitale Produkte.',
     src: '/medin_co-founder.webp',
   },
   {
     name: 'Alanur',
     label: 'Profil 03',
     role: 'Backoffice & Administration',
-    description: 'Dummy-Text: Unterstützt Organisation, Projektkoordination und die Abläufe, die gute Zusammenarbeit im Hintergrund möglich machen.',
     src: '/alanur_backoffice.webp',
   },
 ]
@@ -63,6 +63,9 @@ export interface WorkProject {
   tags: string[]
   art: string
   href?: string
+  /** Descriptive, keyword-bearing name used in the document title. */
+  seoTitle: string
+  industry: string
   relatedServiceIds?: string[]
 }
 
@@ -79,7 +82,9 @@ export const workProjects: WorkProject[] = [
     result: 'Ein durchgängiger digitaler Prozess mit einer zentralen Datenbasis statt mehrerer getrennter Werkzeuge.',
     tags: ['Catering Management', 'Web-App', 'Prozessdigitalisierung'],
     art: 'radial-gradient(ellipse at 28% 22%, var(--color-brand-secondary) 0%, transparent 48%), linear-gradient(145deg, var(--color-brand-dark) 0%, rgb(169 122 255 / 30%) 100%)',
-    relatedServiceIds: ['software'],
+    seoTitle: 'Catering-Software für Daily Gourmet',
+    industry: 'Catering & Gemeinschaftsverpflegung',
+    relatedServiceIds: ['software', 'webapp'],
   },
   {
     slug: 'skinbloom-buchungssystem',
@@ -94,7 +99,9 @@ export const workProjects: WorkProject[] = [
     tags: ['Booking System', 'Kundenportal', 'Administration'],
     art: 'radial-gradient(ellipse at 32% 72%, var(--color-brand-secondary) 0%, transparent 48%), linear-gradient(145deg, var(--color-brand-dark) 0%, rgb(169 122 255 / 24%) 100%)',
     href: 'https://skinbloombooking.gentlegroup.de/',
-    relatedServiceIds: ['software', 'web'],
+    seoTitle: 'Buchungssystem für Skinbloom Aesthetics',
+    industry: 'Ästhetik & Beauty',
+    relatedServiceIds: ['booking', 'software', 'web'],
   },
   {
     slug: 'skinbloom-preisrechner',
@@ -108,7 +115,9 @@ export const workProjects: WorkProject[] = [
     result: 'Transparente, wiederholbare Preisberechnung statt manueller Einzelkalkulation.',
     tags: ['Business Tool', 'Preisberechnung', 'PDF-Automatisierung'],
     art: 'radial-gradient(ellipse at 48% 18%, var(--color-brand-secondary) 0%, transparent 46%), linear-gradient(150deg, var(--color-brand-dark) 0%, rgb(169 122 255 / 30%) 100%)',
-    relatedServiceIds: ['software'],
+    seoTitle: 'Digitaler Preisrechner für Skinbloom',
+    industry: 'Ästhetik & Beauty',
+    relatedServiceIds: ['software', 'webapp'],
   },
   {
     slug: 'emma-solution',
@@ -122,6 +131,8 @@ export const workProjects: WorkProject[] = [
     result: 'Relevante Informationen sind zentral verwaltet und auch unterwegs über die mobile Anwendung abrufbar.',
     tags: ['Logistiksoftware', 'Full-Stack', 'Android-App'],
     art: 'radial-gradient(ellipse at 72% 24%, var(--color-brand-primary) 0%, transparent 46%), linear-gradient(155deg, var(--color-brand-dark) 0%, rgb(1 10 48 / 60%) 100%)',
+    seoTitle: 'Logistiksoftware für Emma Solution',
+    industry: 'Logistik & Transport',
     relatedServiceIds: ['software', 'mobile'],
   },
   {
@@ -136,6 +147,8 @@ export const workProjects: WorkProject[] = [
     result: 'Inhalte werden einmal gepflegt und konsistent auf mehreren Plattformen bereitgestellt.',
     tags: ['Content-Plattform', 'Web-App', 'Android & iOS'],
     art: 'radial-gradient(ellipse at 76% 68%, var(--color-brand-primary) 0%, transparent 44%), radial-gradient(ellipse at 22% 18%, var(--color-brand-secondary) 0%, transparent 42%), linear-gradient(165deg, var(--color-brand-dark) 0%, rgb(1 10 48 / 60%) 100%)',
+    seoTitle: 'Content-Plattform & Apps für Teretnjaci',
+    industry: 'Medien & Logistik',
     relatedServiceIds: ['software', 'mobile'],
   },
 ]
@@ -143,6 +156,7 @@ export const workProjects: WorkProject[] = [
 export const services: Service[] = [
   {
     id: 'software',
+    slug: 'individuelle-softwareentwicklung',
     number: '01',
     title: 'Individuelle Software & Web-Apps',
     description:
@@ -151,6 +165,7 @@ export const services: Service[] = [
   },
   {
     id: 'web',
+    slug: 'webdesign-webentwicklung',
     number: '02',
     title: 'Websites & digitale Erlebnisse',
     description:
@@ -159,6 +174,7 @@ export const services: Service[] = [
   },
   {
     id: 'ai',
+    slug: 'ki-automatisierung',
     number: '03',
     title: 'KI & Automatisierung',
     description:
@@ -167,6 +183,7 @@ export const services: Service[] = [
   },
   {
     id: 'operations',
+    slug: 'cloud-betrieb-wartung',
     number: '04',
     title: 'Cloud, Betrieb & Weiterentwicklung',
     description:
@@ -175,6 +192,7 @@ export const services: Service[] = [
   },
   {
     id: 'mobile',
+    slug: 'app-entwicklung',
     number: '05',
     title: 'Mobile Anwendungen',
     description:
@@ -182,6 +200,48 @@ export const services: Service[] = [
     tags: ['Android', 'iOS', 'Mobile UX', 'APIs', 'Betrieb'],
   },
 ]
+
+/** Focused offers that sit below the core services and get their own landing page. */
+export const solutions: Service[] = [
+  {
+    id: 'webapp',
+    slug: 'web-app-saas-entwicklung',
+    title: 'Web-App- & SaaS-Entwicklung',
+    description:
+      'Browserbasierte Anwendungen und SaaS-Produkte mit Next.js und React: von der ersten Version bis zum Produkt, das mit Nutzern, Mandanten und Funktionen wächst.',
+    tags: ['Next.js', 'React', 'SaaS', 'Mandantenfähigkeit', 'APIs'],
+  },
+  {
+    id: 'crm',
+    slug: 'crm-entwicklung',
+    title: 'Individuelle CRM-Systeme',
+    description:
+      'Ein CRM, das Ihren Vertriebs- und Kundenprozess abbildet statt umgekehrt: Kontakte, Anfragen, Angebote und Aufgaben in einem System, angebunden an Ihre bestehenden Werkzeuge.',
+    tags: ['CRM', 'Kundenverwaltung', 'Vertrieb', 'Integrationen', 'Rollen & Rechte'],
+  },
+  {
+    id: 'booking',
+    slug: 'buchungssystem-entwicklung',
+    title: 'Buchungssysteme & Terminverwaltung',
+    description:
+      'Online-Terminbuchung, die mit Ihrer internen Planung verbunden ist: Leistungen, Mitarbeitende, Zeitfenster und Kundendaten zentral verwaltet.',
+    tags: ['Online-Buchung', 'Kalender', 'Mitarbeiterplanung', 'Kundendaten', 'Verwaltung'],
+  },
+  {
+    id: 'powerplatform',
+    slug: 'microsoft-power-platform',
+    title: 'Microsoft Power Platform',
+    description:
+      'Beratung und Umsetzung mit Power Apps und Power Automate für Unternehmen, die bereits mit Microsoft 365 arbeiten — und eine ehrliche Einschätzung, wann Individualentwicklung die bessere Wahl ist.',
+    tags: ['Power Apps', 'Power Automate', 'Microsoft 365', 'Workflows', 'Beratung'],
+  },
+]
+
+export const allServices: Service[] = [...services, ...solutions]
+
+export function findService(id: string): Service | undefined {
+  return allServices.find((service) => service.id === id)
+}
 
 export const products: Product[] = [
   {

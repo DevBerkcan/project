@@ -3,6 +3,7 @@ import type { BlogPost } from '../types'
 const post: BlogPost = {
   slug: 'generative-engine-optimization-gentlegroup',
   title: 'Generative Engine Optimization: Wie wir gentlegroup.de für KI-Suche aufbereitet haben',
+  seoTitle: 'Generative Engine Optimization in der Praxis',
   category: 'GEO',
   excerpt:
     'Klassisches SEO reicht nicht mehr aus, wenn Antworten zunehmend von ChatGPT, Claude, Gemini oder Perplexity zusammengefasst werden. Ein Einblick in die konkreten technischen Schritte.',

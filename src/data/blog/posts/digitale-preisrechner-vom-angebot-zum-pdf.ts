@@ -7,7 +7,7 @@ const post: BlogPost = {
   excerpt:
     'Wenn Preise von mehreren Faktoren abhängen, wird ein manuelles Angebot schnell fehleranfällig. Ein digitaler Preisrechner macht die Kalkulation transparent und wiederholbar.',
   datePublished: '2026-08-03',
-  relatedServiceIds: ['software'],
+  relatedServiceIds: ['software', 'webapp'],
   relatedProjectSlugs: ['skinbloom-preisrechner'],
   body: [
     {
@@ -34,6 +34,11 @@ const post: BlogPost = {
     {
       type: 'paragraph',
       text: 'Dieses Prinzip — konfigurierbare Preis- und Angebotslogik für transparente digitale Anfragen — ist auch der Kern von GentleCalc, unserem eigenen Produkt für Unternehmen, die eine vergleichbare Kalkulationslogik brauchen, aber keine vollständig individuelle Neuentwicklung. Beides sind unterschiedliche Ausgangspunkte: eine kundenspezifische Einzelentwicklung wie der Skinbloom-Preisrechner auf der einen, ein konfigurierbares eigenes Produkt auf der anderen Seite.',
+    },
+    {
+      type: 'link',
+      text: 'Web-App-Entwicklung für Business-Tools',
+      to: '/leistungen/web-app-saas-entwicklung',
     },
   ],
 }

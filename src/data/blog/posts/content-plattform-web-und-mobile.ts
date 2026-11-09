@@ -3,6 +3,7 @@ import type { BlogPost } from '../types'
 const post: BlogPost = {
   slug: 'content-plattform-web-und-mobile',
   title: 'Eine Content-Plattform für Web und Mobile aus einem Administrationsportal',
+  seoTitle: 'Content-Plattform für Web, Android und iOS',
   category: 'Web-Apps',
   excerpt:
     'Wer Inhalte auf Website, Android und iOS gleichzeitig veröffentlicht, braucht ein zentrales Redaktionssystem — sonst pflegt man dieselben Inhalte mehrfach.',

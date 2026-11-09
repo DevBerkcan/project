@@ -43,7 +43,7 @@ export function InteractivePhotoStack({ items, title }: InteractivePhotoStackPro
       {title ? <div className="mb-8 font-display text-2xl font-semibold text-brand-dark md:text-3xl">{title}</div> : null}
 
       <div className="grid items-center gap-8 md:grid-cols-2">
-        <div className="relative h-[28rem] md:h-[34rem]" aria-label="Teamprofile">
+        <div className="relative h-[28rem] md:h-[34rem]" role="group" aria-label="Teamprofile">
           {items.map((item, index) => {
             const isSelected = selectedIndex === index
             const offset = spreadOffsets[index]
@@ -55,8 +55,8 @@ export function InteractivePhotoStack({ items, title }: InteractivePhotoStackPro
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex((current) => (current === index ? null : current))}
                 aria-pressed={isSelected}
-                tabIndex={!isSpread && index !== 0 ? -1 : 0}
-                aria-hidden={!isSpread && index !== 0}
+                // Stacked cards behind the first are invisible; inert removes them from focus order and the a11y tree.
+                inert={!isSpread && index !== 0}
                 className="absolute left-1/2 top-1/2 h-96 w-64 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-brand-dark/15 bg-brand-light p-3 text-left shadow-xl transition-all duration-700 ease-out focus-visible:outline-2 focus-visible:outline-brand-primary"
                 style={{
                   zIndex: isSelected ? 30 : isSpread ? 20 - index : items.length - index + 10,

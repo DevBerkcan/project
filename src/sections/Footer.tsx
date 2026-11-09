@@ -2,7 +2,8 @@ import { useRef } from 'react'
 import { Link } from 'react-router'
 import { motion, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion'
 import { scrollToTop } from '../lib/scroll'
-import { siteConfig } from '../lib/siteConfig'
+import { siteConfig, copyrightNotice } from '../lib/siteConfig'
+import { findService } from '../data/siteContent'
 import { routes } from '../lib/routes'
 import { trackEvent } from '../lib/analytics'
 import LegalCockpitSeal from '../components/LegalCockpitSeal'
@@ -41,13 +42,17 @@ function ContactButton() {
 }
 
 const menu: { label: string; href: string }[] = [
-  { label: 'Projekte', href: '#work' },
-  { label: 'Studio', href: '#studio' },
+  { label: 'Projekte', href: routes.projects },
   { label: 'Leistungen', href: routes.services },
   { label: 'GentleSuite', href: routes.gentlesuite },
+  { label: 'Leistungsgebiet', href: routes.region },
   { label: 'Blog', href: routes.blog },
-  { label: 'Kontakt', href: '#contact' },
+  { label: 'Projekt starten', href: routes.projectStart },
 ]
+
+const footerServices = ['software', 'webapp', 'web', 'ai', 'crm', 'booking']
+  .map((id) => findService(id))
+  .filter((service): service is NonNullable<typeof service> => Boolean(service))
 
 export default function Footer() {
   const ref = useRef<HTMLDivElement>(null)
@@ -59,7 +64,7 @@ export default function Footer() {
       <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[70vw] h-[40vw] rounded-full bg-brand-primary opacity-[0.08] blur-[140px] pointer-events-none" />
       <motion.div style={{ y }} className="px-6 md:px-10 pt-28 md:pt-44 pb-10">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-14">
-          <h2 className="font-display font-semibold leading-[0.88] tracking-[-0.02em]"><span className="block text-[17vw] lg:text-[11vw]">LASS UNS</span><span className="block text-[17vw] lg:text-[11vw] text-stroke">STARTEN</span></h2>
+          <h2 className="font-display font-semibold leading-[0.88] tracking-[-0.02em]"><span className="block text-[17vw] lg:text-[11vw]">PROJEKT</span><span className="block text-[17vw] lg:text-[11vw] text-stroke">STARTEN</span></h2>
           <div className="lg:pr-[6vw] lg:pt-[6vw]"><ContactButton /></div>
         </div>
 
@@ -67,6 +72,7 @@ export default function Footer() {
           <div>
             <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Kontakt</div>
             <a href={`mailto:${siteConfig.email}`} data-cursor className="block hover:text-brand-primary transition-colors">{siteConfig.email}</a>
+            <a href={`tel:${siteConfig.phone.e164}`} data-cursor className="block mt-1 hover:text-brand-primary transition-colors">{siteConfig.phone.display}</a>
             <Link to={routes.projectStart} data-cursor className="block mt-3 text-brand-primary hover:text-brand-light transition-colors" onClick={() => trackEvent('projectCtaClicked', { location: 'footer-kontakt' })}>Projekt starten ↗</Link>
           </div>
           <div>
@@ -75,15 +81,17 @@ export default function Footer() {
             <Link to={routes.region} data-cursor className="block mt-3 text-brand-primary hover:text-brand-light transition-colors">Leistungsgebiet ansehen →</Link>
           </div>
           <div>
-            <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Fokus</div>
-            <p>Software</p><p className="mt-1">Design</p><p className="mt-1">Weiterentwicklung</p>
+            <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Leistungen</div>
+            {footerServices.map((service) => (
+              <Link key={service.id} to={routes.service(service.slug)} data-cursor className="block mt-1 first:mt-0 hover:text-brand-primary transition-colors">{service.title}</Link>
+            ))}
           </div>
-          <div>
+          <nav aria-label="Footer-Navigation">
             <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Navigation</div>
-            {menu.map(({ label, href }) => href.startsWith('/')
-              ? <Link key={label} to={href} data-cursor className="block mt-1 first:mt-0 hover:text-brand-primary transition-colors">{label}</Link>
-              : <button key={label} data-cursor onClick={() => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })} className="block mt-1 first:mt-0 text-left hover:text-brand-primary transition-colors">{label}</button>)}
-          </div>
+            {menu.map(({ label, href }) => (
+              <Link key={label} to={href} data-cursor className="block mt-1 first:mt-0 hover:text-brand-primary transition-colors">{label}</Link>
+            ))}
+          </nav>
         </div>
 
         <div className="mt-12 flex justify-start md:justify-end">
@@ -91,12 +99,12 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[11px] tracking-[0.15em] uppercase text-brand-light/60 border-t border-brand-light/15 pt-6">
-          <span>© 2026 Gentle Group Studios</span>
-          <div className="flex flex-wrap gap-4">
+          <span>{copyrightNotice()}</span>
+          <nav aria-label="Rechtliches" className="flex flex-wrap gap-4">
             <Link to={routes.legal.impressum} className="hover:text-brand-light">Impressum</Link>
             <Link to={routes.legal.datenschutz} className="hover:text-brand-light">Datenschutz</Link>
             <Link to={routes.legal.barrierefreiheit} className="hover:text-brand-light">Barrierefreiheit</Link>
-          </div>
+          </nav>
           <button data-cursor onClick={() => scrollToTop(false)} className="hover:text-brand-light transition-colors">Nach oben ↑</button>
         </div>
       </motion.div>

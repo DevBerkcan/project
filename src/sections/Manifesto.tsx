@@ -5,7 +5,8 @@ import type { MotionValue } from 'framer-motion'
 const text = 'Wir machen aus komplexen Geschäftsproblemen digitale Produkte, die verständlich beginnen, zuverlässig funktionieren und langfristig weiterentwickelt werden können.'
 
 function Word({ word, progress, range }: { word: string; progress: MotionValue<number>; range: [number, number] }) {
-  const opacity = useTransform(progress, range, [0.24, 1])
+  // Starts at 0.65 so unrevealed words still meet the WCAG 3:1 large-text contrast.
+  const opacity = useTransform(progress, range, [0.65, 1])
   const color = useTransform(progress, range, ['var(--color-brand-secondary)', 'var(--color-brand-light)'])
   return <motion.span style={{ opacity, color }} className="inline-block mr-[0.28em]">{word}</motion.span>
 }

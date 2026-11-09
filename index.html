@@ -3,21 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-    <meta name="description" content="Gentle Group Studios entwickelt individuelle Software, Web-Apps, leistungsstarke Websites und KI-Automatisierungen für Unternehmen in Wuppertal, Düsseldorf und NRW." />
+    <script>
+      // Hide the intro before first paint once it has played in this session (see Preloader.tsx).
+      try { if (sessionStorage.getItem('gg-intro-seen') === '1') document.documentElement.dataset.introSeen = '1' } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://app.cockpit.legal" />
+    <!-- Self-hosted fonts: no third-party request before consent. 600 is the display weight. -->
+    <link rel="preload" href="/fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="description" content="Softwareagentur aus Wuppertal: individuelle Software, Web-Apps, Websites und KI-Automatisierung für Unternehmen in Düsseldorf und NRW. Projekt anfragen." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.gentlegroup.de/" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Individuelle Software, Web-Apps &amp; KI | Gentle Group Studios" />
-    <meta property="og:description" content="Gentle Group Studios entwickelt individuelle Software, Web-Apps, leistungsstarke Websites und KI-Automatisierungen für Unternehmen in Wuppertal, Düsseldorf und NRW." />
+    <meta property="og:title" content="Softwareagentur Wuppertal für Software &amp; KI | Gentle Group Studios" />
+    <meta property="og:description" content="Softwareagentur aus Wuppertal: individuelle Software, Web-Apps, Websites und KI-Automatisierung für Unternehmen in Düsseldorf und NRW. Projekt anfragen." />
     <meta property="og:url" content="https://www.gentlegroup.de/" />
-    <meta property="og:image" content="https://www.gentlegroup.de/og-default.svg" />
+    <meta property="og:image" content="https://www.gentlegroup.de/og-default.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Gentle Group Studios — individuelle Software, Web-Apps, Websites und KI-Automatisierung" />
     <meta property="og:site_name" content="Gentle Group Studios" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Individuelle Software, Web-Apps &amp; KI | Gentle Group Studios" />
-    <meta name="twitter:description" content="Gentle Group Studios entwickelt individuelle Software, Web-Apps, leistungsstarke Websites und KI-Automatisierungen für Unternehmen in Wuppertal, Düsseldorf und NRW." />
-    <meta name="twitter:image" content="https://www.gentlegroup.de/og-default.svg" />
+    <meta name="twitter:title" content="Softwareagentur Wuppertal für Software &amp; KI | Gentle Group Studios" />
+    <meta name="twitter:description" content="Softwareagentur aus Wuppertal: individuelle Software, Web-Apps, Websites und KI-Automatisierung für Unternehmen in Düsseldorf und NRW. Projekt anfragen." />
+    <meta name="twitter:image" content="https://www.gentlegroup.de/og-default.png" />
     <script type="application/ld+json" data-seo-jsonld>
       {
         "@context": "https://schema.org",
@@ -47,8 +57,11 @@
       }
     </script>
     <meta name="theme-color" content="#010A30" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <title>Gentle Group Studios — Digitale Lösungen</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Softwareagentur Wuppertal für Software &amp; KI | Gentle Group Studios</title>
   </head>
   <body>
     <div id="root"><!--app-html--></div>

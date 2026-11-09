@@ -3,6 +3,6 @@
   <circle cx="1000" cy="-40" r="360" fill="#A97AFF" opacity="0.6"/>
   <circle cx="1030" cy="20" r="230" fill="#01FFA9" opacity="0.72"/>
   <text x="72" y="250" fill="#F0EFF4" font-family="Arial, sans-serif" font-size="72" font-weight="700">Gentle Group Studios</text>
-  <text x="76" y="340" fill="#01FFA9" font-family="Arial, sans-serif" font-size="34">Individuelle Software, Web-Apps &amp; KI</text>
-  <text x="76" y="505" fill="#F0EFF4" opacity="0.72" font-family="Arial, sans-serif" font-size="24">Wuppertal · Düsseldorf · NRW</text>
+  <text x="76" y="340" fill="#01FFA9" font-family="Arial, sans-serif" font-size="34">Software, Web-Apps, Websites &amp; KI-Automatisierung</text>
+  <text x="76" y="505" fill="#F0EFF4" opacity="0.72" font-family="Arial, sans-serif" font-size="24">Softwareagentur aus Wuppertal · Düsseldorf · NRW</text>
 </svg>

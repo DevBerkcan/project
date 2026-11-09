@@ -1,0 +1,14 @@
+{
+  "name": "Gentle Group Studios",
+  "short_name": "Gentle Group",
+  "description": "Softwareagentur aus Wuppertal für individuelle Software, Web-Apps, Websites und KI-Automatisierung.",
+  "lang": "de",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#010a30",
+  "theme_color": "#010a30",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

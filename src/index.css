@@ -1,4 +1,53 @@
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&f[]=satoshi@300,400,500,700&display=swap');
+/*
+ * Clash Display (Indian Type Foundry, ITF Free Font License), self-hosted from
+ * public/fonts so no visitor data reaches a third party before consent.
+ */
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * Metric-matched fallback for Clash Display. Until the web font arrives, text is
+ * rendered in Arial scaled to Clash Display's width and vertical metrics, so the
+ * swap does not shift the layout (CLS). Values derived from the files in public/fonts
+ * (2026-11); recompute if the font version changes.
+ */
+@font-face {
+  font-family: 'Clash Display Fallback';
+  src: local('Arial'), local('ArialMT'), local('Liberation Sans');
+  font-weight: 100 500;
+  size-adjust: 104.6%;
+  ascent-override: 85.08%;
+  descent-override: 23.9%;
+  line-gap-override: 8.6%;
+}
+@font-face {
+  font-family: 'Clash Display Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold');
+  font-weight: 600 900;
+  size-adjust: 103.45%;
+  ascent-override: 86.03%;
+  descent-override: 24.17%;
+  line-gap-override: 8.7%;
+}
 
 @tailwind base;
 @tailwind components;
@@ -31,7 +80,7 @@ html.lenis, html.lenis body {
 }
 
 body {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Clash Display', 'Clash Display Fallback', sans-serif;
   background: var(--color-background);
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
@@ -55,11 +104,11 @@ body {
 }
 
 .font-display {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Clash Display', 'Clash Display Fallback', sans-serif;
 }
 
 .brand-logo {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Clash Display', 'Clash Display Fallback', sans-serif;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -71,6 +120,38 @@ body {
 .brand-logo sup {
   font-size: 10px;
   vertical-align: super;
+}
+
+/* Hidden until focused; first tab stop on every page. */
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10001;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  background: var(--color-brand-primary);
+  color: var(--color-brand-dark);
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+.skip-link:focus-visible {
+  transform: none;
+  outline: 2px solid var(--color-brand-light);
+  outline-offset: 2px;
+}
+main:focus {
+  outline: none;
+}
+
+/* Intro already played this session or motion is reduced: never paint the preloader. */
+html[data-intro-seen] .preloader {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    display: none;
+  }
 }
 
 .text-stroke {

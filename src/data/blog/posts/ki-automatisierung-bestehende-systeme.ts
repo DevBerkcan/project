@@ -7,7 +7,7 @@ const post: BlogPost = {
   excerpt:
     'KI-Integration muss nicht bedeuten, bestehende Software zu ersetzen. Meist geht es darum, wiederkehrende Arbeitsschritte innerhalb der vorhandenen Systeme zu automatisieren.',
   datePublished: '2026-09-01',
-  relatedServiceIds: ['ai'],
+  relatedServiceIds: ['ai', 'powerplatform'],
   body: [
     {
       type: 'paragraph',
@@ -37,6 +37,11 @@ const post: BlogPost = {
     {
       type: 'paragraph',
       text: 'Wie bei jeder individuellen Softwareentwicklung steht auch hier die Analyse am Anfang: Welcher Arbeitsschritt kostet wiederkehrend am meisten Zeit, und ist er regelbasiert genug, um automatisiert zu werden? Erst danach folgt die technische Umsetzung — Assistent, Workflow oder API-Integration in das bestehende System.',
+    },
+    {
+      type: 'link',
+      text: 'KI-Automatisierung für Unternehmen',
+      to: '/leistungen/ki-automatisierung',
     },
   ],
 }

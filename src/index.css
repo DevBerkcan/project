@@ -293,6 +293,13 @@ html[data-intro-seen] .preloader {
   color: var(--color-brand-secondary);
 }
 
+/* While the consent dialog is open it carries its own settings button; the
+   fixed shortcut would otherwise sit on top of the dialog's footer links. */
+html.show--consent .consent-settings-link,
+html.show--settings .consent-settings-link {
+  visibility: hidden;
+}
+
 /* Legal Cockpit uses layer 1000000; the non-interactive cursor sits above it. */
 .custom-cursor {
   --layer-cursor: 1000001;

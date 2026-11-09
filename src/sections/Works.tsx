@@ -51,9 +51,9 @@ export default function Works() {
           <article key={project.title} onMouseEnter={() => setActive(index)} className="group block border-t border-brand-dark/15 last:border-b px-6 md:px-10">
             <div className="md:hidden pt-6"><ProjectArt art={project.art} className="w-full h-44 rounded-md" /></div>
             <div className="relative flex items-center justify-between gap-6 py-7 md:py-10">
-              <div className="flex items-baseline gap-5 md:gap-10">
+              <div className="flex min-w-0 items-baseline gap-5 md:gap-10">
                 <span className="text-xs text-brand-dark/60 tabular-nums">0{index + 1}</span>
-                <h3 className="font-display font-semibold text-3xl md:text-6xl leading-none transition-all duration-500 md:group-hover:translate-x-6 md:group-hover:text-brand-secondary"><Link to={`/projekte/${project.slug}`}>{project.title}</Link></h3>
+                <h3 className="min-w-0 hyphens-auto font-display font-semibold text-3xl md:text-6xl leading-none transition-all duration-500 md:group-hover:translate-x-6 md:group-hover:text-brand-secondary"><Link to={`/projekte/${project.slug}`}>{project.title}</Link></h3>
               </div>
               <div className="flex items-center gap-6 md:gap-14 shrink-0">
                 <span className="text-[12px] text-brand-dark/60 tabular-nums">{project.year}</span>

@@ -62,16 +62,17 @@ export default function Footer() {
   return (
     <footer id="contact" ref={ref} className="relative overflow-hidden bg-brand-dark">
       <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[70vw] h-[40vw] rounded-full bg-brand-primary opacity-[0.08] blur-[140px] pointer-events-none" />
-      <motion.div style={{ y }} className="px-6 md:px-10 pt-28 md:pt-44 pb-10">
+      {/* Bottom padding keeps the last row clear of the fixed "Cookie-Einstellungen" shortcut. */}
+      <motion.div style={{ y }} className="px-6 md:px-10 pt-28 md:pt-44 pb-24">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-14">
           <h2 className="font-display font-semibold leading-[0.88] tracking-[-0.02em]"><span className="block text-[17vw] lg:text-[11vw]">PROJEKT</span><span className="block text-[17vw] lg:text-[11vw] text-stroke">STARTEN</span></h2>
           <div className="lg:pr-[6vw] lg:pt-[6vw]"><ContactButton /></div>
         </div>
 
-        <div className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-10 border-t border-brand-light/15 pt-10">
+        <div className="mt-20 md:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 border-t border-brand-light/15 pt-10">
           <div>
             <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Kontakt</div>
-            <a href={`mailto:${siteConfig.email}`} data-cursor className="block hover:text-brand-primary transition-colors">{siteConfig.email}</a>
+            <a href={`mailto:${siteConfig.email}`} data-cursor className="block [overflow-wrap:anywhere] hover:text-brand-primary transition-colors">{siteConfig.email}</a>
             <a href={`tel:${siteConfig.phone.e164}`} data-cursor className="block mt-1 hover:text-brand-primary transition-colors">{siteConfig.phone.display}</a>
             <Link to={routes.projectStart} data-cursor className="block mt-3 text-brand-primary hover:text-brand-light transition-colors" onClick={() => trackEvent('projectCtaClicked', { location: 'footer-kontakt' })}>Projekt starten ↗</Link>
           </div>

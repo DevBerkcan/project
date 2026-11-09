@@ -29,9 +29,9 @@ export default function Services() {
                 aria-expanded={isOpen}
                 aria-controls={`service-panel-${service.id}`}
               >
-                <div className="flex items-baseline gap-6 md:gap-12">
+                <div className="flex min-w-0 items-baseline gap-6 md:gap-12">
                   <span className={`text-sm tabular-nums transition-colors duration-300 ${isOpen ? 'text-brand-primary' : 'text-brand-light/60'}`}>{service.number}</span>
-                  <span className={`font-display font-semibold text-2xl md:text-5xl transition-all duration-500 ${isOpen ? 'translate-x-2 md:translate-x-4 text-brand-primary' : 'group-hover:translate-x-2 md:group-hover:translate-x-4'}`}>{service.title}</span>
+                  <span className={`min-w-0 hyphens-auto font-display font-semibold text-2xl md:text-5xl transition-all duration-500 ${isOpen ? 'translate-x-2 md:translate-x-4 text-brand-primary' : 'group-hover:translate-x-2 md:group-hover:translate-x-4'}`}>{service.title}</span>
                 </div>
                 <motion.span
                   className={`shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-full border flex items-center justify-center text-xl transition-colors duration-500 ${isOpen ? 'bg-brand-primary border-brand-primary text-brand-dark' : 'border-brand-light/20'}`}

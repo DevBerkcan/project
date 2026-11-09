@@ -30,7 +30,9 @@ export default function Cursor() {
       const target = (e.target as HTMLElement).closest('[data-cursor], #cc--main a, #cc--main button:not(:disabled), #cc--main label, .consent-settings-link')
       if (target) {
         setHovering(true)
-        setLabel(target.getAttribute('data-cursor') || '')
+        // A bare `data-cursor` prop renders as "true"; only explicit text is a label.
+        const value = target.getAttribute('data-cursor')
+        setLabel(value && value !== 'true' ? value : '')
       } else {
         setHovering(false)
         setLabel('')

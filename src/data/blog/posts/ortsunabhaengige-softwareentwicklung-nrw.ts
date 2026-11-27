@@ -7,6 +7,8 @@ const post: BlogPost = {
   category: 'GEO',
   excerpt:
     'Nicht jedes Digitalprojekt braucht eine Agentur mit Büro vor Ort. Wie ortsunabhängige Zusammenarbeit in der Praxis funktioniert — und wo sie an Grenzen stößt.',
+  metaDescription:
+    'Softwareentwicklung aus Wuppertal für Unternehmen in NRW: wie ortsunabhängige Zusammenarbeit in der Praxis funktioniert und wo sie an Grenzen stößt.',
   datePublished: '2026-09-10',
   relatedServiceIds: ['software'],
   body: [

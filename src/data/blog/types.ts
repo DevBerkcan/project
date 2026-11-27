@@ -12,6 +12,8 @@ export interface BlogPost {
   seoTitle?: string
   category: 'Webdesign' | 'SEO' | 'GEO' | 'KI' | 'Web-Apps' | 'Softwareentwicklung'
   excerpt: string
+  /** Search snippet (max. 155 characters); falls back to the shortened excerpt. */
+  metaDescription?: string
   datePublished: string
   dateModified?: string
   relatedServiceIds: string[]

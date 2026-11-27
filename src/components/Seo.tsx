@@ -31,14 +31,14 @@ export default function Seo() {
     const canonical = `${siteConfig.url}${canonicalPath(pathname)}`
     const notFound = page === getNotFoundMeta()
     const previewHost = isPreviewHost(window.location.hostname)
-    const noindex = page.noindex || previewHost
 
     document.documentElement.lang = 'de'
     document.title = page.title
     if (notFound) document.head.querySelector('link[rel="canonical"]')?.remove()
     else setLink('canonical', canonical)
     setMeta('name', 'description', page.description)
-    setMeta('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow')
+    // Preview deployments stay fully out of search; noindex pages on production still pass link signals.
+    setMeta('name', 'robots', previewHost ? 'noindex, nofollow' : page.noindex ? 'noindex, follow' : 'index, follow')
     setMeta('property', 'og:locale', siteConfig.locale)
     setMeta('property', 'og:type', page.type ?? 'website')
     setMeta('property', 'og:title', page.title)

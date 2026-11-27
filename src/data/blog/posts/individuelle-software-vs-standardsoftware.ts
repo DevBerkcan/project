@@ -3,10 +3,12 @@ import type { BlogPost } from '../types'
 const post: BlogPost = {
   slug: 'individuelle-software-vs-standardsoftware',
   title: 'Individuelle Software vs. Standardsoftware: Wann sich Eigenentwicklung lohnt',
-  seoTitle: 'Individuelle Software vs. Standardsoftware',
+  seoTitle: 'Individualsoftware oder Standardsoftware? Wann sich das lohnt',
   category: 'Softwareentwicklung',
   excerpt:
     'Standardsoftware deckt viele Abläufe gut ab — aber nicht alle. Ein Überblick, woran man erkennt, dass ein Unternehmen an die Grenzen von Standardlösungen stößt.',
+  metaDescription:
+    'Individualsoftware oder Standardsoftware? Woran Sie erkennen, dass Standardlösungen an Grenzen stoßen und sich eine Eigenentwicklung lohnt.',
   datePublished: '2026-07-06',
   relatedServiceIds: ['software'],
   relatedProjectSlugs: ['daily-gourmet', 'emma-solution'],

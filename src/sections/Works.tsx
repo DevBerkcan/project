@@ -33,11 +33,11 @@ export default function Works() {
   return (
     <section id="work" className="py-24 md:py-36 bg-brand-light text-brand-dark">
       <div ref={headerRef} className="overflow-hidden mb-14 md:mb-20">
-        <motion.h2 style={{ x: hx }} className="font-display font-semibold text-[16vw] md:text-[11vw] leading-none whitespace-nowrap text-stroke-dark select-none">Ausgewählte Projekte<span aria-hidden="true"> — Ausgewählte Projekte</span></motion.h2>
+        <motion.p aria-hidden="true" style={{ x: hx }} className="font-display font-semibold text-[16vw] md:text-[11vw] leading-none whitespace-nowrap text-stroke-dark select-none">Ausgewählte Projekte — Ausgewählte Projekte</motion.p>
       </div>
       <div className="px-6 md:px-10 flex items-baseline justify-between mb-6">
         <span className="text-[11px] tracking-[0.25em] uppercase text-brand-dark/60">02 — Projekte</span>
-        <span className="text-[11px] tracking-[0.25em] uppercase text-brand-dark/60">Ausgewählte Projekte</span>
+        <h2 className="text-[11px] font-normal tracking-[0.25em] uppercase text-brand-dark/60">Ausgewählte Projekte</h2>
       </div>
       <div ref={containerRef} className="relative" onMouseMove={onMove} onMouseLeave={() => setActive(null)}>
         <AnimatePresence>

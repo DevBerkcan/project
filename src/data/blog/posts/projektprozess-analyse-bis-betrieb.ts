@@ -3,9 +3,12 @@ import type { BlogPost } from '../types'
 const post: BlogPost = {
   slug: 'projektprozess-analyse-bis-betrieb',
   title: 'Unser Projektprozess: von der Analyse bis zum Betrieb',
+  seoTitle: 'Ablauf Softwareprojekt: 6 Phasen von Analyse bis Betrieb',
   category: 'Softwareentwicklung',
   excerpt:
     'Jedes Projekt bei Gentle Group Studios durchläuft dieselben sechs Phasen. Ein Überblick, was in jeder Phase passiert und warum die Reihenfolge wichtig ist.',
+  metaDescription:
+    'Ablauf eines Softwareprojekts in sechs Phasen: was bei Gentle Group Studios von der Analyse bis zum Betrieb passiert und warum die Reihenfolge zählt.',
   datePublished: '2026-06-08',
   relatedServiceIds: ['software', 'web', 'ai', 'operations', 'mobile'],
   body: [

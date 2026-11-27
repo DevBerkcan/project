@@ -7,6 +7,8 @@ const post: BlogPost = {
   category: 'GEO',
   excerpt:
     'Klassisches SEO reicht nicht mehr aus, wenn Antworten zunehmend von ChatGPT, Claude, Gemini oder Perplexity zusammengefasst werden. Ein Einblick in die konkreten technischen Schritte.',
+  metaDescription:
+    'Wie wir gentlegroup.de für ChatGPT, Claude, Gemini und Perplexity aufbereitet haben: die konkreten technischen Schritte der Generative Engine Optimization.',
   datePublished: '2026-09-15',
   relatedServiceIds: ['web', 'software'],
   body: [

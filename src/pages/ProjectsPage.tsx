@@ -11,7 +11,7 @@ export default function ProjectsPage() {
           <div className="flex flex-wrap items-end justify-between gap-8 border-b border-brand-light/15 pb-8">
             <div>
               <p className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60">Ausgewählte Projekte</p>
-                <h1 className="mt-6 font-display font-semibold text-[16vw] md:text-[10vw] leading-[0.85] tracking-[-0.03em]">Alle<br /><span className="text-stroke">Projekte</span></h1>
+                <h1 className="mt-6 font-display font-semibold text-[16vw] md:text-[10vw] leading-[0.85] tracking-[-0.03em]">Alle<br /><span className="text-stroke">Projekte</span><span className="mt-6 block text-base md:text-lg font-normal leading-snug tracking-normal text-brand-light/70">Referenzen & Fallstudien: Software, Web-Apps und Apps aus Wuppertal</span></h1>
             </div>
             <p className="max-w-sm text-brand-light/70 leading-relaxed">Referenzen aus individueller Softwareentwicklung, Buchungssystemen, Logistiksoftware und App-Entwicklung — jeweils mit Ausgangslage, Lösung und Ergebnis.</p>
           </div>

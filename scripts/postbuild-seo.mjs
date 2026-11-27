@@ -18,7 +18,7 @@ function replaceOrInsert(html, regex, replacement, insertBeforeHead) {
 function applyPageMeta(templateHtml, appHtml, canonical, meta, siteUrl) {
   const title = escapeHtml(meta.title)
   const description = escapeHtml(meta.description)
-  const robots = meta.noindex ? 'noindex, nofollow' : 'index, follow'
+  const robots = meta.noindex ? 'noindex, follow' : 'index, follow'
   const type = meta.type ?? 'website'
 
   let html = templateHtml.replace('<!--app-html-->', appHtml)

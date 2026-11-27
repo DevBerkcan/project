@@ -46,6 +46,9 @@ const menu: { label: string; href: string }[] = [
   { label: 'Leistungen', href: routes.services },
   { label: 'GentleSuite', href: routes.gentlesuite },
   { label: 'Leistungsgebiet', href: routes.region },
+  { label: 'Beauty & Kosmetik', href: routes.industry('beauty-kosmetik') },
+  { label: 'Über uns', href: routes.about },
+  { label: 'Kontakt', href: routes.contact },
   { label: 'Blog', href: routes.blog },
   { label: 'Projekt starten', href: routes.projectStart },
 ]

@@ -62,6 +62,7 @@ export default function RegionPage() {
 
         <section className="mt-28" aria-labelledby="region-work">
           <h2 id="region-work" className="font-display font-semibold text-3xl md:text-5xl leading-tight">Ausgewählte Projekte.</h2>
+          <p className="mt-6 max-w-2xl text-brand-light/70 leading-relaxed">Für Kosmetik-, Beauty- und Ästhetikstudios haben wir eine eigene Übersicht: <Link to={routes.industry('beauty-kosmetik')} className="text-brand-primary hover:text-brand-light">Software & Websites für Beautystudios →</Link></p>
           <ul className="mt-8 flex flex-wrap gap-3">
             {workProjects.map((project) => (
               <li key={project.slug}>

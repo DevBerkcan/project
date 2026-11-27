@@ -16,7 +16,7 @@ Spalten: **Suchintention** (was jemand sucht), **GEO-Potenzial** (wie gut sich d
 | Responsive Design jenseits von "funktioniert auf dem Handy" | informational | Niedrig | Niedrig | `web` | Geplant |
 | Ladezeit als UX-Faktor | informational | Mittel | Niedrig | `web` | Geplant |
 | Vom Wireframe zum fertigen Design | informational | Niedrig | Mittel | `web`, `processStages` | Geplant |
-| Website-Relaunch: wann er sich lohnt | commercial | Mittel | Hoch | `web` | Geplant |
+| Website-Relaunch: wann er sich lohnt | commercial | Mittel | Hoch | `web` | Geschrieben (Review offen) |
 | Designsysteme für wachsende Unternehmen | informational | Niedrig | Mittel | `web` | Geplant |
 
 ## SEO
@@ -78,6 +78,7 @@ Spalten: **Suchintention** (was jemand sucht), **GEO-Potenzial** (wie gut sich d
 | Individuelle Software vs. Standardsoftware | commercial | Hoch | Hoch | `software`, Daily Gourmet, Emma Solution | Geschrieben |
 | Cloud, Betrieb & Weiterentwicklung nach dem Launch | informational | Mittel | Mittel | `operations` | Geschrieben |
 | Unser Projektprozess: von der Analyse bis zum Betrieb | informational | Hoch | Mittel | `processStages` (Hub-Artikel) | Geschrieben |
+| Was kostet individuelle Software? Die Kostenfaktoren | commercial | Hoch | Hoch | `software`, `webapp`, `operations` | Geschrieben (Review offen, Preisspannen fehlen) |
 | Systemintegration: wenn Tools zusammenarbeiten müssen | informational | Niedrig | Mittel | `software` | Geplant |
 | Skalierbare Architektur für kleine Teams | informational | Niedrig | Niedrig | `software` | Geplant |
 | Wartung und Weiterentwicklung nach dem Launch | informational | Niedrig | Mittel | `operations` | Geplant |

@@ -2,6 +2,7 @@ import { siteConfig } from './siteConfig'
 import { routes } from './routes'
 import { services, solutions, workProjects, products } from '../data/siteContent'
 import { blogPosts } from '../data/blog'
+import { industries } from '../data/industries'
 
 const url = (path: string) => `${siteConfig.url}${path}`
 
@@ -41,6 +42,9 @@ export function buildLlmsTxt(): string {
     '## Optional',
     '',
     `- [Leistungsgebiet Wuppertal, Düsseldorf & NRW](${url(routes.region)})`,
+    ...industries.map((industry) => `- [${industry.h1}](${url(routes.industry(industry.slug))})`),
+    `- [Über uns](${url(routes.about)})`,
+    `- [Kontakt](${url(routes.contact)})`,
     `- [Impressum](${url(routes.legal.impressum)})`,
     `- [Datenschutz](${url(routes.legal.datenschutz)})`,
     '',

@@ -9,9 +9,9 @@ const links: { label: string; index: string; href?: string; route?: string }[] =
   { label: 'Leistungen', index: '01', route: routes.services },
   { label: 'Projekte', index: '02', route: routes.projects },
   { label: 'GentleSuite', index: '03', route: routes.gentlesuite },
-  { label: 'Studio', index: '04', href: '#studio' },
+  { label: 'Studio', index: '04', route: routes.about },
   { label: 'Blog', index: '05', route: routes.blog },
-  { label: 'Kontakt', index: '06', route: routes.projectStart },
+  { label: 'Kontakt', index: '06', route: routes.contact },
 ]
 
 export default function Nav() {

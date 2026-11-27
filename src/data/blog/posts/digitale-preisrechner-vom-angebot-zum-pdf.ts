@@ -6,6 +6,8 @@ const post: BlogPost = {
   category: 'Web-Apps',
   excerpt:
     'Wenn Preise von mehreren Faktoren abhängen, wird ein manuelles Angebot schnell fehleranfällig. Ein digitaler Preisrechner macht die Kalkulation transparent und wiederholbar.',
+  metaDescription:
+    'Wenn Preise von vielen Faktoren abhängen: wie ein digitaler Preisrechner die Kalkulation transparent und wiederholbar macht – bis zum fertigen PDF.',
   datePublished: '2026-08-03',
   relatedServiceIds: ['software', 'webapp'],
   relatedProjectSlugs: ['skinbloom-preisrechner'],

@@ -25,13 +25,13 @@ export interface ServiceDetail {
 
 export const serviceDetails: Record<string, ServiceDetail> = {
   software: {
-    seoTitle: 'Individuelle Softwareentwicklung | Gentle Group Studios',
+    seoTitle: 'Softwareentwicklung Wuppertal & NRW | Gentle Group Studios',
     metaDescription:
       'Software entwickeln lassen, die zu Ihren Abläufen passt: Portale, Dashboards, APIs und Business-Software für Unternehmen in Wuppertal, Düsseldorf und NRW.',
     eyebrow: 'Leistung 01 — Softwareentwicklung',
-    h1: 'Individuelle Softwareentwicklung für Unternehmen',
+    h1: 'Individuelle Softwareentwicklung aus Wuppertal',
     lead:
-      'Wenn Standardsoftware Ihre Abläufe nur mit Umwegen abbildet, entwickeln wir eine Lösung, die genau zu Ihrem Unternehmen passt — von der ersten Analyse über die Umsetzung bis zum laufenden Betrieb.',
+      'Wenn Standardsoftware Ihre Abläufe nur mit Umwegen abbildet, entwickeln wir eine Lösung, die genau zu Ihrem Unternehmen passt — von der ersten Analyse über die Umsetzung bis zum laufenden Betrieb. Von Wuppertal aus arbeiten wir für Unternehmen in Düsseldorf und ganz NRW – remote und bei Bedarf vor Ort.',
     sections: [
       {
         heading: 'Wann sich individuelle Software lohnt',
@@ -88,13 +88,13 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   web: {
-    seoTitle: 'Webdesign & Webentwicklung für Unternehmen | Gentle Group Studios',
+    seoTitle: 'Webdesign Wuppertal: Website erstellen lassen | Gentle Group Studios',
     metaDescription:
-      'Professionelle Website erstellen lassen: Strategie, UX/UI-Design und Entwicklung für schnelle, barrierearme und gut auffindbare Unternehmenswebsites.',
+      'Webdesign aus Wuppertal: Website erstellen lassen mit Strategie, UX/UI-Design und Entwicklung – schnell, barrierearm und gut auffindbar. Für NRW.',
     eyebrow: 'Leistung 02 — Websites',
-    h1: 'Webdesign & Webentwicklung für Unternehmen',
+    h1: 'Webdesign & Webentwicklung aus Wuppertal',
     lead:
-      'Eine Unternehmenswebsite soll verständlich erklären, was Sie anbieten, und Interessenten zu einer Anfrage führen. Wir verbinden Strategie, Design und Entwicklung zu Websites, die schnell laden, auf allen Geräten funktionieren und gefunden werden.',
+      'Eine Unternehmenswebsite soll verständlich erklären, was Sie anbieten, und Interessenten zu einer Anfrage führen. Wir verbinden Strategie, Design und Entwicklung zu Websites, die schnell laden, auf allen Geräten funktionieren und gefunden werden. Von Wuppertal aus arbeiten wir für Unternehmen in Düsseldorf und ganz NRW – remote und bei Bedarf vor Ort.',
     sections: [
       {
         heading: 'Typische Ausgangslagen',
@@ -146,13 +146,13 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   ai: {
-    seoTitle: 'KI-Automatisierung & KI-Agenten | Gentle Group Studios',
+    seoTitle: 'KI-Automatisierung für Unternehmen in NRW | Gentle Group Studios',
     metaDescription:
-      'Geschäftsprozesse automatisieren und KI sinnvoll integrieren: KI-Assistenten, KI-Agenten und Workflows, die mit Ihren bestehenden Systemen arbeiten.',
+      'KI-Automatisierung aus Wuppertal für Unternehmen in NRW: KI-Assistenten, KI-Agenten und Workflows, die mit Ihren bestehenden Systemen arbeiten.',
     eyebrow: 'Leistung 03 — KI & Automatisierung',
     h1: 'KI-Automatisierung für Unternehmen',
     lead:
-      'Viele Teams verlieren täglich Zeit mit wiederkehrenden Aufgaben: Daten übertragen, Dokumente erstellen, Anfragen sortieren. Wir automatisieren solche Abläufe und integrieren KI dort, wo sie einen klaren Nutzen bringt — verantwortungsvoll und auf Basis Ihrer bestehenden Systeme.',
+      'Viele Teams verlieren täglich Zeit mit wiederkehrenden Aufgaben: Daten übertragen, Dokumente erstellen, Anfragen sortieren. Wir automatisieren solche Abläufe und integrieren KI dort, wo sie einen klaren Nutzen bringt — verantwortungsvoll und auf Basis Ihrer bestehenden Systeme. Von Wuppertal aus arbeiten wir für Unternehmen in Düsseldorf und ganz NRW – remote und bei Bedarf vor Ort.',
     sections: [
       {
         heading: 'Wo Automatisierung typischerweise ansetzt',
@@ -246,13 +246,13 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   mobile: {
-    seoTitle: 'App-Entwicklung für Android & iOS | Gentle Group Studios',
+    seoTitle: 'App-Entwicklung Wuppertal: Android & iOS | Gentle Group Studios',
     metaDescription:
-      'Mobile Apps für Android und iOS, verbunden mit Web-Anwendung und Backend — für Teams unterwegs, Kunden und Inhalte auf mehreren Plattformen.',
+      'App-Entwicklung aus Wuppertal: Apps für Android und iOS, verbunden mit Web-Anwendung und Backend – für Unternehmen in Düsseldorf und ganz NRW.',
     eyebrow: 'Leistung 05 — Mobile',
-    h1: 'App-Entwicklung für Android & iOS',
+    h1: 'App-Entwicklung für Android & iOS aus Wuppertal',
     lead:
-      'Eine App lohnt sich, wenn Menschen unterwegs arbeiten, regelmäßig auf Informationen zugreifen oder Funktionen des Smartphones brauchen. Wir entwickeln mobile Anwendungen, die mit Ihrer Web-Anwendung und Ihrem Backend eine gemeinsame Datenbasis teilen.',
+      'Eine App lohnt sich, wenn Menschen unterwegs arbeiten, regelmäßig auf Informationen zugreifen oder Funktionen des Smartphones brauchen. Wir entwickeln mobile Anwendungen, die mit Ihrer Web-Anwendung und Ihrem Backend eine gemeinsame Datenbasis teilen. Von Wuppertal aus arbeiten wir für Unternehmen in Düsseldorf und ganz NRW – remote und bei Bedarf vor Ort.',
     sections: [
       {
         heading: 'Wann eine App sinnvoll ist',
@@ -301,7 +301,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     eyebrow: 'Schwerpunkt — Web-Apps & SaaS',
     h1: 'Web-App- & SaaS-Entwicklung mit Next.js',
     lead:
-      'Ob internes Werkzeug, Kundenportal oder eigenes SaaS-Produkt: Wir entwickeln browserbasierte Anwendungen, die ohne Installation auf jedem Gerät funktionieren und mit Nutzerzahl und Funktionsumfang wachsen können.',
+      'Ob internes Werkzeug, Kundenportal oder eigenes SaaS-Produkt: Wir entwickeln browserbasierte Anwendungen, die ohne Installation auf jedem Gerät funktionieren und mit Nutzerzahl und Funktionsumfang wachsen können. Von Wuppertal aus arbeiten wir für Unternehmen in Düsseldorf und ganz NRW – remote und bei Bedarf vor Ort.',
     sections: [
       {
         heading: 'Für wen wir Web-Apps entwickeln',
@@ -454,13 +454,13 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   powerplatform: {
-    seoTitle: 'Microsoft Power Platform Beratung | Gentle Group Studios',
+    seoTitle: 'Microsoft Power Platform Beratung NRW | Gentle Group Studios',
     metaDescription:
       'Power Apps und Power Automate für Unternehmen mit Microsoft 365: Beratung, Umsetzung und ehrliche Einschätzung, wann Individualentwicklung passt.',
     eyebrow: 'Schwerpunkt — Power Platform',
     h1: 'Microsoft Power Platform: Beratung & Umsetzung',
     lead:
-      'Wenn Ihr Unternehmen bereits mit Microsoft 365 arbeitet, lassen sich viele Abläufe mit Power Apps und Power Automate schnell digitalisieren. Wir helfen bei Auswahl, Aufbau und sauberer Umsetzung — und sagen offen, wann eine individuelle Lösung langfristig besser ist.',
+      'Wenn Ihr Unternehmen bereits mit Microsoft 365 arbeitet, lassen sich viele Abläufe mit Power Apps und Power Automate schnell digitalisieren. Wir helfen bei Auswahl, Aufbau und sauberer Umsetzung — und sagen offen, wann eine individuelle Lösung langfristig besser ist. Von Wuppertal aus arbeiten wir für Unternehmen in Düsseldorf und ganz NRW – remote und bei Bedarf vor Ort.',
     sections: [
       {
         heading: 'Wofür sich die Power Platform eignet',

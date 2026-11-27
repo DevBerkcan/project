@@ -3,9 +3,12 @@ import type { BlogPost } from '../types'
 const post: BlogPost = {
   slug: 'digitale-buchungssysteme-fuer-dienstleister',
   title: 'Digitale Buchungssysteme für Dienstleistungsbetriebe',
+  seoTitle: 'Online-Buchungssystem für Dienstleister: worauf es ankommt',
   category: 'Web-Apps',
   excerpt:
     'Online-Terminbuchung ist für Kunden Standard geworden. Für Dienstleistungsbetriebe entscheidet sich der Nutzen aber erst an der internen Verwaltung dahinter.',
+  metaDescription:
+    'Online-Buchungssystem für Dienstleister: Warum sich der Nutzen der Terminbuchung erst an der internen Verwaltung dahinter entscheidet.',
   datePublished: '2026-07-20',
   relatedServiceIds: ['booking', 'software', 'web'],
   relatedProjectSlugs: ['skinbloom-buchungssystem'],

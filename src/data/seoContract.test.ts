@@ -68,6 +68,18 @@ describe('SEO contract', () => {
     expect(new Set(metas.map((meta) => meta.description)).size).toBe(metas.length)
   })
 
+  it('keeps local intent on the core service pages and full-sentence snippets (audit 2026-11-27)', () => {
+    for (const id of ['software', 'web', 'ai', 'mobile', 'powerplatform']) {
+      const detail = serviceDetails[id]
+      expect(detail.seoTitle, id).toMatch(/Wuppertal|NRW/)
+      expect(detail.lead, id).toMatch(/Wuppertal/)
+    }
+    const truncated = getIndexableRoutes()
+      .filter((route) => route.startsWith('/blog/'))
+      .filter((route) => getPageMeta(route).description.endsWith('…'))
+    expect(truncated).toEqual([])
+  })
+
   it('301-redirects every retired service URL to a live route', () => {
     const vercel = JSON.parse(readFileSync(`${projectRoot}/vercel.json`, 'utf8')) as {
       redirects: { source: string; destination: string; statusCode: number }[]

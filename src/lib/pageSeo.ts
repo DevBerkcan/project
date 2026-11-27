@@ -218,7 +218,7 @@ function blogPostingNode(post: BlogPost, pathname: string): JsonLdNode {
   return {
     '@type': 'BlogPosting',
     headline: post.title,
-    description: post.excerpt,
+    description: post.metaDescription ?? post.excerpt,
     datePublished: post.datePublished,
     dateModified: post.dateModified ?? post.datePublished,
     inLanguage: 'de-DE',
@@ -286,7 +286,7 @@ export function getPageMeta(pathname: string): PageMeta {
 
   if (path === routes.projectStart) {
     return {
-      title: 'Projekt anfragen | Gentle Group Studios',
+      title: 'Projekt anfragen – Softwareagentur Wuppertal | Gentle Group Studios',
       description:
         'Beschreiben Sie Ihr Vorhaben in wenigen Schritten: Software, Web-App, Website oder KI-Automatisierung. Gentle Group Studios meldet sich zur Abstimmung.',
       jsonLd: [...base, webPageNode(path, 'Projekt anfragen')],
@@ -311,7 +311,7 @@ export function getPageMeta(pathname: string): PageMeta {
 
   if (path === routes.services) {
     return {
-      title: 'Leistungen: Software, Web & KI | Gentle Group Studios',
+      title: 'Leistungen: Software, Webdesign & KI in NRW | Gentle Group Studios',
       description:
         'Softwareentwicklung, Web-Apps & SaaS, Webdesign, KI-Automatisierung, CRM- und Buchungssysteme, Power Platform, Cloud-Betrieb und Apps.',
       jsonLd: [
@@ -383,7 +383,7 @@ export function getPageMeta(pathname: string): PageMeta {
     if (post) {
       return {
         title: withBrand(post.seoTitle ?? post.title),
-        description: clampDescription(post.excerpt),
+        description: post.metaDescription ?? clampDescription(post.excerpt),
         type: 'article',
         lastModified: post.dateModified ?? post.datePublished,
         jsonLd: [

@@ -6,6 +6,8 @@ const post: BlogPost = {
   category: 'Webdesign',
   excerpt:
     'Barrierefreiheit lässt sich nachträglich kaum vollständig nachrüsten. Systematische Prüfung von Anfang an spart deutlich mehr Aufwand als eine spätere Korrektur.',
+  metaDescription:
+    'Barrierefreiheit lässt sich kaum nachrüsten. Warum sie ab dem ersten Entwurf mitgedacht werden sollte und wie frühe Prüfung später Aufwand spart.',
   datePublished: '2026-06-15',
   relatedServiceIds: ['web'],
   body: [

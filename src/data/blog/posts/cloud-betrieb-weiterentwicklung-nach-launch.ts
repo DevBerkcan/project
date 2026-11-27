@@ -6,6 +6,8 @@ const post: BlogPost = {
   category: 'Softwareentwicklung',
   excerpt:
     'Ein digitales Produkt ist mit dem Launch nicht fertig. Cloud-Architektur, Deployment, Monitoring, Sicherheit und Support entscheiden, ob es zuverlässig bleibt.',
+  metaDescription:
+    'Mit dem Launch ist ein digitales Produkt nicht fertig: wie Cloud-Architektur, Deployment, Monitoring, Sicherheit und Support den Betrieb sichern.',
   datePublished: '2026-09-08',
   relatedServiceIds: ['operations'],
   body: [

@@ -40,15 +40,11 @@ export default function Hero({ started }: { started: boolean }) {
 
       <motion.div style={{ y, opacity }} className="relative">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-8 mb-6 md:mb-10">
-          <motion.h1
-            className="max-w-xl text-base md:text-lg font-normal leading-relaxed text-brand-light/80"
-            initial={{ opacity: 0, y: 20 }}
-            animate={started ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
+          {/* Rendered without an entrance animation so the page topic is visible before JavaScript runs. */}
+          <h1 className="max-w-xl text-base md:text-lg font-normal leading-relaxed text-brand-light/80">
             <span className="block font-semibold text-brand-light">Softwareagentur aus Wuppertal</span>
             für individuelle Software, Web-Apps, Websites und KI-Automatisierung — für Unternehmen in Düsseldorf und ganz NRW.
-          </motion.h1>
+          </h1>
           <MotionLink
             to={routes.projectStart}
             data-cursor="Projekt besprechen"

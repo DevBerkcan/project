@@ -24,7 +24,7 @@ export default function ProjectPage() {
         <main id="main" tabIndex={-1} className="px-6 md:px-10 pt-40 pb-32 md:pt-52">
           <Link to={routes.projects} className="text-xs uppercase tracking-[0.2em] text-brand-light/60 hover:text-brand-primary">← Alle Projekte</Link>
           <p className="mt-16 text-xs uppercase tracking-[0.25em] text-brand-primary">{project.year} · {project.industry} · Fallstudie</p>
-          <h1 className="mt-6 max-w-5xl font-display font-semibold text-6xl md:text-[10vw] leading-[0.88]">{project.title}</h1>
+          <h1 className="mt-6 max-w-5xl font-display font-semibold text-6xl md:text-[10vw] leading-[0.88]">{project.title}<span className="mt-6 block text-base md:text-lg font-normal leading-snug tracking-normal text-brand-light/70">{project.seoTitle}</span></h1>
           <p className="mt-10 max-w-3xl text-xl md:text-2xl leading-relaxed text-brand-light/80">{project.description}</p>
 
           <div className="mt-16 grid gap-10 border-t border-brand-light/15 pt-8 md:grid-cols-3">

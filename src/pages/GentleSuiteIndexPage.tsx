@@ -17,7 +17,7 @@ export default function GentleSuiteIndexPage() {
           <div className="flex flex-wrap items-end justify-between gap-8 border-b border-brand-light/15 pb-8">
             <div>
               <p className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60">Eigene Produkte</p>
-              <h1 className="mt-6 font-display font-semibold text-[16vw] md:text-[10vw] leading-[0.85] tracking-[-0.03em]">Gentle<br /><span className="text-stroke">Suite</span></h1>
+              <h1 className="mt-6 font-display font-semibold text-[16vw] md:text-[10vw] leading-[0.85] tracking-[-0.03em]">Gentle<br /><span className="text-stroke">Suite</span><span className="mt-6 block text-base md:text-lg font-normal leading-snug tracking-normal text-brand-light/70">Eigene Software für Projektübersicht, Barrierefreiheit, Preise & Online-Buchung</span></h1>
             </div>
             <p className="max-w-sm text-brand-light/70 leading-relaxed">Während Gentle Group Studios individuelle Lösungen für einzelne Kunden entwickelt, ist GentleSuite unsere eigene Produktfamilie — Werkzeuge, die wir selbst bauen und weiterentwickeln.</p>
           </div>

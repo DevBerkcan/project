@@ -7,6 +7,8 @@ const post: BlogPost = {
   category: 'Web-Apps',
   excerpt:
     'Wer Inhalte auf Website, Android und iOS gleichzeitig veröffentlicht, braucht ein zentrales Redaktionssystem — sonst pflegt man dieselben Inhalte mehrfach.',
+  metaDescription:
+    'Inhalte für Website, Android und iOS aus einem Administrationsportal pflegen: warum ein zentrales Redaktionssystem doppelte Pflege vermeidet.',
   datePublished: '2026-08-31',
   relatedServiceIds: ['software', 'mobile'],
   relatedProjectSlugs: ['teretnjaci'],

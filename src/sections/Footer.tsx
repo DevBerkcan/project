@@ -65,7 +65,7 @@ export default function Footer() {
       {/* Bottom padding keeps the last row clear of the fixed "Cookie-Einstellungen" shortcut. */}
       <motion.div style={{ y }} className="px-6 md:px-10 pt-28 md:pt-44 pb-24">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-14">
-          <h2 className="font-display font-semibold leading-[0.88] tracking-[-0.02em]"><span className="block text-[17vw] lg:text-[11vw]">PROJEKT</span><span className="block text-[17vw] lg:text-[11vw] text-stroke">STARTEN</span></h2>
+          <p className="font-display font-semibold leading-[0.88] tracking-[-0.02em]"><span className="block text-[17vw] lg:text-[11vw]">PROJEKT</span><span className="block text-[17vw] lg:text-[11vw] text-stroke">STARTEN</span></p>
           <div className="lg:pr-[6vw] lg:pt-[6vw]"><ContactButton /></div>
         </div>
 

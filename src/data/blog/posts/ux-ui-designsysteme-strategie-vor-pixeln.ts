@@ -6,6 +6,8 @@ const post: BlogPost = {
   category: 'Webdesign',
   excerpt:
     'Ein gutes Design entsteht nicht am Bildschirm allein. Strategie, UX/UI, Designsystem und Entwicklung greifen ineinander — in dieser Reihenfolge.',
+  metaDescription:
+    'Strategie vor Pixeln: wie UX/UI-Design, Designsystem und Entwicklung ineinandergreifen – und warum die Reihenfolge über das Ergebnis entscheidet.',
   datePublished: '2026-06-22',
   relatedServiceIds: ['web'],
   body: [

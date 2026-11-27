@@ -12,7 +12,7 @@ export default function BlogIndexPage() {
           <div className="flex flex-wrap items-end justify-between gap-8 border-b border-brand-light/15 pb-8">
             <div>
               <p className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60">Wissen & Einblicke</p>
-              <h1 className="mt-6 font-display font-semibold text-[16vw] md:text-[10vw] leading-[0.85] tracking-[-0.03em]">Der<br /><span className="text-stroke">Blog</span></h1>
+              <h1 className="mt-6 font-display font-semibold text-[16vw] md:text-[10vw] leading-[0.85] tracking-[-0.03em]">Der<br /><span className="text-stroke">Blog</span><span className="mt-6 block text-base md:text-lg font-normal leading-snug tracking-normal text-brand-light/70">Softwareentwicklung, Webdesign & KI in der Praxis</span></h1>
             </div>
             <p className="max-w-sm text-brand-light/70 leading-relaxed">Artikel zu individueller Softwareentwicklung, Webdesign, KI &amp; Automatisierung sowie SEO &amp; GEO — verankert in echten Projekten und Leistungen.</p>
           </div>

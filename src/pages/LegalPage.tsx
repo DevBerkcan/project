@@ -41,7 +41,7 @@ function ImprintContent() {
             Verantwortlich für journalistisch-redaktionelle Inhalte:
           </h3>
           <ProviderAddress />
-          <p>E-Mail-Adresse: <a className="break-words underline underline-offset-4 hover:text-brand-secondary" href="mailto:office@gentle-webdesign.com">office@gentle-webdesign.com</a></p>
+          <p>E-Mail-Adresse: <a className="break-words underline underline-offset-4 hover:text-brand-secondary" href="mailto:office@gentlegroup.de">office@gentlegroup.de</a></p>
         </div>
       </section>
       <div className="border-t border-brand-light/15 pt-8">

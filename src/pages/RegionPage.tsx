@@ -7,7 +7,7 @@ import { trackEvent } from '../lib/analytics'
 import FaqList from '../components/FaqList'
 
 const collaboration = [
-  ['Erstgespräch', 'Per Video oder telefonisch klären wir Ziel, Ausgangslage und Rahmen Ihres Vorhabens.'],
+  ['Kostenloses Erstgespräch', 'Per Video oder telefonisch klären wir Ziel, Ausgangslage und Rahmen Ihres Vorhabens – das Erstgespräch ist kostenlos.'],
   ['Analyse vor Ort, wenn sinnvoll', 'Wenn Abläufe im Betrieb verstanden werden müssen, kommen wir projektbezogen zu Ihnen — in Wuppertal, Düsseldorf oder anderswo in NRW.'],
   ['Entwicklung in Etappen', 'Sie sehen regelmäßig funktionierende Zwischenstände und entscheiden auf dieser Grundlage über die nächsten Schritte.'],
   ['Betrieb & Weiterentwicklung', 'Nach dem Launch bleiben wir Ansprechpartner für Betrieb, Updates und neue Anforderungen.'],
@@ -62,6 +62,7 @@ export default function RegionPage() {
 
         <section className="mt-28" aria-labelledby="region-work">
           <h2 id="region-work" className="font-display font-semibold text-3xl md:text-5xl leading-tight">Ausgewählte Projekte.</h2>
+          <p className="mt-6 max-w-2xl text-brand-light/70 leading-relaxed">Für Kosmetik-, Beauty- und Ästhetikstudios haben wir eine eigene Übersicht: <Link to={routes.industry('beauty-kosmetik')} className="text-brand-primary hover:text-brand-light">Software & Websites für Beautystudios →</Link></p>
           <ul className="mt-8 flex flex-wrap gap-3">
             {workProjects.map((project) => (
               <li key={project.slug}>

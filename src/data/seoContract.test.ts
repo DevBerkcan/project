@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { getStaticRoutes, getIndexableRoutes, getPageMeta, buildSitemapXml } from '../lib/pageSeo'
 import { siteConfig } from '../lib/siteConfig'
-import { buildLlmsTxt } from '../lib/llmsTxt'
+import { buildLlmsTxt, buildLlmsFullTxt } from '../lib/llmsTxt'
 import { workProjects, allServices } from './siteContent'
 import { serviceDetails } from './serviceDetails'
 import { blogPosts } from './blog'
@@ -122,6 +122,27 @@ describe('SEO contract', () => {
       expect(llms).toContain(`${siteConfig.url}/leistungen/${service.slug}`)
     }
     expect(llms).toContain('Kein Büro in Düsseldorf')
+  })
+
+  it('publishes a full-text llms-full.txt covering every service, case study and article (GEO)', () => {
+    const full = buildLlmsFullTxt()
+    expect(buildLlmsTxt()).toContain(`${siteConfig.url}/llms-full.txt`)
+    for (const service of allServices) {
+      expect(full).toContain(`${siteConfig.url}/leistungen/${service.slug}`)
+      expect(full).toContain(serviceDetails[service.id].lead)
+    }
+    for (const project of workProjects) expect(full).toContain(project.result)
+    for (const post of blogPosts) expect(full).toContain(`${siteConfig.url}/blog/${post.slug}`)
+    expect(full).toContain('Erstgespräch: kostenlos')
+  })
+
+  it('describes the service catalogue and the free consultation in the organization schema', () => {
+    const organization = getPageMeta('/').jsonLd[0] as {
+      hasOfferCatalog: { itemListElement: unknown[] }
+      makesOffer?: { price: string; priceCurrency: string }
+    }
+    expect(organization.hasOfferCatalog.itemListElement).toHaveLength(allServices.length)
+    expect(organization.makesOffer).toMatchObject({ price: '0', priceCurrency: 'EUR' })
   })
 
   it('never reintroduces fabricated schema types (Review, AggregateRating, SearchAction)', () => {

@@ -7,6 +7,9 @@ export const routes = {
   service: (slug: string) => `/leistungen/${slug}`,
   gentlesuite: '/gentlesuite',
   region: '/leistungsgebiet',
+  contact: '/kontakt',
+  about: '/ueber-uns',
+  industry: (slug: string) => `/branchen/${slug}`,
   blog: '/blog',
   post: (slug: string) => `/blog/${slug}`,
   legal: {

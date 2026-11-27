@@ -19,6 +19,8 @@ export const siteConfig = {
     region: 'Nordrhein-Westfalen',
     country: 'DE',
   },
+  // Confirmed by the owner (2026-11-27): the first consultation is free of charge.
+  freeInitialConsultation: true,
   // Market region, not office locations.
   areaServed: ['Wuppertal', 'Düsseldorf', 'Nordrhein-Westfalen', 'Deutschland'],
 } as const

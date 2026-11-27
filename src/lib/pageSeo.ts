@@ -4,6 +4,7 @@ import { workProjects, allServices, findService, type WorkProject, type Service 
 import { serviceDetails } from '../data/serviceDetails'
 import { faqs, regionFaqs, type FaqItem } from '../data/faqContent'
 import { blogPosts, type BlogPost } from '../data/blog'
+import { industries } from '../data/industries'
 
 export type JsonLdNode = Record<string, unknown>
 
@@ -113,6 +114,26 @@ function organizationNode(): JsonLdNode {
       addressCountry: siteConfig.location.country,
     },
     areaServed: siteConfig.areaServed.map((name) => ({ '@type': name === 'Deutschland' ? 'Country' : 'Place', name })),
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Leistungen',
+      itemListElement: allServices.map((service) => ({
+        '@type': 'Offer',
+        itemOffered: { '@id': serviceId(service) },
+      })),
+    },
+    ...(siteConfig.freeInitialConsultation
+      ? {
+          makesOffer: {
+            '@type': 'Offer',
+            name: 'Kostenloses Erstgespräch',
+            description: 'Erstgespräch per Video oder Telefon zu Ziel, Ausgangslage und Rahmen Ihres Vorhabens.',
+            price: '0',
+            priceCurrency: 'EUR',
+            url: absoluteUrl(routes.projectStart),
+          },
+        }
+      : {}),
     knowsAbout: [
       'Individuelle Softwareentwicklung',
       'Web-App-Entwicklung',
@@ -191,13 +212,14 @@ function serviceNode(service: Service, description: string): JsonLdNode {
   }
 }
 
-function webPageNode(pathname: string, name: string): JsonLdNode {
+function webPageNode(pathname: string, name: string, type: 'WebPage' | 'ContactPage' | 'AboutPage' = 'WebPage'): JsonLdNode {
   return {
-    '@type': 'WebPage',
+    '@type': type,
     name,
     url: absoluteUrl(pathname),
     inLanguage: 'de-DE',
     isPartOf: { '@id': `${siteConfig.url}/#website` },
+    ...(type === 'WebPage' ? {} : { mainEntity: { '@id': ORGANIZATION_ID } }),
   }
 }
 
@@ -242,6 +264,9 @@ export function getStaticRoutes(): string[] {
     routes.projects,
     routes.projectStart,
     routes.region,
+    routes.contact,
+    routes.about,
+    ...industries.map((industry) => routes.industry(industry.slug)),
     routes.services,
     routes.gentlesuite,
     ...LEGAL_PAGES.map((page) => page.path),
@@ -307,6 +332,58 @@ export function getPageMeta(pathname: string): PageMeta {
         ]),
         faqPageNode(regionFaqs),
       ],
+    }
+  }
+
+  if (path === routes.contact) {
+    return {
+      title: 'Kontakt – Softwareagentur Wuppertal | Gentle Group Studios',
+      description:
+        'Kontakt zu Gentle Group Studios in Wuppertal: E-Mail, Telefon und Adresse. Projekt anfragen für Software, Web-Apps, Websites und KI-Automatisierung.',
+      jsonLd: [
+        ...base,
+        breadcrumbNode([
+          { name: 'Start', path: routes.home },
+          { name: 'Kontakt', path: routes.contact },
+        ]),
+        webPageNode(path, 'Kontakt', 'ContactPage'),
+      ],
+    }
+  }
+
+  if (path === routes.about) {
+    return {
+      title: 'Über uns: Softwareagentur aus Wuppertal | Gentle Group Studios',
+      description:
+        'Gentle Group Studios aus Wuppertal: Team, Arbeitsweise und Projektphasen für Software, Web-Apps, Websites und KI – von der Analyse bis zum Betrieb.',
+      jsonLd: [
+        ...base,
+        breadcrumbNode([
+          { name: 'Start', path: routes.home },
+          { name: 'Über uns', path: routes.about },
+        ]),
+        webPageNode(path, 'Über uns', 'AboutPage'),
+      ],
+    }
+  }
+
+  const industryMatch = path.match(/^\/branchen\/([^/]+)$/)
+  if (industryMatch) {
+    const industry = industries.find((item) => item.slug === industryMatch[1])
+    if (industry) {
+      return {
+        title: industry.seoTitle,
+        description: industry.metaDescription,
+        jsonLd: [
+          ...base,
+          breadcrumbNode([
+            { name: 'Start', path: routes.home },
+            { name: industry.name, path },
+          ]),
+          webPageNode(path, industry.h1),
+          faqPageNode(industry.faqs),
+        ],
+      }
     }
   }
 

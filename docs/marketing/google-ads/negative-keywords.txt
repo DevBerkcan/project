@@ -1,0 +1,149 @@
+# Kontoweite Ausschlussliste – Gentle Group Studios
+# Name in Google Ads: "Konto – Standard-Ausschlüsse"
+# Notation: wort = Broad-Ausschluss | "wort folge" = Phrase-Ausschluss | [wort folge] = Exact-Ausschluss
+# Kommentarzeilen (#) und Leerzeilen vor dem Einfügen entfernen:
+#   grep -v '^#' docs/marketing/google-ads/negative-keywords.txt | grep -v '^[[:space:]]*$'
+# NICHT ausschließen: agentur, kosten, preis, preise, freelancer, erfahrungen, vergleich
+
+# --- Jobs & Karriere ---
+job
+jobs
+stellenangebot
+stellenangebote
+stellenanzeige
+stellenausschreibung
+karriere
+gehalt
+gehälter
+verdienst
+stundenlohn
+"wie viel verdient"
+ausbildung
+azubi
+praktikum
+praktikant
+werkstudent
+minijob
+teilzeit
+bewerbung
+lebenslauf
+quereinsteiger
+umschulung
+"gesucht m w d"
+"m/w/d"
+
+# --- Bildung & Lernen ---
+studium
+studiengang
+studieren
+hochschule
+universität
+uni
+kurs
+kurse
+onlinekurs
+schulung
+seminar
+weiterbildung
+zertifizierung
+zertifikat
+prüfung
+bootcamp
+tutorial
+anleitung
+lernen
+"pl-900"
+"pl-200"
+udemy
+youtube
+
+# --- Gratis & Selbermachen ---
+kostenlos
+kostenlose
+kostenloser
+gratis
+free
+umsonst
+vorlage
+vorlagen
+template
+templates
+muster
+selber
+"selbst erstellen"
+"selbst programmieren"
+"selbst machen"
+"selbst bauen"
+"diy"
+"open source"
+github
+billig
+
+# --- Baukästen, Hosting & Theme-Anbieter ---
+baukasten
+homepagebaukasten
+websitebaukasten
+wix
+jimdo
+squarespace
+webflow
+ionos
+strato
+"one.com"
+"wordpress theme"
+"wordpress plugin"
+themeforest
+
+# --- Fremdsoftware, Downloads & Logins ---
+download
+herunterladen
+apk
+crack
+login
+einloggen
+anmelden
+passwort
+"app store"
+"play store"
+salesforce
+hubspot
+pipedrive
+zoho
+"sap crm"
+datev
+lexoffice
+sevdesk
+calendly
+doctolib
+treatwell
+planity
+timify
+"shore app"
+"microsoft support"
+"power apps preise"
+"power apps lizenz"
+"power automate lizenz"
+
+# --- Wissen & Definitionen ---
+"was ist"
+"was sind"
+definition
+bedeutung
+wikipedia
+pdf
+hausarbeit
+bachelorarbeit
+masterarbeit
+hausaufgabe
+referat
+
+# --- Unpassende Themen ---
+spiel
+spiele
+game
+games
+"spiele entwickeln"
+minecraft
+roblox
+"für privat"
+privat

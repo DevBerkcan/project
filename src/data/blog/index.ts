@@ -11,6 +11,10 @@ import ortsunabhaengigeSoftwareentwicklungNrw from './posts/ortsunabhaengige-sof
 import generativeEngineOptimizationGentlegroup from './posts/generative-engine-optimization-gentlegroup'
 import projektprozessAnalyseBisBetrieb from './posts/projektprozess-analyse-bis-betrieb'
 import barrierefreiheitImWebWarumFruehMitdenken from './posts/barrierefreiheit-im-web-warum-frueh-mitdenken'
+import wasKostetIndividuelleSoftware from './posts/was-kostet-individuelle-software'
+import websiteRelaunchWannErSichLohnt from './posts/website-relaunch-wann-er-sich-lohnt'
+import softwareagenturFindenWoraufAchten from './posts/softwareagentur-finden-worauf-achten'
+import webAppOderNativeApp from './posts/web-app-oder-native-app'
 
 export const blogPosts: BlogPost[] = [
   individuelleSoftwareVsStandardsoftware,
@@ -25,6 +29,10 @@ export const blogPosts: BlogPost[] = [
   generativeEngineOptimizationGentlegroup,
   projektprozessAnalyseBisBetrieb,
   barrierefreiheitImWebWarumFruehMitdenken,
+  wasKostetIndividuelleSoftware,
+  websiteRelaunchWannErSichLohnt,
+  softwareagenturFindenWoraufAchten,
+  webAppOderNativeApp,
 ].sort((a, b) => b.datePublished.localeCompare(a.datePublished))
 
 export type { BlogPost, BlogBlock } from './types'

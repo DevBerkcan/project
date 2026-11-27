@@ -12,6 +12,9 @@ import ServiceDetailPage from './pages/ServiceDetailPage'
 import BlogIndexPage from './pages/BlogIndexPage'
 import BlogPostPage from './pages/BlogPostPage'
 import GentleSuiteIndexPage from './pages/GentleSuiteIndexPage'
+import ContactPage from './pages/ContactPage'
+import AboutPage from './pages/AboutPage'
+import IndustryPage from './pages/IndustryPage'
 import NotFoundPage from './pages/NotFoundPage'
 import Cursor from './components/Cursor'
 import Nav from './components/Nav'
@@ -58,6 +61,9 @@ export default function App() {
         <Route path="/datenschutz" element={<LegalPage id="datenschutz" />} />
         <Route path="/barrierefreiheit" element={<LegalPage id="barrierefreiheit" />} />
         <Route path="/leistungsgebiet" element={<RegionPage />} />
+        <Route path="/kontakt" element={<ContactPage />} />
+        <Route path="/ueber-uns" element={<AboutPage />} />
+        <Route path="/branchen/:slug" element={<IndustryPage />} />
         <Route path="/leistungen" element={<ServicesIndexPage />} />
         <Route path="/leistungen/:slug" element={<ServiceDetailPage />} />
         <Route path="/blog" element={<BlogIndexPage />} />

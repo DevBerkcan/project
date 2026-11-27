@@ -49,7 +49,9 @@ function parseCsv(text) {
 
 function checkForbidden(where, text) {
   const t = text.toLowerCase()
-  for (const w of FORBIDDEN) if (t.includes(w)) warn(where, `verbotener Begriff "${w.trim() || w}" in "${text}"`)
+  // Vom Inhaber bestätigt (27.11.2026): Das Erstgespräch ist kostenlos. Nur diese Formulierung ist freigegeben.
+  const checked = t.replaceAll('kostenloses erstgespräch', '').replaceAll('erstgespräch kostenlos', '')
+  for (const w of FORBIDDEN) if (checked.includes(w)) warn(where, `verbotener Begriff "${w.trim() || w}" in "${text}"`)
 }
 
 function checkLen(where, text, max) {

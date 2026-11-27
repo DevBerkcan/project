@@ -114,6 +114,26 @@ function organizationNode(): JsonLdNode {
       addressCountry: siteConfig.location.country,
     },
     areaServed: siteConfig.areaServed.map((name) => ({ '@type': name === 'Deutschland' ? 'Country' : 'Place', name })),
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Leistungen',
+      itemListElement: allServices.map((service) => ({
+        '@type': 'Offer',
+        itemOffered: { '@id': serviceId(service) },
+      })),
+    },
+    ...(siteConfig.freeInitialConsultation
+      ? {
+          makesOffer: {
+            '@type': 'Offer',
+            name: 'Kostenloses Erstgespräch',
+            description: 'Erstgespräch per Video oder Telefon zu Ziel, Ausgangslage und Rahmen Ihres Vorhabens.',
+            price: '0',
+            priceCurrency: 'EUR',
+            url: absoluteUrl(routes.projectStart),
+          },
+        }
+      : {}),
     knowsAbout: [
       'Individuelle Softwareentwicklung',
       'Web-App-Entwicklung',

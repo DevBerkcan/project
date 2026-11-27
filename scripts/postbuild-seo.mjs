@@ -100,7 +100,7 @@ function canonicalPath(route) {
 
 async function main() {
   const templateHtml = readFileSync(join(distDir, 'index.html'), 'utf8')
-  const { render, getStaticRoutes, getIndexableRoutes, getPageMeta, getNotFoundMeta, buildSitemapXml, buildLlmsTxt, siteConfig } =
+  const { render, getStaticRoutes, getIndexableRoutes, getPageMeta, getNotFoundMeta, buildSitemapXml, buildLlmsTxt, buildLlmsFullTxt, siteConfig } =
     await import(ssrEntry)
 
   for (const route of getStaticRoutes()) {
@@ -121,6 +121,7 @@ async function main() {
   const sitemap = buildSitemapXml(siteConfig.url, getIndexableRoutes())
   writeFileSync(join(distDir, 'sitemap.xml'), sitemap, 'utf8')
   writeFileSync(join(distDir, 'llms.txt'), buildLlmsTxt(), 'utf8')
+  writeFileSync(join(distDir, 'llms-full.txt'), buildLlmsFullTxt(), 'utf8')
 }
 
 main().catch((error) => {

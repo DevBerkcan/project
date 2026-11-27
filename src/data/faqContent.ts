@@ -22,7 +22,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'Was kostet ein Projekt?',
     answer:
-      'Das hängt von Umfang, Funktionen und Integrationen ab. Nach einem Erstgespräch und einer kurzen Analyse erhalten Sie eine Einschätzung, die auf Ihrem konkreten Vorhaben beruht.',
+      'Das hängt von Umfang, Funktionen und Integrationen ab. Nach einem kostenlosen Erstgespräch und einer kurzen Analyse erhalten Sie eine Einschätzung, die auf Ihrem konkreten Vorhaben beruht.',
   },
   {
     question: 'Setzt Gentle Group Studios KI-Automatisierungen um?',

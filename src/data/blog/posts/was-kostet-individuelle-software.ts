@@ -51,7 +51,7 @@ const post: BlogPost = {
     { type: 'heading', text: 'Wie Sie zu einer belastbaren Einschätzung kommen' },
     {
       type: 'paragraph',
-      text: 'Eine verlässliche Kostenschätzung setzt voraus, dass der Ablauf verstanden ist. Deshalb beginnt jedes Projekt bei uns mit einem Erstgespräch und einer kurzen Analyse. Auf dieser Grundlage erhalten Sie eine Einschätzung zu Vorgehen, Umfang und Aufwand, die auf Ihrem konkreten Vorhaben beruht.',
+      text: 'Eine verlässliche Kostenschätzung setzt voraus, dass der Ablauf verstanden ist. Deshalb beginnt jedes Projekt bei uns mit einem kostenlosen Erstgespräch und einer kurzen Analyse. Auf dieser Grundlage erhalten Sie eine Einschätzung zu Vorgehen, Umfang und Aufwand, die auf Ihrem konkreten Vorhaben beruht.',
     },
     { type: 'link', text: 'Individuelle Softwareentwicklung bei Gentle Group Studios', to: '/leistungen/individuelle-softwareentwicklung' },
   ],

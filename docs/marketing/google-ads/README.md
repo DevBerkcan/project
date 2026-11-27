@@ -176,6 +176,7 @@ Empfehlung: alle 8 auf Kontoebene; in „Search | Brand“ zusätzlich auf Kampa
 <!-- assets:callouts:start -->
 | Text |
 | --- |
+| Kostenloses Erstgespräch |
 | Sitz in Wuppertal |
 | Entwicklung in Etappen |
 | Sichtbare Zwischenstände |
@@ -353,7 +354,7 @@ Zielwerte werden **nicht vorab festgelegt**, sondern nach den ersten 4 Wochen au
 
 | # | Frage | Wirkung, wenn bestätigt |
 | --- | --- | --- |
-| 1 | **Ist das Erstgespräch kostenlos und unverbindlich?** | Dann sind Headline „Kostenloses Erstgespräch“ und ein Callout möglich. Achtung: `validate.mjs` sperrt „kostenlos“ derzeit; nur nach Bestätigung entsperren. „kostenlos“ ist außerdem in `negative-keywords.txt` als Ausschluss gesetzt (gegen Gratis-Suchen) – das bleibt davon unberührt. |
+| 1 | ~~Ist das Erstgespräch kostenlos?~~ **Geklärt (27.11.2026): Ja.** | Umgesetzt: Headline „Kostenloses Erstgespräch“ in allen 14 Anzeigen, Callout ergänzt. `validate.mjs` erlaubt nur diese Formulierung, jedes andere „kostenlos“ bleibt gesperrt. Ob das Gespräch auch „unverbindlich“ genannt werden darf, ist nicht bestätigt. Der Ausschluss „kostenlos“ in `negative-keywords.txt` bleibt bestehen (gegen Gratis-Suchen). |
 | 2 | **Verbindliche Reaktionszeit** auf Anfragen? | Nur mit belegbarer, gelebter Praxis als Aussage nutzen (z. B. „Antwort in der Regel am nächsten Werktag“). |
 | 3 | **Preisspannen / Einstiegspreise** je Leistung? | Preis-Assets und Headlines mit Preisen wären möglich; aktuell keine Preisangaben. |
 | 4 | **Telefon-Erreichbarkeit** (Tage/Uhrzeiten) | Zeitplan für das Anruf-Asset. |

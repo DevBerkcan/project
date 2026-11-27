@@ -7,7 +7,7 @@ import { trackEvent } from '../lib/analytics'
 import FaqList from '../components/FaqList'
 
 const collaboration = [
-  ['Erstgespräch', 'Per Video oder telefonisch klären wir Ziel, Ausgangslage und Rahmen Ihres Vorhabens.'],
+  ['Kostenloses Erstgespräch', 'Per Video oder telefonisch klären wir Ziel, Ausgangslage und Rahmen Ihres Vorhabens – das Erstgespräch ist kostenlos.'],
   ['Analyse vor Ort, wenn sinnvoll', 'Wenn Abläufe im Betrieb verstanden werden müssen, kommen wir projektbezogen zu Ihnen — in Wuppertal, Düsseldorf oder anderswo in NRW.'],
   ['Entwicklung in Etappen', 'Sie sehen regelmäßig funktionierende Zwischenstände und entscheiden auf dieser Grundlage über die nächsten Schritte.'],
   ['Betrieb & Weiterentwicklung', 'Nach dem Launch bleiben wir Ansprechpartner für Betrieb, Updates und neue Anforderungen.'],

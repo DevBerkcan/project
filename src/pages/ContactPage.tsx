@@ -6,7 +6,7 @@ import { trackEvent } from '../lib/analytics'
 
 const nextSteps = [
   ['Anfrage', 'Sie beschreiben Ihr Vorhaben über das Projektformular oder per E-Mail. Stichpunkte reichen für den Anfang.'],
-  ['Erstgespräch', 'Per Video oder telefonisch klären wir Ziel, Ausgangslage, Rahmen und offene Fragen.'],
+  ['Kostenloses Erstgespräch', 'Per Video oder telefonisch klären wir Ziel, Ausgangslage, Rahmen und offene Fragen. Das Erstgespräch ist für Sie kostenlos.'],
   ['Einschätzung', 'Auf Grundlage des Gesprächs und einer kurzen Analyse erhalten Sie eine Einschätzung zu Vorgehen, Umfang und nächsten Schritten.'],
 ] as const
 

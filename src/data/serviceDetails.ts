@@ -71,7 +71,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       {
         question: 'Was kostet individuelle Softwareentwicklung?',
         answer:
-          'Das hängt vor allem vom Funktionsumfang, der Anzahl der Nutzerrollen und den nötigen Integrationen ab. Nach einem Erstgespräch und einer kurzen Analyse erhalten Sie eine Einschätzung, die auf Ihrem konkreten Vorhaben beruht statt auf Pauschalpreisen.',
+          'Das hängt vor allem vom Funktionsumfang, der Anzahl der Nutzerrollen und den nötigen Integrationen ab. Nach einem kostenlosen Erstgespräch und einer kurzen Analyse erhalten Sie eine Einschätzung, die auf Ihrem konkreten Vorhaben beruht statt auf Pauschalpreisen.',
       },
       {
         question: 'Können bestehende Systeme angebunden werden?',
@@ -129,7 +129,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       {
         question: 'Was kostet eine professionelle Website?',
         answer:
-          'Der Aufwand hängt von der Anzahl der Seiten, dem Designumfang, den Inhalten und zusätzlichen Funktionen ab. Nach einem Erstgespräch erhalten Sie ein Angebot, das auf Ihren konkreten Anforderungen basiert.',
+          'Der Aufwand hängt von der Anzahl der Seiten, dem Designumfang, den Inhalten und zusätzlichen Funktionen ab. Nach einem kostenlosen Erstgespräch erhalten Sie ein Angebot, das auf Ihren konkreten Anforderungen basiert.',
       },
       {
         question: 'Ist SEO im Website-Projekt enthalten?',

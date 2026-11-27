@@ -106,6 +106,7 @@ function organizationNode(): JsonLdNode {
       'Softwareagentur aus Wuppertal für individuelle Software, Web-Apps, Websites, KI-Automatisierung sowie Cloud-Betrieb und Weiterentwicklung.',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: siteConfig.location.streetAddress,
       addressLocality: siteConfig.location.locality,
       postalCode: siteConfig.location.postalCode,
       addressRegion: siteConfig.location.region,

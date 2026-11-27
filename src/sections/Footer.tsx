@@ -78,7 +78,10 @@ export default function Footer() {
           </div>
           <div>
             <div className="text-[11px] tracking-[0.25em] uppercase text-brand-light/60 mb-4">Region</div>
-            <p>Deutschland</p><p className="mt-1 text-brand-light/70">Wuppertal / NRW</p>
+            <address className="not-italic">
+              <p>{siteConfig.location.streetAddress}</p>
+              <p className="mt-1 text-brand-light/70">{siteConfig.location.postalCode} {siteConfig.location.locality}</p>
+            </address>
             <Link to={routes.region} data-cursor className="block mt-3 text-brand-primary hover:text-brand-light transition-colors">Leistungsgebiet ansehen →</Link>
           </div>
           <div>

@@ -11,9 +11,9 @@ export const siteConfig = {
   defaultImage: 'https://www.gentlegroup.de/og-default.png',
   defaultImageAlt: 'Gentle Group Studios — individuelle Software, Web-Apps, Websites und KI-Automatisierung',
   logo: 'https://www.gentlegroup.de/logo/gentle-group-studios-navy.png',
-  // Public business location as stated in the imprint. The street address stays
-  // on the legal page only; structured data uses locality-level data.
+  // Customer-facing office address approved for public use.
   location: {
+    streetAddress: 'Girardetstraße 17',
     locality: 'Wuppertal',
     postalCode: '42109',
     region: 'Nordrhein-Westfalen',
